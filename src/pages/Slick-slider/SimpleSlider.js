@@ -2,7 +2,6 @@ import Slider from "react-slick";
 import {Link} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import data from "bootstrap/js/src/dom/data";
 
 export default function SimpleSlider() {
     const [windowFilm, setWindowFilm] = useState([])
@@ -33,9 +32,9 @@ export default function SimpleSlider() {
                         const data = input.slice(0,1);
                         return (
 
-                            <div>
+                            <div key={it.id}>
                                 <div className='block'>
-                                    <Link to={`/now_playing/${it.id}`} className='slider-box'>
+                                    <Link to={`/movie-info/${it.id}`} className='slider-box'>
                                         <img className='w-100' src={"https://image.tmdb.org/t/p/w500" + it.poster_path}
                                              alt=""/>
                                         <div className='slider-text'>{it.title}</div>

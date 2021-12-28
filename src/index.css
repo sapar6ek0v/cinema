@@ -1,4 +1,10 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 body {
+    position: relative;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -11,13 +17,42 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 header {
-    padding: 30px 0;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #20232a;
 }
+
 .header {
-    padding: 10px 0;
+    padding: 20px 0;
     display: flex;
 }
+
+button {
+    padding: 2px 8px;
+    border: 2px solid white;
+    background: #233a50;
+    color: white;
+    border-radius: 8px;
+    margin-right: 8px;
+}
+
+button:hover {
+    background: white;
+    color: #233a50;
+}
+
+span {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    padding-right: 8px;
+}
+
 .link {
     color: #abb7c4;
     text-decoration: none;
@@ -26,6 +61,7 @@ header {
     font-weight: bold;
     padding-right: 30px;
 }
+
 .register-button {
     background-color: #dd003f;
     color: #ffffff;
@@ -34,26 +70,31 @@ header {
     -moz-border-radius: 20px;
     border-radius: 20px;
 }
+
 .block {
     margin-bottom: 20px;
     margin-right: 30px;
 }
+
 .register-box {
     margin-left: auto;
 }
-.first-block {
+
+.title-block {
     width: 400px;
-    margin-right: 70px;
+    margin-right: 50px;
+}
+
+.info-block {
+    width: 600px;
+    padding: 39px 0;
 }
 
 .img {
     width: 100%;
     height: 400px;
     object-fit: contain;
-}
-
-.second-block {
-    width: 600px;
+    border-radius: 8px;
 }
 
 .context {
@@ -66,10 +107,12 @@ header {
 }
 
 .hero {
+    padding: 60px 0 0;
     height: 100vh;
     min-height: 790px;
     background: url("./image/bg.jpg") center/ cover;
 }
+
 .search-box {
     display: -webkit-flex;
     display: -moz-box;
@@ -81,7 +124,6 @@ header {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    margin-bottom: 50px;
 }
 
 .search-input {
@@ -93,15 +135,27 @@ header {
     font-weight: 300;
     text-transform: none;
 }
+
 .search-input:focus {
     outline: none;
 }
+
 .search-img {
     text-align: center;
     height: 46px;
-    background-color: #233a50
 }
-input[type='text']{
+
+.search-btn {
+    padding: 0;
+    background: #233a50 no-repeat;
+    border: none;
+}
+
+.search-btn:disabled {
+    background: #dd003f;
+}
+
+input[type='text'] {
     display: block;
     width: 100%;
     padding: 6px 12px;
@@ -111,41 +165,50 @@ input[type='text']{
     background-color: #fff;
     /*border: 1px solid #aaa;*/
 }
-.slick-next, .slick-prev  {
+
+.slick-next, .slick-prev {
     display: none;
 }
 
 .slick-next:before {
     content: none;
 }
+
 .slick-prev:before {
     content: none;
 }
+
 .slick-dots {
     text-align: right;
 }
+
 .slick-dots li button:before {
     font-size: 11px;
     color: white;
 }
+
 .slick-dots li button {
     color: white;
 }
-.slick-dots li.slick-active button:before{
+
+.slick-dots li.slick-active button:before {
     color: greenyellow;
 }
-.slider-box{
+
+.slider-box {
     text-decoration: none;
     position: relative;
     font-family: 'Arial', sans-serif;
     font-weight: 500;
 }
+
 .slider-text {
     display: inline-block;
     color: white;
     padding: 5px 8px 0;
     font-size: 20px;
 }
+
 .slider-popular {
     position: absolute;
     top: 333px;
@@ -156,21 +219,150 @@ input[type='text']{
     border-radius: 50%;
     padding: 5px 8px;
 }
-.slider-date{
+
+.slider-date {
     display: inline-block;
     color: white;
     font-size: 16px;
     padding: 0 8px;
 }
+
 .content {
     padding: 70px 0;
     background: #020d18;
 }
+
 .film-popular {
     display: inline-block;
     color: yellow;
 }
+
 .film-img {
     width: 100%;
     border-radius: 8px;
+}
+
+.about {
+    padding: 60px 0 0;
+}
+
+.info {
+    padding: 50px 0;
+    display: flex;
+    font-family: 'Dosis', sans-serif;
+    color: white;
+}
+
+.get-films-block {
+    padding: 60px 0 0;
+    background: #020d18;
+}
+
+.film-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: none;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.film-date {
+    font-size: 24px;
+    color: #4f5b68;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding-left: 8px;
+}
+
+.film-sub-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.btn-success {
+    color: #abb7c4;
+    background: none;
+    border: none;
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-right: 30px;
+}
+
+.btn-success:hover {
+    color: greenyellow;
+    background: none;
+    border: none;
+}
+
+.show > .btn-success.dropdown-toggle {
+    color: greenyellow;
+    background: none;
+    border: none;
+}
+
+.movies {
+    padding: 100px 0 0;
+}
+
+.credits-box {
+    background: #020d18;
+    padding: 170px 0 0;
+}
+
+.photo-box {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: lightslategray;
+    border-radius: 40px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.actors-box {
+    border-bottom: 2px solid white;
+}
+.actors-image {
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.actors-photo-box {
+    margin-right: 60px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+}
+.actors-about-box {
+    font-family: 'Nunito', sans-serif;
+    color: white;
+}
+.actors-name {
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.actors-about-titres {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
 }
