@@ -10,7 +10,6 @@ const CreditsInfo = () => {
     const {id} = useParams()
     const [actor, setActor] = useState({})
     const [actorsFilms, setActorsFilm] = useState([])
-    const [nav, setNav] = useState(<ActorsInfo/>)
 
     useEffect(() => {
         axios(`${URL_BASE}/person/${id}?api_key=${API_KEY}`)
@@ -29,9 +28,6 @@ const CreditsInfo = () => {
             })
     }, [id])
 
-    // const onClick = () => {
-    //     setNav(nav + 1)
-    // }
 
     return (
         <div className='credits-box'>
@@ -43,15 +39,7 @@ const CreditsInfo = () => {
 
                     <div className='tabs'>
                         <ul className='tab-links tabs-mv'>
-                            {/*<button onClick={() => onClick(<ActorsInfo/>)} className='li'>*/}
-                            {/*    Overview*/}
-                            {/*</button>*/}
-                            {/*<button  onClick={() => setNav(nav + 2)}  className='li'>*/}
-                            {/*    Personal information*/}
-                            {/*</button>*/}
-                            {/*<button  onClick={onClick}  className='li'>*/}
-                            {/*    Movies*/}
-                            {/*</button>*/}
+                            <ActorsInfo />
                         </ul>
                     </div>
                     <div className='actors-about-box'>
