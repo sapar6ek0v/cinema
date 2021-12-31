@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {useParams} from "react-router-dom";
 import {Container, Row} from "react-bootstrap";
-import FilmsCard from "../../components/film-card/FilmsCard";
+import FilmsCard from "../../components/Film-card/FilmsCard";
 
 const TopSearchInfo = () => {
     const {name} = useParams()

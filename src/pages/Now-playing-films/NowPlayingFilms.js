@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import {Container, Row} from "react-bootstrap";
-import FilmsCard from "../../components/film-card/FilmsCard";
+import {Container} from "react-bootstrap";
+import {Link} from "react-router-dom";
 const NowPlayingFilms = () => {
     const [films, setFilms] = useState([])
 
@@ -13,17 +13,36 @@ const NowPlayingFilms = () => {
             })
     }, [])
     return (
-        <Container>
-            <Row>
-                {
-                    films.map(film => {
-                        return (
-                            <FilmsCard key={film.id} film={film}/>
-                        )
-                    })
-                }
-            </Row>
-        </Container>
+       <div className='films-card-page'>
+           <Container>
+               <div className='d-flex overflow-auto'>
+                   {
+                       films.map(film => { const input = film.release_date.split('-')
+                           const data = input.slice(0, 1);
+                           return (
+                               <div  className='films-card'>
+                                   <div className="block">
+                                       <Link to={`/movie-info/${film.id}`} className='text-decoration-none text-black'>
+                                           <img className='film-img'
+                                                src={"https://image.tmdb.org/t/p/w500" + film.poster_path} alt=""/>
+                                           <div className='films-sub-card'>
+                                               {/*<div className='films-card-percent-box'>*/}
+                                               {/*    <span className='films-card-percent'>*/}
+                                               {/*        {film.vote_average * 10}%*/}
+                                               {/*    </span>*/}
+                                               {/*</div>*/}
+                                               <div className='films-card-title'>{film.title}</div>
+                                               <div className='films-card-text'>({data})</div>
+                                           </div>
+                                       </Link>
+                                   </div>
+                               </div>
+                           )
+                       })
+                   }
+               </div>
+           </Container>
+       </div>
     );
 }
 

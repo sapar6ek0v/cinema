@@ -13,11 +13,6 @@ const FilmsCard = ({film}) => {
                         <div className='film-popular'>{film.vote_average}/10</div>
                         <div className='slider-text'>{film.title}</div>
                         <div className='slider-date'>({data})</div>
-                        {/*<div>Жанры: {film.genres?.map(it => {*/}
-                        {/*    return (*/}
-                        {/*        <span>{it.name},</span>*/}
-                        {/*    )*/}
-                        {/*})}</div>*/}
                     </Link>
                 </div>
             </div>

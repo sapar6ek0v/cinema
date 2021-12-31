@@ -3,12 +3,14 @@ import axios from "axios";
 import {API_KEY, PHOTO_BASE, URL_BASE} from "../../constants/api";
 import {Link, useParams} from "react-router-dom";
 import {Container, Row} from "react-bootstrap";
-import AboutActors from "../../components/AboutActors/AboutActors";
+import AboutActors from "../../components/About - actors/AboutActors";
+import ActorsInfo from "../Actors-info/ActorsInfo";
 
 const CreditsInfo = () => {
     const {id} = useParams()
     const [actor, setActor] = useState({})
     const [actorsFilms, setActorsFilm] = useState([])
+    const [nav, setNav] = useState(<ActorsInfo/>)
 
     useEffect(() => {
         axios(`${URL_BASE}/person/${id}?api_key=${API_KEY}`)
@@ -27,12 +29,32 @@ const CreditsInfo = () => {
             })
     }, [id])
 
+    // const onClick = () => {
+    //     setNav(nav + 1)
+    // }
+
     return (
         <div className='credits-box'>
             <Container>
                 <div className='d-flex '>
                     <div className='actors-photo-box'>
                         <img className='actors-image' src={`${PHOTO_BASE}${actor.profile_path}`} alt={actor.name}/>
+                    </div>
+
+                    <div className='tabs'>
+                        <ul className='tab-links tabs-mv'>
+                            {/*<button onClick={() => onClick(<ActorsInfo/>)} className='li'>*/}
+                            {/*    Overview*/}
+                            {/*</button>*/}
+                            {/*<button  onClick={() => setNav(nav + 2)}  className='li'>*/}
+                            {/*    Personal information*/}
+                            {/*</button>*/}
+                            {/*<button  onClick={onClick}  className='li'>*/}
+                            {/*    Movies*/}
+                            {/*</button>*/}
+                        </ul>
+                    </div>
+                    <div className='actors-about-box'>
                         <div>
                             <h3 className='fw-bold'>Personal information</h3>
                             <AboutActors title={'Known for department'} text={actor.known_for_department}/>
@@ -41,16 +63,7 @@ const CreditsInfo = () => {
                             <AboutActors title={'Also known as'} text={actor.also_known_as}/>
                         </div>
 
-                    </div>
 
-                    <div className='actors-about-box'>
-                        <h2 className='actors-name'>
-                            {actor.name}
-                        </h2>
-                        <div>
-                            <h4>Biography</h4>
-                            {actor.biography}
-                        </div>
                     </div>
                 </div>
                 <div>

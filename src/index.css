@@ -24,11 +24,11 @@ header {
     width: 100%;
     top: 0;
     left: 0;
+    padding: 20px 0 ;
     background-color: #20232a;
 }
 
 .header {
-    padding: 20px 0;
     display: flex;
 }
 
@@ -60,6 +60,9 @@ span {
     text-transform: uppercase;
     font-weight: bold;
     padding-right: 30px;
+}
+.link:hover {
+    color: #dcf836;
 }
 
 .register-button {
@@ -242,8 +245,8 @@ input[type='text'] {
     border-radius: 8px;
 }
 
-.about {
-    padding: 60px 0 0;
+.about-film {
+    padding: 86px 0 0;
 }
 
 .info {
@@ -280,7 +283,16 @@ input[type='text'] {
     font-size: 16px;
     margin-bottom: 10px;
 }
-
+.film-pod-title {
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+    color: #abb7c4;
+    font-weight: bold;
+}
+.h3 {
+    color: #abb7c4;
+    font-weight: bold;
+}
 .btn-success {
     color: #abb7c4;
     background: none;
@@ -296,20 +308,27 @@ input[type='text'] {
     background: none;
     border: none;
 }
-
+.btn-success:focus {
+    color: #fff;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
 .show > .btn-success.dropdown-toggle {
     color: greenyellow;
     background: none;
     border: none;
 }
-
+.show>.btn-success.dropdown-toggle:focus {
+    box-shadow: none;
+}
 .movies {
     padding: 100px 0 0;
 }
 
 .credits-box {
     background: #020d18;
-    padding: 170px 0 0;
+    padding: 70px 0 ;
 }
 
 .photo-box {
@@ -365,4 +384,164 @@ input[type='text'] {
 .actors-about-titres {
     font-family: 'Dosis', sans-serif;
     font-weight: bold;
+}
+.films-card-page {
+    background: url("./image/trending-bg.svg") no-repeat center;
+}
+.films-card {
+    width: 150px;
+    min-width: 150px;
+    transition: height .5s linear;
+}
+.films-card-title {
+    font-weight: 700;
+    color: white;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+.films-card-text {
+    font-size: 1em;
+    color: lightblue;
+}
+.films-card-percent-box {
+    width: 34px;
+    height: 34px;
+    padding-top: 1px;
+    padding-left: 1px;
+    font-size: 0.6em;
+}
+.films-card-percent {
+    color: yellow;
+    background: #020d18;
+    border: 2px solid greenyellow;
+    border-radius: 50%;
+}
+.films-sub-card {
+    padding: 10px 10px 12px 10px;
+}
+.tabs ul.tabs-mv {
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+.tabs ul.tab-links{
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0;
+}
+ul {
+    list-style: none;
+    margin-left: 0;
+}
+.tabs ul.tabs-mv .li  {
+    font-size: 18px;
+    padding-bottom: 15px;
+    font-family: 'Dosis', sans-serif;
+    color: #abb7c4;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.tabs ul.tabs-mv .li {
+    margin-right: 50px;
+}
+.tabs ul.tabs-mv .li.active , .tabs ul.tabs-mv .li:hover  {
+    border-bottom: 3px solid #dcf836;
+}
+.li:hover {
+    color: #dcf836;
+}
+.tabs ul.tab-links .li.active {
+    color: #dcf836;
+}
+.creotors-job {
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+    color: #abb7c4;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.creotors-name {
+    color: #4280bf;
+}
+.creotors-name:hover {
+    color: #dcf836;
+}
+.photo-page{
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 6px 4px 8px -4px lightblue;
+    border: 1px solid white;
+    margin-bottom: 20px;
+    margin-right: 40px;
+}
+.photo-box {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+.modal-bg {
+    background: rgba(0,0,0,0.7);
+}
+.start-btn {
+    height: 60px;
+    position: absolute;
+    top: 120px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+.trailer-btn {
+    background: none;
+    border: none;
+}
+.trailer-img {
+    width: 533px;
+    height: 300px;
+    object-fit: cover;
+}
+.start-play {
+    position: absolute;
+    top: 118px;
+    right: 0;
+    left: 238px;
+    width: 67px;
+    height: 67px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.7);
+}
+.play-start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("./image/start-video.svg");
+}
+
+.actors-title {
+    color: #abb7c4;
+    margin-bottom: 40px;
+}
+.trailer-box {
+    padding: 50px 0;
+    background: url("./image/info-bg.jpg");
+}
+footer {
+    padding: 40px 0;
+    background: url("./image/bg.jpg");
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#abb7c4;
+    font-weight: bold;
+    font-size: 18px;
+}
+.footer-img {
+    width: 154px;
+    height: 20px;
+    margin-left: 30px;
 }
