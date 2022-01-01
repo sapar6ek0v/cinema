@@ -1,15 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {API_KEY, PHOTO_BASE, URL_BASE} from "../../constants/api";
-import {Link, useParams} from "react-router-dom";
-import {Container, Row} from "react-bootstrap";
-import AboutActors from "../../components/About - actors/AboutActors";
+import {useParams} from "react-router-dom";
+import {Container} from "react-bootstrap";
+import ActorsFilms from "../ActorsFilms/ActorsFilms";
 import ActorsInfo from "../Actors-info/ActorsInfo";
+import ActorsPersonalInfo from "../Actors-info/ActorsPersonalInfo";
 
 const CreditsInfo = () => {
+    const activeBtn = document.querySelector('.active')
     const {id} = useParams()
     const [actor, setActor] = useState({})
-    const [actorsFilms, setActorsFilm] = useState([])
+    const [active, setActive] = useState(activeBtn)
 
     useEffect(() => {
         axios(`${URL_BASE}/person/${id}?api_key=${API_KEY}`)
@@ -17,62 +19,62 @@ const CreditsInfo = () => {
                 setActor(data)
             })
 
-        axios(`${URL_BASE}/person/${id}/movie_credits?api_key=${API_KEY}`)
-            .then(({data}) => {
-                setActorsFilm(data.cast)
-            })
-
-        axios(`${URL_BASE}/person/po?api_key=${API_KEY}`)
-            .then(({data}) => {
-                setActorsFilm(data.cast)
-            })
     }, [id])
 
+
+    const toggleContent = (event) => {
+        setActive(event)
+    }
+
+    const switchContent = (value) => {
+        switch (value) {
+            case 'overview':
+                return <ActorsInfo actor={actor}/>
+            case 'personal-information':
+                return <div>
+                    <ActorsPersonalInfo actor={actor}/>
+                </div>;
+            case 'films':
+                return <ActorsFilms />
+            case 'more':
+                return <div>
+                    <p>More Content Here</p>
+                </div>;
+            default:
+                return null;
+        }
+    }
 
     return (
         <div className='credits-box'>
             <Container>
-                <div className='d-flex '>
+                <div className='d-flex actors-box'>
                     <div className='actors-photo-box'>
                         <img className='actors-image' src={`${PHOTO_BASE}${actor.profile_path}`} alt={actor.name}/>
                     </div>
 
-                    <div className='tabs'>
-                        <ul className='tab-links tabs-mv'>
-                            <ActorsInfo />
-                        </ul>
-                    </div>
-                    <div className='actors-about-box'>
-                        <div>
-                            <h3 className='fw-bold'>Personal information</h3>
-                            <AboutActors title={'Known for department'} text={actor.known_for_department}/>
-                            <AboutActors title={'Birthday'} text={actor.birthday}/>
-                            <AboutActors title={'Place of birth'} text={actor.place_of_birth}/>
-                            <AboutActors title={'Also known as'} text={actor.also_known_as}/>
+                    <div>
+                        <div className="d-flex mb-4">
+                            <button className='link-button' value="overview"
+                                    onClick={() => toggleContent('overview')}>
+                                overview
+                            </button>
+                            <button className='link-button' value="personal-information"
+                                    onClick={() => toggleContent('personal-information')}>
+                                personal - information
+                            </button>
+                            <button className='link-button' value="films"
+                                    onClick={() => toggleContent('films')}>
+                                Films
+                            </button>
+                            <button className='link-button' value="more"
+                                    onClick={() => toggleContent('more')}>+ More
+                            </button>
                         </div>
-
-
+                        <>
+                            {switchContent(active)}
+                        </>
                     </div>
-                </div>
-                <div>
-                    <h3>Фильмы с участием</h3>
-                    <Row>
-                        {
-                            actorsFilms?.map(film => {
-                                return (
-                                    <div className='col-sm-6 col-md-4 col-xl-3'>
-                                        <div className='block'>
-                                            <Link to={`/movie-info/${film.id}`}>
-                                                <div>{film.title}</div>
-                                                <div>{film.release_date}</div>
-                                                <img className='w-100' src={`${PHOTO_BASE}${film.poster_path}`} alt={film.title}/>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                )
-                            })
-                        }
-                    </Row>
                 </div>
             </Container>
         </div>

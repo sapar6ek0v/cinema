@@ -10,7 +10,11 @@ const TopSearch = () => {
     const onChange = (e) => setFilm(e.target.value.trim())
 
 
-    const onKeyDown = () => navigate(`/search-films/${film}`)
+    const onKeyDown = () => {
+        if (film) {
+            navigate(`/search-films/${film}`)
+        }
+    }
 
     const onChangeDown = (e) => {
       if (e.key === 'Enter') {
@@ -29,7 +33,6 @@ const TopSearch = () => {
                        <img className='search-img' src={search} alt=""/>
                    </button>
 
-               })
                }
            </div>
        </div>

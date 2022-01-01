@@ -6,35 +6,28 @@ import Credits from "../Credits/Credits";
 import {API_KEY, URL_BASE} from "../../constants/api";
 import Trailers from "../Trailers/Trailers";
 import StartTrailers from "../Trailers/StartTrailers";
+import Creators from "../Creators/Creators";
 
 const FilmsInfo = () => {
     const {id} = useParams()
     const [film, setFilm] = useState({})
-    const [producers, setProducers] = useState([])
-    const jobs = ["Director", "Producer", "Screenplay"]
     const [videos, setVideos] = useState([])
     const [modal, setModal] = useState(false)
     const [videoKey, setVideoKey] = useState('')
 
     useEffect(() => {
-        axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4eb03517df3f1b8227a751b8d89d9ee8&language=ru&page=1`)
+        axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4eb03517df3f1b8227a751b8d89d9ee8&language=ru`)
             .then(({data}) => {
                 setFilm(data)
             })
 
-
-        axios(`${URL_BASE}/movie/${id}/credits?api_key=${API_KEY}&language=ru`)
-            .then(({data}) => {
-                setProducers(data.crew.filter(it => jobs.includes(it.job)))
-                console.log(producers)
-            })
 
 
         axios(`${URL_BASE}/movie/${id}/videos?api_key=${API_KEY}&language=ru,en`)
             .then(({data}) => {
                 setVideos(data.results)
             })
-    }, [id, jobs, producers])
+    }, [id])
 
     useEffect(() => {
         if (modal) {
@@ -88,28 +81,10 @@ const FilmsInfo = () => {
                                 <div className='info-block'>
                                     <h3 className='h3'>Обзор</h3>
                                     <div>
-                                        {film.overview}
+                                        {film.overview ? film.overview : 'Sorry but we don\'t have information about this movie yet'}
                                     </div>
                                 </div>
-
-                                <div className='row'>
-                                    {
-                                        producers?.map(people => {
-                                            return (
-                                                <div key={people.id} className='col-sm-6 col-md-4 col-lg-3 '>
-                                                    <div className='mb-2'>
-                                                        <div className='creotors-job'>
-                                                            {people.job}
-                                                        </div>
-                                                        <div className='creotors-name'>
-                                                            {people.name}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </div>
+                                <Creators />
                             </div>
                         </div>
                     </Container>

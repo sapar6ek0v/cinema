@@ -15,20 +15,25 @@ const TopSearchInfo = () => {
                 setSearch(data.results)
                 console.log(data)
             })
+
+
+
     }, [name])
 
     return (
-        <Container>
-            <Row>
-                {
-                    search.map((film) => {
-                        return (
-                            <FilmsCard key={film.id} film={film} />
-                        )
-                    })
-                }
-            </Row>
-        </Container>
+        <div className='search-page'>
+            <Container>
+                <Row>
+                    {
+                        search.map((film) => {
+                            return (
+                                <FilmsCard key={film.id} film={film} />
+                            )
+                        })
+                    }
+                </Row>
+            </Container>
+        </div>
     );
 };
 

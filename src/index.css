@@ -42,7 +42,7 @@ button {
 }
 
 button:hover {
-    background: white;
+    background: transparent;
     color: #233a50;
 }
 
@@ -115,7 +115,10 @@ span {
     min-height: 790px;
     background: url("./image/bg.jpg") center/ cover;
 }
-
+.search-page {
+    padding: 170px 0 70px;
+    background: #020d18;
+}
 .search-box {
     display: -webkit-flex;
     display: -moz-box;
@@ -152,6 +155,8 @@ span {
     padding: 0;
     background: #233a50 no-repeat;
     border: none;
+    margin-right: 0;
+    border-radius: 0;
 }
 
 .search-btn:disabled {
@@ -328,7 +333,7 @@ input[type='text'] {
 
 .credits-box {
     background: #020d18;
-    padding: 70px 0 ;
+    padding: 170px 0 100px;
 }
 
 .photo-box {
@@ -358,9 +363,7 @@ input[type='text'] {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-.actors-box {
-    border-bottom: 2px solid white;
-}
+
 .actors-image {
     width: 300px;
     height: 450px;
@@ -378,12 +381,35 @@ input[type='text'] {
     color: white;
 }
 .actors-name {
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-.actors-about-titres {
+    margin-bottom: 20px;
     font-family: 'Dosis', sans-serif;
+    font-size: 21px;
+    color:#4280bf;
     font-weight: bold;
+    text-transform: capitalize;
+}
+.actors-sub-title {
+    margin-bottom: 10px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+    color: #abb7c4;
+    font-weight: bold;
+}
+
+.actors-pod-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: #abb7c4;
+}
+.actors-item {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    color: #abb7c4;
+    font-weight: 300;
+    line-height: 24px;
+}
+.actors-line {
+    border-bottom: 1px solid #233a50;
 }
 .films-card-page {
     background: url("./image/trending-bg.svg") no-repeat center;
@@ -418,42 +444,27 @@ input[type='text'] {
 .films-sub-card {
     padding: 10px 10px 12px 10px;
 }
-.tabs ul.tabs-mv {
-    padding: 20px 0;
-    margin-bottom: 30px;
+.active {
+    display: block;
+    color: #dcf836;
+    border-bottom: 3px solid #dcf836;
 }
-.tabs ul.tab-links{
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 0;
-}
-ul {
-    list-style: none;
-    margin-left: 0;
-}
-.tabs ul.tabs-mv .li  {
-    font-size: 18px;
-    padding-bottom: 15px;
+.link-button {
+    background: none;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    padding: 0 0 15px 0;
     font-family: 'Dosis', sans-serif;
+    font-size: 20px;
     color: #abb7c4;
     font-weight: bold;
     text-transform: uppercase;
-    text-decoration: none;
+    margin-right: 30px;
 }
-.tabs ul.tabs-mv .li {
-    margin-right: 50px;
-}
-.tabs ul.tabs-mv .li.active , .tabs ul.tabs-mv .li:hover  {
+.link-button:hover {
+    color: #dcf836;
     border-bottom: 3px solid #dcf836;
-}
-.li:hover {
-    color: #dcf836;
-}
-.tabs ul.tab-links .li.active {
-    color: #dcf836;
 }
 .creotors-job {
     font-family: 'Dosis', sans-serif;
@@ -544,4 +555,75 @@ footer {
     width: 154px;
     height: 20px;
     margin-left: 30px;
+}
+
+.actors-box {
+    margin-bottom: 60px;
+    border-bottom: 2px solid #233a50;
+}
+.credits-card {
+    width: 252px;
+    min-width: 200px;
+}
+.credits-img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    min-height: 300px;
+}
+.credits-rule-title {
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
+    color: #4280bf;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #233a50;
+}
+.credits-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: #abb7c4;
+    font-weight: bold;
+    text-transform: none;
+    line-height: 24px !important;
+    padding:  0 10px;
+    display: inline-block;
+}
+.credits-date {
+    color: #4280bf;
+    transition: ease-in-out 0.4s;
+    padding:  0 10px;
+}
+.actors-button {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: none;
+    color: #4280bf;
+    font-weight: bold;
+}
+.actors-button:hover {
+    color: yellow;
+    background: white;
+}
+.actors-button-img {
+    height: 40px;
+    display: flex;
+    padding-left: 10px;
+}
+.margin-btn {
+    margin-right: 20px;
+}
+.trailer-img {
+    object-fit: cover;
+    object-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.trailer-btn {
+    background: transparent;
 }
