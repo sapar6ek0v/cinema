@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 
+
 export default function SimpleSlider() {
     const [windowFilm, setWindowFilm] = useState([])
 
@@ -36,9 +37,11 @@ export default function SimpleSlider() {
                                 <div className='block'>
                                     <Link to={`/movie-info/${it.id}`} className='slider-box'>
                                         <img className='w-100' src={"https://image.tmdb.org/t/p/w500" + it.poster_path}
-                                             alt=""/>
+                                             alt={it.title}/>
                                         <div className='slider-text'>{it.title}</div>
-                                        <div className='slider-popular'>{it.vote_average}</div>
+                                        <div className='slider-popular'>
+                                            {it.vote_average}
+                                        </div>
                                         <span className='slider-date'>({data})</span>
                                     </Link>
                                 </div>

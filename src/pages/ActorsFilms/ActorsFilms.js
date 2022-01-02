@@ -9,7 +9,6 @@ import {Row} from "react-bootstrap";
 
 const ActorsFilms = () => {
     const {id} = useParams()
-    const [backFilms, setBackFilms] = useState(0)
     const [films, setFilms] = useState(10)
     const [actorsFilms, setActorsFilm] = useState([])
 
@@ -24,20 +23,10 @@ const ActorsFilms = () => {
         <div >
             <h3 className='credits-rule-title'>Фильмы с участием :</h3>
             <div>
-                {
-                    films > actorsFilms.length && <div className='d-flex align-items-center justify-content-center'>
-                        <button onClick={() => setFilms(films - 10)} className='actors-button margin-btn'>
-                            <span >
-                                <img className='actors-button-img' src={prev} alt="next"/>
-                            </span>
-                            PREV
-                        </button>
-                    </div>
-                }
 
                 <Row>
                     {
-                        actorsFilms?.slice(backFilms,films).map(film => {
+                        actorsFilms?.slice(0,films).map(film => {
                             const date = film.release_date.slice(0,4)
                             return (
                                 <div key={film.id} className='credits-card'>
@@ -50,17 +39,20 @@ const ActorsFilms = () => {
                             )
                         })
                     }
+
                 </Row>
-                {
-                    films < actorsFilms.length && <div className='d-flex align-items-center justify-content-center'>
-                        <button onClick={() => setFilms(films + 10 || actorsFilms - 1 )} className='actors-button'>
-                            NEXT
-                            <span>
+                <div>
+                    {
+                        films < actorsFilms.length && <div  className='next-box'>
+                            <button onClick={() => setFilms(films + 10 || actorsFilms - 1 )} className='actors-button'>
+                                NEXT
+                                <span>
                                 <img className='actors-button-img' src={next} alt="next"/>
                             </span>
-                        </button>
-                    </div>
-                }
+                            </button>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     );

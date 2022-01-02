@@ -41,7 +41,7 @@ const CreditsInfo = () => {
                     <p>More Content Here</p>
                 </div>;
             default:
-                return null;
+                return <ActorsInfo actor={actor}/>
         }
     }
 
