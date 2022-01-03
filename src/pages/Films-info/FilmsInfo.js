@@ -63,7 +63,7 @@ const FilmsInfo = () => {
                                 <div className='film-info-box'>
                                     {
                                         film?.poster_path ?
-                                            <img className='film-info-img' src={"https://image.tmdb.org/t/p/w500" + film.poster_path} alt='film-photo'/>
+                                            <img className='film-info-img' src={"https://image.tmdb.org/t/p/w500" + film.poster_path} alt='film'/>
                                             : <img src={notFound} alt='not-found'/>
                                     }
                                 </div>
