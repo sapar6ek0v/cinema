@@ -10,7 +10,6 @@ import CreditsInfo from "./pages/Credits/CreditsInfo";
 import Footer from "./components/Footer/Footer";
 import UpcomingFilms from "./pages/UpcomingFilms/UpcomingFilms";
 import TopRated from "./pages/Top-rated/TopRated";
-import TopSearchPeopleInfo from "./pages/TopPeopleSearch/TopSearchPeopleInfo";
 
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
                     <Route path='/popular' element={<PopularFilms />} />
                     <Route path='/top-rated' element={<TopRated/>} />
                     <Route path='/upcoming' element={<UpcomingFilms />} />
-                    <Route path='/people/:name' element={<TopSearchPeopleInfo />}/>
                     <Route path='/movie-info/:id' element={<FilmsInfo />} />
                     <Route path='/search-films/:name' element={<TopSearchInfo />} />
                     <Route path='/credits-info/:id' element={<CreditsInfo />} />
