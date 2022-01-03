@@ -17,7 +17,7 @@ const Footer = () => {
                     </div>
                     <div>
                         <h4 className='footer-title'>Resources</h4>
-                        <div><a className='footer-link' href="#">About</a></div>
+                        <div><Link className='footer-link' to={'/'}>About</Link></div>
                     </div>
                     <div>
                         <h4 className='footer-title'>Newsletter</h4>
