@@ -3,7 +3,6 @@ import {Link, useParams} from "react-router-dom";
 import {API_KEY, PHOTO_BASE, URL_BASE} from "../../constants/api";
 import axios from "axios";
 import next from '../../image/icons (1).png'
-import prev from '../../image/icons (2).png'
 import notFound from '../../image/not found.jpg'
 import {Row} from "react-bootstrap";
 
@@ -17,7 +16,7 @@ const ActorsFilms = () => {
             .then(({data}) => {
                 setActorsFilm(data.cast)
             })
-    }, [])
+    }, [id])
 
     return (
         <div >

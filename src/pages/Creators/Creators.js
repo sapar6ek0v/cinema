@@ -8,18 +8,19 @@ const Creators = () => {
     const [producers, setProducers] = useState([])
     const jobs = ["Director", "Producer", "Screenplay"]
 
+    const works = producers.filter(it => jobs.includes(it.job))
+
     useEffect(() => {
         axios(`${URL_BASE}/movie/${id}/credits?api_key=${API_KEY}&language=ru`)
             .then(({data}) => {
-                setProducers(data.crew.filter(it => jobs.includes(it.job)))
-                console.log(producers)
+                setProducers(data.crew)
             })
-    }, [])
+    }, [id])
 
     return (
             <div className='row'>
                 {
-                    producers?.map(people => {
+                    works?.map(people => {
                         return (
                             <div key={people.id} className='col-sm-6 col-md-4 col-lg-3 '>
                                 <div className='mb-2'>

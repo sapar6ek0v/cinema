@@ -1,52 +1,42 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import {Container, Dropdown} from "react-bootstrap";
-import HeaderLink from "./HeaderLink";
+import HeaderDropDown from "./HeaderDropDown";
+import HeaderBtn from "./HeaderBtn";
 
 const Header = () => {
+
+
+    window.onscroll = function onScroll () {
+
+        const header = document.querySelector('.header')
+
+        if ( window.pageYOffset > 100 ) {
+            header.classList.add('header-fix')
+        } else  {
+            header.classList.remove('header-fix')
+        }
+    }
+
+
     return (
-        <header>
+        <header className='header'>
             <Container>
-                <div className='header'>
+                <div className='d-flex'>
                     <div className='about-box d-flex align-items-center'>
-                        <NavLink className='link' to='/'>
-                            home
-                        </NavLink>
-                        <Dropdown className='drop-button'>
-                            <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                <NavLink className='link' to='/all-films' >
-                                    Movies
-                                </NavLink>
-                            </Dropdown.Toggle>
-
-                            <Dropdown.Menu>
-                                <HeaderLink link={'popular'} title={'popular'}/>
-                                <HeaderLink link={'top-rated'} title={'top rated'} />
-                                <HeaderLink link={'upcoming'} title={'upcoming'} />
-                            </Dropdown.Menu>
-                        </Dropdown>
-
-
-                        <NavLink className='link' to='/'>
-                            serials
-                        </NavLink>
-                        <NavLink className='link' to='/'>
-                            news
-                        </NavLink>
-                        <NavLink className='link' to='/'>
-                            community
-                        </NavLink>
+                        <HeaderBtn title={'home'} item={''} />
+                        <HeaderDropDown />
+                        <HeaderBtn title={'serials'} item={''}/>
+                        <HeaderBtn title={'community'} item={''}/>
+                        <HeaderBtn title={'news'} item={'/'}/>
                     </div>
                     <div className='register-box d-flex align-items-center'>
-                        <NavLink className='link' to='/'>
-                            help
-                        </NavLink>
-                        <NavLink className='link' to='/'>
-                            login
-                        </NavLink>
-                        <NavLink  className='link register-button' to='/'>
+                        <HeaderBtn title={'help'} item={''} />
+                        <HeaderBtn title={'login'} item={''} />
+
+                        <button  className='register-button' >
                             sign up
-                        </NavLink>
+                        </button>
                     </div>
                 </div>
             </Container>

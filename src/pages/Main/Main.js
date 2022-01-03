@@ -2,9 +2,6 @@ import React, {useState} from 'react';
 import {Container, Row} from "react-bootstrap";
 import SimpleSlider from "../Slick-slider/SimpleSlider";
 import TopSearch from "../Seacrh-films/TopSearch";
-import {Link} from "react-router-dom";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAngleRight} from '@fortawesome/free-solid-svg-icons'
 import SlickPopularFilms from "../Popular-films/SlickPopularFilms";
 import SlickUpcoming from "../UpcomingFilms/SlickUpcoming";
 import SlickTopRated from "../Top-rated/SlickTopRated";
@@ -15,6 +12,7 @@ import TvPopular from "../Tv/TVPopular";
 import MainPageTitle from "../../components/MainPageTitle/MainPageTitle";
 import TvTopRated from "../Tv/TVTopRated";
 import TvOnTheAir from "../Tv/TVOnTheAir";
+import Trends from "../Trends/Trends";
 
 
 const Main = () => {
@@ -82,23 +80,25 @@ const Main = () => {
                             {
                                 switchContent(active)
                             }
-                            <div className='content-sub-box'>
-                                <MainPageTitle title={'ON TV'} item={''}/>
+                            <div className='content-page'>
+                                <div className='content-sub-box'>
+                                    <MainPageTitle title={'ON TV'} item={''}/>
+                                </div>
+                                <div>
+                                    <button onClick={() => toggleContent('popular')} className='content-btn' type="button"
+                                            value='popular'>#POPULAR
+                                    </button>
+                                    <button onClick={() => toggleContent('on-the-air')} className='content-btn' type="button"
+                                            value='on-the-air'>#on the air
+                                    </button>
+                                    <button onClick={() => toggleContent('top-rated')} className='content-btn' type="button"
+                                            value='top-rated'>#TOP RATED
+                                    </button>
+                                </div>
+                                {
+                                    switchTVContent(active)
+                                }
                             </div>
-                            <div>
-                                <button onClick={() => toggleContent('popular')} className='content-btn' type="button"
-                                        value='popular'>#POPULAR
-                                </button>
-                                <button onClick={() => toggleContent('on-the-air')} className='content-btn' type="button"
-                                        value='on-the-air'>#on the air
-                                </button>
-                                <button onClick={() => toggleContent('top-rated')} className='content-btn' type="button"
-                                        value='top-rated'>#TOP RATED
-                                </button>
-                            </div>
-                            {
-                                switchTVContent(active)
-                            }
                         </div>
                         <div className='col-md-4 pad-lf'>
                             <div className='side-bar'>
@@ -111,6 +111,7 @@ const Main = () => {
                 </Container>
             </div>
             <Tizers />
+            <Trends />
         </>
     )
 

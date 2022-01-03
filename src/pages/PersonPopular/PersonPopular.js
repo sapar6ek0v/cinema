@@ -22,13 +22,13 @@ const PersonPopular = () => {
                 {
                     personPop.slice(0, 4).map((person) => {
                         return (
-                            <div className='d-flex align-items-center mb-4'>
+                            <Link to={`credits-info/${person.id}`} className='d-flex align-items-center mb-4 text-decoration-none'>
                                 <img className='person-popular-img' src={"https://image.tmdb.org/t/p/w500" + person.profile_path} alt=""/>
                                 <div>
                                     <div className='person-popular-title'>{person.name}</div>
                                     <div className='person-popular-pod-title'>{person.known_for_department}</div>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     })
                 }
