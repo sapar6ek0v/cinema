@@ -1,6 +1,5 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
-import {Container, Dropdown} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import HeaderDropDown from "./HeaderDropDown";
 import HeaderBtn from "./HeaderBtn";
 

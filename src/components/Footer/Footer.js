@@ -3,6 +3,7 @@ import logo from '../../image/logo-movie.svg'
 import {Container} from "react-bootstrap";
 import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -23,7 +24,7 @@ const Footer = () => {
                         <div className='footer-link w-75 mb-4'>Subscribe to our newsletter system now
                             to get latest news from us.</div>
                         <input className='footer-input mb-4' type="text" placeholder='Enter your email...'/>
-                        <div><a className='footer-email-link' href="#">subscribe now <FontAwesomeIcon icon={faAngleRight}/></a></div>
+                        <div><Link className='footer-email-link' to={'/'}>subscribe now <FontAwesomeIcon icon={faAngleRight}/></Link></div>
                     </div>
                 </div>
                 <div className='footer-end-title'>
