@@ -1,22 +1,23 @@
 import React from 'react';
+import {Dropdown, DropdownButton} from "react-bootstrap";
+import './header-dropdown.css'
+import {Link} from "react-router-dom";
+
 
 const HeaderDropDown = () => {
+
     return (
-        <ul>
-            <li>
-                <ul className='header-link-none'>
-                    <li>
-                        <button>Popular</button>
-                    </li>
-                    <li>
-                        <button>Top Rated</button>
-                    </li>
-                    <li>
-                        <button>Upcoming</button>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+        <DropdownButton id="dropdown-basic-button" title="Movies">
+            <Link to='popular' className='dropdown-link'>
+                Popular
+            </Link>
+            <Link to='top-rated' className='dropdown-link'>
+                Top Rated
+            </Link>
+            <Link to='upcoming' className='dropdown-link'>
+                Upcoming
+            </Link>
+        </DropdownButton>
     );
 };
 

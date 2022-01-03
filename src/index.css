@@ -427,12 +427,23 @@ input[type='text'] {
     padding: 30px 0 60px;
     background: #020d18;
 }
+.film-info-img {
+    width: 100%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.film-info-box{
+    margin-right: 30px;
+    margin-bottom: 60px;
+}
 
 .film-title {
     font-size: 36px;
     font-weight: 700;
     text-transform: none;
     margin-bottom: 25px;
+    color: #ffffff;
     display: flex;
     align-items: center;
     margin-right: 8px;

@@ -2,7 +2,6 @@ import React from 'react';
 import {Container} from "react-bootstrap";
 import HeaderDropDown from "./HeaderDropDown";
 import HeaderBtn from "./HeaderBtn";
-
 const Header = () => {
 
 

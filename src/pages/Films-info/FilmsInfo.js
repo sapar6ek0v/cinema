@@ -7,6 +7,7 @@ import {API_KEY, URL_BASE} from "../../constants/api";
 import Trailers from "../Trailers/Trailers";
 import StartTrailers from "../Trailers/StartTrailers";
 import Creators from "../Creators/Creators";
+import notFound from '../../image/not found.jpg'
 
 const FilmsInfo = () => {
     const {id} = useParams()
@@ -58,12 +59,18 @@ const FilmsInfo = () => {
                 }}>
                     <Container>
                         <div className='d-flex'>
-                            <div className='title-block'>
-                                <img className='img' src={"https://image.tmdb.org/t/p/w500" + film.poster_path} alt=""/>
+                            <div className='title-block col-4'>
+                                <div className='film-info-box'>
+                                    {
+                                        film?.poster_path ?
+                                            <img className='film-info-img' src={"https://image.tmdb.org/t/p/w500" + film.poster_path} alt='film-photo'/>
+                                            : <img src={notFound} alt='not-found'/>
+                                    }
+                                </div>
                             </div>
-                            <div>
+                            <div className='col-8'>
                                 <div className='film-title w-75'>{film.original_title}
-                                    <span className='film-date'>{output}</span>
+                                    <span className='film-date'>({output})</span>
                                 </div>
                                 <div className='film-sub-title'>
                                     <span className='film-pod-title'>Время : </span>
