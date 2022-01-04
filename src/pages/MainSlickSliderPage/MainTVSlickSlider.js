@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
+import notFound from '../../image/not found.jpg'
 
 const MainTvSlickSlider = ({tv}) => {
 
@@ -26,7 +27,7 @@ const MainTvSlickSlider = ({tv}) => {
                                 <div className='content-slick-slider-box'>
                                     <Link to={`/`} className='content-slick-slider'>
                                         <div className='content-slick-slider-box-img'>
-                                            <img className='content-slick-slider-img' src={"https://image.tmdb.org/t/p/w500" + tv.poster_path}
+                                            <img className='content-slick-slider-img' src={ tv.poster_path ? "https://image.tmdb.org/t/p/w500" + tv.poster_path : notFound }
                                                  alt={tv.name}/>
                                         </div>
                                         <div className='content-slick-slider-title'>{tv.name}</div>

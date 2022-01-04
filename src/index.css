@@ -51,7 +51,9 @@ button {
     border-radius: 8px;
     margin-right: 8px;
 }
-
+.bor-rad {
+    border-radius: 8px;
+}
 button:hover {
     background: transparent;
     color: #233a50;
@@ -476,17 +478,6 @@ input[type='text'] {
     padding: 100px 0 0;
 }
 
-.credits-box {
-    background: #020d18;
-    padding: 70px 0 100px;
-}
-
-.photo-box {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-}
-
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -624,25 +615,26 @@ input[type='text'] {
 .creotors-name:hover {
     color: #dcf836;
 }
-.photo-page{
-    min-width: 200px;
-    border-radius: 8px;
-    box-shadow: 6px 4px 8px -4px lightblue;
-    border: 1px solid white;
+.photo-page {
     margin-bottom: 20px;
-    margin-right: 40px;
 }
 .photo-box {
-    width: 100%;
-    border-radius: 8px 8px 0 0;
+    width: 120px;
+    /*min-height: 200px;*/
+}
+.photo-box-img {
+    width: 125px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 .modal-bg {
     background: rgba(0,0,0,0.7);
 }
-.start-btn {
-    height: 60px;
+.trailer-icon {
     position: absolute;
-    top: 120px;
+    color: #dd003f;
+    font-size: 36px;
+    top: 114px;
     right: 0;
     left: 0;
     margin: 0 auto;
@@ -655,19 +647,20 @@ input[type='text'] {
     width: 533px;
     height: 300px;
     object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
-.start-play {
-    position: absolute;
-    top: 118px;
-    right: 0;
-    left: 238px;
-    width: 67px;
-    height: 67px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.7);
+.trailer-size-title {
+    font-size: 17px;
+    font-weight: bold;
+    color: #233a50;
+}
+.trailer-size-title:hover {
+    color: #dcf836;
+}
+.trailer-size {
+    font-size: 16px;
+    color: darkorange;
 }
 .play-start {
     display: flex;
@@ -678,11 +671,18 @@ input[type='text'] {
 
 .actors-title {
     color: #abb7c4;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    padding: 0 24px;
+    font-family: 'Dosis', sans-serif;
+    border-bottom: 1px solid #233a50;
+    width: 100%;
+}
+.films-info-box {
+    padding: 10px 0 30px;
+    background: #020d18;
 }
 .trailer-box {
     padding: 50px 0;
-    background: url("./image/info-bg.jpg");
 }
 footer {
     padding: 80px 0 0 0;
@@ -749,8 +749,43 @@ input[type='text'] {
     border-top: 1px solid #405266;
 }
 .actors-box {
-    margin-bottom: 60px;
-    border-bottom: 2px solid #233a50;
+    margin-bottom: 40px;
+}
+.actors-buttons {
+    border-bottom: 1px solid #233a50;
+}
+.actors-sg-tl {
+    font-family: 'Dosis', sans-serif;
+    font-size: 36px;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: none;
+    margin-bottom: 18px;
+}
+.actor-media-block {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin-bottom: 20px;
+}
+.actor-link {
+    display: block;
+    font-size: 25px;
+}
+.actors-film-page {
+    background: #020d18;
+    padding: 70px 0 50px;
+}
+.credits-page {
+    height: 140vh;
+    min-height: 500px;
+    background: rgba(0, 0, 0, 0.75) url("./image/sr-single.jpg") center/cover;
+    background-blend-mode: darken;
+    padding: 50px 0 100px;
+}
+
+.credits-box {
+    padding: 50px 0 100px;
 }
 .credits-card {
     width: 252px;
@@ -788,6 +823,21 @@ input[type='text'] {
     transition: ease-in-out 0.4s;
     padding:  0 10px;
 }
+.credits-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #233a50;
+}
+.credits-btn:hover {
+    color: #dcf836;
+}
+.credits-btn-title {
+    font-size: 28px;
+}
+.credits-btn-item {
+    font-size: 22px;
+}
 .actors-button {
     display: flex;
     align-items: center;
@@ -814,9 +864,11 @@ input[type='text'] {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    width: 100%;
 }
 .trailer-btn {
     background: transparent;
+    width: 100%;
 }
 .next-box {
     display: flex;

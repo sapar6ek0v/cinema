@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {useParams} from "react-router-dom";
-import {Container} from "react-bootstrap";
+import {Container, Row} from "react-bootstrap";
 import Credits from "../Credits/Credits";
 import {API_KEY, URL_BASE} from "../../constants/api";
 import Trailers from "../Trailers/Trailers";
@@ -97,8 +97,18 @@ const FilmsInfo = () => {
                     </Container>
 
                 </div>
-                <Credits/>
-                <StartTrailers film={film} videos={videos} turnOn={turnOn}/>
+               <div className='films-info-box'>
+                   <Container>
+                       <Row>
+                           <div className='col-8'>
+                               <StartTrailers film={film} videos={videos} turnOn={turnOn}/>
+                           </div>
+                           <div className='col-4'>
+                               <Credits/>
+                           </div>
+                       </Row>
+                   </Container>
+               </div>
             </>
             {modal && <Trailers setModal={setModal} videoKey={videoKey} />}
         </div>
