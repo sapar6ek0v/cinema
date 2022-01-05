@@ -25,7 +25,7 @@ const MainTvSlickSlider = ({tv}) => {
                         return (
                             <div key={tv.id}>
                                 <div className='content-slick-slider-box'>
-                                    <Link to={`/`} className='content-slick-slider'>
+                                    <Link to={`/tv-serials/serials-info/${tv.id}`} className='content-slick-slider'>
                                         <div className='content-slick-slider-box-img'>
                                             <img className='content-slick-slider-img' src={ tv.poster_path ? "https://image.tmdb.org/t/p/w500" + tv.poster_path : notFound }
                                                  alt={tv.name}/>
