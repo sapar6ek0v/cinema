@@ -1,7 +1,9 @@
 import React from 'react';
-import {Container} from "react-bootstrap";
+import {Container, DropdownButton} from "react-bootstrap";
+import './header-dropdown.css'
 import HeaderDropDown from "./HeaderDropDown";
 import HeaderBtn from "./HeaderBtn";
+import {Link} from "react-router-dom";
 const Header = () => {
 
 
@@ -24,7 +26,17 @@ const Header = () => {
                     <div className='about-box d-flex align-items-center'>
                         <HeaderBtn title={'home'} item={''} />
                         <HeaderDropDown />
-                        <HeaderBtn title={'serials'} item={''}/>
+                        <DropdownButton id="dropdown-basic-button" title="Serials">
+                            <Link to='tv-serials/popular' className='dropdown-link'>
+                                Popular
+                            </Link>
+                            <Link to='tv-serials/on-the-air' className='dropdown-link'>
+                                On the air
+                            </Link>
+                            <Link to='tv-serials/top-rated' className='dropdown-link'>
+                                top rated
+                            </Link>
+                        </DropdownButton>
                         <HeaderBtn title={'community'} item={''}/>
                         <HeaderBtn title={'news'} item={'/'}/>
                     </div>

@@ -83,10 +83,11 @@ const FilmsInfo = () => {
                                             <span className='film-sub-title'>
                                             {it.name}, </span>
                                         )
-                                    })}</div>
+                                    })}
+                                </div>
 
                                 <div className='info-block'>
-                                    <h3 className='h3'>Обзор</h3>
+                                    <h3 className='h3'>Overview</h3>
                                     <div>
                                         {film.overview ? film.overview : 'Sorry but we don\'t have information about this movie yet'}
                                     </div>

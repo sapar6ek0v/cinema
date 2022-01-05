@@ -24,7 +24,7 @@ const StartTrailers = ({turnOn, videos}) => {
                 <h3 className='actors-title'>Media</h3>
                 <Row>
                     {
-                      videos ? videos.map(video => {
+                     videos.map(video => {
                             return (
                                 <div className='col-6'>
                                     <div className='p-3'>
@@ -46,7 +46,7 @@ const StartTrailers = ({turnOn, videos}) => {
                                     </div>
                                 </div>
                             )
-                        }) : <div>
+                        }) || <div>
                             <h3 className='text-white'>Sorry but we don't have trailers or videos about this movie
                                 yet</h3>
                             <img src={notFound} alt="trailer"/>
