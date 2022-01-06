@@ -3,14 +3,13 @@ import axios from "axios";
 import {API_KEY, PHOTO_BASE, URL_BASE} from "../../constants/api";
 import {useParams} from "react-router-dom";
 import {Container} from "react-bootstrap";
-import ActorsFilms from "../ActorsFilms/ActorsFilms";
-import ActorsInfo from "../Actors-info/ActorsInfo";
-import ActorsPersonalInfo from "../Actors-info/ActorsPersonalInfo";
+import ActorsInfo from "../../components/ActorsInfo/ActorsInfo";
+import ActorsPersonalInfo from "../../components/ActorsInfo/ActorsPersonalInfo";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faInstagram, faTwitter} from "@fortawesome/free-brands-svg-icons";
-import CreditsMovie from "./CreditsMovie";
-import CreditsTv from "./CreditsTv";
-import CreditsPhotos from "./CreditsPhotos";
+import CreditsMovie from "../../components/Credits/CreditsMovie";
+import CreditsTv from "../../components/Credits/CreditsTv";
+import CreditsPhotos from "../../components/Credits/CreditsPhotos";
 
 const CreditsInfo = () => {
     const activeBtn = document.querySelector('.active')
@@ -78,9 +77,9 @@ const CreditsInfo = () => {
 
                             <div className='actors-sg-tl'>{actor.name}</div>
                             <div className='actor-media-block'>
-                                <a className='actor-link' target='_blank' href={media.instagram_id ? `https://www.instagram.com/${media.instagram_id}/` : "https://www.instagram.com/" }><FontAwesomeIcon icon={faInstagram}/></a>
-                                <a className='actor-link' target='_blank' href={media.facebook_id ? `https://www.facebook.com/${media.facebook_id}/` : 'https://www.facebook.com/'}><FontAwesomeIcon icon={faFacebook}/></a>
-                                <a className='actor-link' target='_blank' href={media.twitter_id ? `https://twitter.com/${media.twitter_id}/` : 'https://twitter.com/'}><FontAwesomeIcon icon={faTwitter}/></a>
+                                <a className='actor-link'  href={media.instagram_id ? `https://www.instagram.com/${media.instagram_id}/` : "https://www.instagram.com/" }><FontAwesomeIcon icon={faInstagram}/></a>
+                                <a className='actor-link'  href={media.facebook_id ? `https://www.facebook.com/${media.facebook_id}/` : 'https://www.facebook.com/'}><FontAwesomeIcon icon={faFacebook}/></a>
+                                <a className='actor-link'  href={media.twitter_id ? `https://twitter.com/${media.twitter_id}/` : 'https://twitter.com/'}><FontAwesomeIcon icon={faTwitter}/></a>
                             </div>
 
                             <div className="d-flex mb-4 actors-buttons">

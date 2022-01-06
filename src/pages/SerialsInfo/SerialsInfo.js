@@ -3,7 +3,9 @@ import {useParams} from "react-router-dom";
 import axios from "axios";
 import {API_KEY, PHOTO_BASE, URL_BASE} from "../../constants/api";
 import {Container, Row} from "react-bootstrap";
+import './serials.css'
 import notFound from '../../image/not found.jpg'
+import SerialsAfterInfo from "../../components/SerilasPage/SerialsItem/SerialsAfterInfo";
 
 const SerialsInfo = () => {
     const {id} = useParams()
@@ -14,7 +16,7 @@ const SerialsInfo = () => {
             .then(({data}) => {
                 setSerial(data)
             })
-    }, [] )
+    }, [id] )
 
     const input = serial.first_air_date?.split('-')
     const output = input?.slice(0, 1)
@@ -27,13 +29,13 @@ const SerialsInfo = () => {
             }}>
                 <Container>
                     <Row>
-                        <div className='col-4'>
-                            <div className='py-2'>
-                                <img className='w-100' src={serial.poster_path ? `${PHOTO_BASE}${serial.poster_path}` : notFound} alt="serials photo"/>
+                        <div className='col-4 '>
+                            <div className='py-4 serials-img-box'>
+                                <img className='serials-bg' src={serial.poster_path ? `${PHOTO_BASE}${serial.poster_path}` : notFound} alt="serials photo"/>
                             </div>
                         </div>
                         <div className='col-8'>
-                            <div className='film-title w-75'>{serial.name}
+                            <div className='serials-title'>{serial.name}
                                 <span className='film-date'>({output})</span>
                             </div>
                             <div className='film-sub-title'>
@@ -61,7 +63,7 @@ const SerialsInfo = () => {
                                     serial.created_by?.map(it => {
                                         return (
                                             <div>
-                                                <div>Created by</div>
+                                                <div className='serials-created'>Created by</div>
                                                 <div>{it.name}</div>
                                             </div>
                                         )
@@ -72,6 +74,7 @@ const SerialsInfo = () => {
                     </Row>
                 </Container>
             </div>
+            <SerialsAfterInfo />
         </div>
     );
 };

@@ -1,18 +1,18 @@
 import React, {useState} from 'react';
 import {Container, Row} from "react-bootstrap";
-import SimpleSlider from "../Slick-slider/SimpleSlider";
-import TopSearch from "../Seacrh-films/TopSearch";
-import SlickPopularFilms from "../Popular-films/SlickPopularFilms";
-import SlickUpcoming from "../UpcomingFilms/SlickUpcoming";
-import SlickTopRated from "../Top-rated/SlickTopRated";
+import SimpleSlider from "../../components/SlickSlider/SimpleSlider";
+import TopSearch from "../../components/SeacrhFilms/TopSearch";
+import SlickPopularFilms from "../../components/FilmsSlickSlider/SlickPopularFilms";
+import SlickUpcoming from "../../components/FilmsSlickSlider/SlickUpcoming";
+import SlickTopRated from "../../components/FilmsSlickSlider/SlickTopRated";
 import advertise from '../../image/advertise.jpg'
-import Tizers from "../Tizers/Tizers";
-import PersonPopular from "../PersonPopular/PersonPopular";
+import Tizers from "../../components/Tizers/Tizers";
+import PersonPopular from "../../components/PersonPopular/PersonPopular";
 import TvPopular from "../Tv/TVPopular";
 import MainPageTitle from "../../components/MainPageTitle/MainPageTitle";
 import TvTopRated from "../Tv/TVTopRated";
 import TvOnTheAir from "../Tv/TVOnTheAir";
-import Trends from "../Trends/Trends";
+import Trends from "../../components/Trends/Trends";
 
 
 const Main = () => {

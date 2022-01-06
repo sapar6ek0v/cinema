@@ -13,7 +13,7 @@ const CreditsPhotos = () => {
             .then(({data}) => {
                 setPhotos(data.profiles)
             })
-    } , [])
+    } , [id])
 
     return (
         <Row key={photos.id}>

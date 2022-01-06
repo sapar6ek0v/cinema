@@ -17,7 +17,12 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
 .header {
     width: 100%;
     padding: 20px 0 ;
@@ -248,7 +253,13 @@ input[type='text'] {
     font-family: 'Arial', sans-serif;
     font-weight: 500;
 }
-
+.slider-btn {
+    background: none;
+    border: none;
+}
+.slider-btn:focus{
+    outline: none;
+}
 .slider-text {
     display: inline-block;
     color: white;

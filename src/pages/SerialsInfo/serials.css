@@ -1,0 +1,22 @@
+.serials-bg {
+    border-radius: 8px;
+    width: 100%;
+}
+.serials-img-box {
+    margin-right: 30px;
+}
+.serials-title {
+    padding: 40px 0 0;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: none;
+    margin-bottom: 25px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+.serials-created {
+    font-weight: bold;
+    color: #4280bf;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutActors from "../../components/About - actors/AboutActors";
+import AboutActors from "../AboutActors/AboutActors";
 
 const ActorsPersonalInfo = ({actor}) => {
     return (

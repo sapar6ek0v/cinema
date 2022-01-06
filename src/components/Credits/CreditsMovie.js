@@ -13,7 +13,7 @@ const CreditsMovie = () => {
             .then(({data}) => {
                 setMovie(data.cast)
             })
-    } , [])
+    } , [id])
 
     return (
         <div>

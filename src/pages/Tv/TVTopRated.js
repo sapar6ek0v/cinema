@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {API_KEY, URL_BASE} from "../../constants/api";
-import MainTvSlickSlider from "../MainSlickSliderPage/MainTVSlickSlider";
+import MainTvSlickSlider from "../../components/MainSlickSliderPage/MainTVSlickSlider";
 
 const TvTopRated = () => {
     const [tvTopRated, setTVTopRared] = useState([])

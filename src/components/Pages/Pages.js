@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Row} from "react-bootstrap";
-import FilmsCard from "../Film-card/FilmsCard";
+import FilmsCard from "../FilmCard/FilmsCard";
 
 const Pages = ({pages, getFilms, setPages}) => {
     return (

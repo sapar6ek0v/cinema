@@ -27,7 +27,6 @@ const TopSearch = () => {
            <div className='search-box'>
                <input onChange={onChange} onKeyDown={onChangeDown} className='search-input' type="text"
                       placeholder='Search for a movie, TV Show or celebrity that you are looking for'/>
-
                {
                    <button className='search-btn' onClick={onKeyDown} disabled={!film}>
                        <img className='search-img' src={search} alt=""/>

@@ -5,11 +5,10 @@ import {Container, Row} from "react-bootstrap";
 import SerialCard from "../../components/SerilasPage/SerialCard";
 
 const PopularSerials = () => {
-    const [pages, setPages] = useState(1)
     const [popSer, setPop] = useState([])
 
     useEffect(() => {
-        axios(`${URL_BASE}/tv/popular?api_key=${API_KEY}&language=en-US&page=${pages}`)
+        axios(`${URL_BASE}/tv/popular?api_key=${API_KEY}&language=en-US&`)
             .then(({data}) => {
                 setPop(data.results)
             })
@@ -22,7 +21,7 @@ const PopularSerials = () => {
                    {
                        popSer.map(it => {
                            return (
-                               <SerialCard serial={it} />
+                               <SerialCard serial={it}/>
                            )
                        })
                    }

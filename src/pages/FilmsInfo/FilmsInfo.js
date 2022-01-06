@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {useParams} from "react-router-dom";
 import {Container, Row} from "react-bootstrap";
-import Credits from "../Credits/Credits";
+import Credits from "../../components/Credits/Credits";
 import {API_KEY, URL_BASE} from "../../constants/api";
-import Trailers from "../Trailers/Trailers";
-import StartTrailers from "../Trailers/StartTrailers";
-import Creators from "../Creators/Creators";
+import Trailers from "../../components/Trailers/Trailers";
+import StartTrailers from "../../components/Trailers/StartTrailers";
+import Creators from "../../components/Creators/Creators";
 import notFound from '../../image/not found.jpg'
 
 const FilmsInfo = () => {
@@ -49,9 +49,7 @@ const FilmsInfo = () => {
     }
 
     return (
-
         <div key={film.id} className='about-film'>
-
             <>
                 <div className='info' style={{
                     background: `rgba(0,0,0,0.7) url(https://image.tmdb.org/t/p/original/${film.backdrop_path}) center/cover`,
