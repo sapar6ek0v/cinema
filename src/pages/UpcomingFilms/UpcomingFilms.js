@@ -2,9 +2,11 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {API_KEY, URL_BASE} from "../../constants/api";
 import Pages from "../../components/Pages/Pages";
+import {useSearchParams} from "react-router-dom";
 
 const UpcomingFilms = () => {
-    const [pages, setPages] = useState(1)
+    const [query, setQuery] = useSearchParams()
+    const [pages, setPages] = useState(+query.get('page') || 1)
     const [upcomingFilms, setUpcomingFilms] = useState([])
 
 
@@ -18,7 +20,7 @@ const UpcomingFilms = () => {
 
     return (
         <div>
-            <Pages pages={pages} getFilms={upcomingFilms} setPages={setPages} />
+            <Pages pages={pages} getFilms={upcomingFilms} setPages={setPages} setQuery={setQuery}/>
         </div>
     );
 };

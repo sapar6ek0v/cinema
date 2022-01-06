@@ -27,13 +27,13 @@ const Header = () => {
                         <HeaderBtn title={'home'} item={''} />
                         <HeaderDropDown />
                         <DropdownButton id="dropdown-basic-button" title="Serials">
-                            <Link to='tv-serials/popular' className='dropdown-link'>
+                            <Link to='tv-serials/popular?page=1' className='dropdown-link'>
                                 Popular
                             </Link>
-                            <Link to='tv-serials/on-the-air' className='dropdown-link'>
+                            <Link to='tv-serials/on-the-air?page=1' className='dropdown-link'>
                                 On the air
                             </Link>
-                            <Link to='tv-serials/top-rated' className='dropdown-link'>
+                            <Link to='tv-serials/top-rated?page=1' className='dropdown-link'>
                                 top rated
                             </Link>
                         </DropdownButton>

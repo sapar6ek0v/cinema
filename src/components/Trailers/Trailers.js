@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Trailers = ({videoKey, setModal}) => {
+const Trailers = ({videoKey, setModal, filmImg}) => {
 
 
     return (

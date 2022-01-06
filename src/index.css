@@ -21,6 +21,9 @@ code {
     justify-content: space-between;
     min-height: 100vh;
 }
+.main {
+    flex: 1;
+}
 .header {
     width: 100%;
     padding: 20px 0 ;

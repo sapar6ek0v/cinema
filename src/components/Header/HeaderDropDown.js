@@ -8,14 +8,17 @@ const HeaderDropDown = () => {
 
     return (
         <DropdownButton id="dropdown-basic-button" title="Movies">
-            <Link to='popular' className='dropdown-link'>
+            <Link to='popular?page=1' className='dropdown-link'>
                 Popular
             </Link>
-            <Link to='top-rated' className='dropdown-link'>
+            <Link to='top-rated?page=1' className='dropdown-link'>
                 Top Rated
             </Link>
-            <Link to='upcoming' className='dropdown-link'>
+            <Link to='upcoming?page=1' className='dropdown-link'>
                 Upcoming
+            </Link>
+            <Link to='now-playing?page=1' className='dropdown-link'>
+                Now Playing
             </Link>
         </DropdownButton>
     );

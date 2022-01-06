@@ -1,0 +1,22 @@
+.serials-pod-page {
+    padding: 50px 0;
+}
+.serials-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #233a50;
+}
+.serials-btn:hover {
+    color: #dcf836;
+}
+.serials-title {
+    font-size: 30px;
+    color: #abb7c4;
+    margin-bottom: 30px;
+    padding: 0 24px;
+    font-family: 'Dosis', sans-serif;
+    border-bottom: 1px solid #233a50;
+    width: 100%;
+    font-weight: 400;
+}

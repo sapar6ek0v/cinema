@@ -1,9 +1,9 @@
 import React from 'react';
 import {Button, Container, Row} from "react-bootstrap";
-import FilmsCard from "../FilmCard/FilmsCard";
 import Buttons from "../Buttons/Buttons";
+import SerialCard from "../SerilasPage/SerialCard";
 
-const Pages = ({pages, getFilms, setPages, setQuery}) => {
+const SerialPages = ({pages, getSerials, setPages, setQuery}) => {
 
     const getPages = (num) => {
         setPages(num)
@@ -18,8 +18,8 @@ const Pages = ({pages, getFilms, setPages, setQuery}) => {
                     <Buttons pages={pages} getPages={getPages} />
                     <Row>
                         {
-                            getFilms.map(film => {
-                                return <FilmsCard key={film.id} film={film} />
+                            getSerials.map(serial => {
+                                return <SerialCard key={serial.id} serial={serial} />
                             })
                         }
                     </Row>
@@ -29,4 +29,4 @@ const Pages = ({pages, getFilms, setPages, setQuery}) => {
     );
 };
 
-export default Pages;
+export default SerialPages;

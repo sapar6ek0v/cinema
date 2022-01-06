@@ -5,9 +5,10 @@ import {Container, Row} from "react-bootstrap";
 import Credits from "../../components/Credits/Credits";
 import {API_KEY, URL_BASE} from "../../constants/api";
 import Trailers from "../../components/Trailers/Trailers";
-import StartTrailers from "../../components/Trailers/StartTrailers";
 import Creators from "../../components/Creators/Creators";
 import notFound from '../../image/not found.jpg'
+import Loading from "../../components/Loading/Loading";
+import StartMovieTrailer from "../../components/Trailers/StartMovieTrailer";
 
 const FilmsInfo = () => {
     const {id} = useParams()
@@ -15,19 +16,23 @@ const FilmsInfo = () => {
     const [videos, setVideos] = useState([])
     const [modal, setModal] = useState(false)
     const [videoKey, setVideoKey] = useState('')
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4eb03517df3f1b8227a751b8d89d9ee8&language=ru`)
+        const prom1 = axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4eb03517df3f1b8227a751b8d89d9ee8&language=ru`)
             .then(({data}) => {
                 setFilm(data)
             })
 
-
-
-        axios(`${URL_BASE}/movie/${id}/videos?api_key=${API_KEY}&language=ru,en`)
+        const prom2 = axios(`${URL_BASE}/movie/${id}/videos?api_key=${API_KEY}&language=ru,en`)
             .then(({data}) => {
                 setVideos(data.results)
             })
+
+        Promise.all([prom1, prom2])
+            // .catch((e) => console.log(e))
+            // .finally(() => setLoading(false))
+            .then(() => setLoading(false))
     }, [id])
 
     useEffect(() => {
@@ -46,6 +51,12 @@ const FilmsInfo = () => {
     const turnOn = (key) => {
         setVideoKey(key)
         setModal(true)
+    }
+
+    if (loading) {
+        return (
+            <Loading />
+        )
     }
 
     return (
@@ -100,7 +111,7 @@ const FilmsInfo = () => {
                    <Container>
                        <Row>
                            <div className='col-8'>
-                               <StartTrailers film={film} videos={videos} turnOn={turnOn}/>
+                               <StartMovieTrailer videos={videos} turnOn={turnOn}/>
                            </div>
                            <div className='col-4'>
                                <Credits/>

@@ -10,6 +10,8 @@ import {faFacebook, faInstagram, faTwitter} from "@fortawesome/free-brands-svg-i
 import CreditsMovie from "../../components/Credits/CreditsMovie";
 import CreditsTv from "../../components/Credits/CreditsTv";
 import CreditsPhotos from "../../components/Credits/CreditsPhotos";
+import Loading from "../../components/Loading/Loading";
+import Media from "../../components/Media/Media";
 
 const CreditsInfo = () => {
     const activeBtn = document.querySelector('.active')
@@ -17,18 +19,22 @@ const CreditsInfo = () => {
     const [actor, setActor] = useState({})
     const [active, setActive] = useState(activeBtn)
     const [media, setMedia] = useState({})
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        axios(`${URL_BASE}/person/${id}?api_key=${API_KEY}`)
+        const prom1 = axios(`${URL_BASE}/person/${id}?api_key=${API_KEY}`)
             .then(({data}) => {
                 setActor(data)
             })
 
-        axios(`${URL_BASE}/person/${id}/external_ids?api_key=${API_KEY}`)
+        const prom2 = axios(`${URL_BASE}/person/${id}/external_ids?api_key=${API_KEY}`)
             .then(({data}) => {
                 setMedia(data)
             })
 
+        Promise.all([prom1, prom2])
+            .catch((e) => console.log(e))
+            .finally(() => setLoading(false))
     }, [id])
 
 
@@ -64,6 +70,10 @@ const CreditsInfo = () => {
         }
     }
 
+    if (loading) {
+        return <Loading />
+    }
+
     return (
         <>
             <div className='credits-page'>
@@ -76,12 +86,7 @@ const CreditsInfo = () => {
                         <div>
 
                             <div className='actors-sg-tl'>{actor.name}</div>
-                            <div className='actor-media-block'>
-                                <a className='actor-link'  href={media.instagram_id ? `https://www.instagram.com/${media.instagram_id}/` : "https://www.instagram.com/" }><FontAwesomeIcon icon={faInstagram}/></a>
-                                <a className='actor-link'  href={media.facebook_id ? `https://www.facebook.com/${media.facebook_id}/` : 'https://www.facebook.com/'}><FontAwesomeIcon icon={faFacebook}/></a>
-                                <a className='actor-link'  href={media.twitter_id ? `https://twitter.com/${media.twitter_id}/` : 'https://twitter.com/'}><FontAwesomeIcon icon={faTwitter}/></a>
-                            </div>
-
+                            <Media media={media} />
                             <div className="d-flex mb-4 actors-buttons">
                                 <button className='link-button' value="overview"
                                         onClick={() => toggleContent('overview')}>

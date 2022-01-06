@@ -5,21 +5,55 @@ import {API_KEY, PHOTO_BASE, URL_BASE} from "../../constants/api";
 import {Container, Row} from "react-bootstrap";
 import './serials.css'
 import notFound from '../../image/not found.jpg'
-import SerialsAfterInfo from "../../components/SerilasPage/SerialsItem/SerialsAfterInfo";
+import SerialsCreditsInfo from "../../components/SerilasPage/SerialsItem/SerialsCreditsInfo";
+import Loading from "../../components/Loading/Loading";
+import StartSerialTrailers from "../../components/Trailers/StartSerialTrailers";
+import Trailers from "../../components/Trailers/Trailers";
+import SerialMedia from "../../components/SerilasPage/SerialMedia/SerialMedia";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faHome} from "@fortawesome/free-solid-svg-icons";
 
 const SerialsInfo = () => {
     const {id} = useParams()
     const [serial, setSerial] = useState({})
+    const [modal, setModal] = useState(false)
+    const [loading, setLoading] = useState(true)
+    const [trailer, setTrailer] = useState([])
+    const [trailerKey, setTrailerKey] = useState('')
 
     useEffect(() => {
         axios(`${URL_BASE}/tv/${id}?api_key=${API_KEY}&language=en-US`)
             .then(({data}) => {
                 setSerial(data)
+                setLoading(false)
+            })
+
+        axios(`${URL_BASE}/tv/${id}/videos?api_key=${API_KEY}&language=ru,en`)
+            .then(({data}) => {
+                setTrailer(data.results)
             })
     }, [id] )
 
     const input = serial.first_air_date?.split('-')
     const output = input?.slice(0, 1)
+
+    useEffect(() => {
+        if (modal) {
+            document.body.style.overflow = "hidden"
+        } else {
+            document.body.style.overflow = "auto"
+        }
+
+    }, [modal])
+
+    const turnOn = (key) => {
+        setTrailerKey(key)
+        setModal(true)
+    }
+
+    if (loading) {
+        return <Loading />
+    }
 
     return (
         <div key={serial.id} className='about-film'>
@@ -52,6 +86,7 @@ const SerialsInfo = () => {
                                     )
                                 })}
                             </div>
+                            <SerialMedia /> <span><a href={serial.homepage}><FontAwesomeIcon icon={faHome}/></a></span>
                             <div className='info-block'>
                                 <h3 className='h3'>Overview</h3>
                                 <div>
@@ -74,7 +109,19 @@ const SerialsInfo = () => {
                     </Row>
                 </Container>
             </div>
-            <SerialsAfterInfo />
+            <div className='sls-trl-crd-box'>
+                <Container>
+                    <Row>
+                        <div className='col-8'>
+                            <StartSerialTrailers turnOn={turnOn} videos={trailer} />
+                        </div>
+                        <div className='col-4'>
+                            <SerialsCreditsInfo />
+                        </div>
+                    </Row>
+                </Container>
+            </div>
+            {modal && <Trailers setModal={setModal} videoKey={trailerKey} />}
         </div>
     );
 };
