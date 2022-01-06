@@ -12,7 +12,7 @@ const PopularSerials = () => {
             .then(({data}) => {
                 setPop(data.results)
             })
-    }, [pages])
+    }, [])
 
     return (
        <div className='get-films-block'>
