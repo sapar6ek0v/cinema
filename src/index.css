@@ -164,9 +164,9 @@ ul{
     background: #020d18;
 }
 .search-box {
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
+    /*display: -webkit-flex;*/
+    /*display: -moz-box;*/
+    /*display: -ms-flexbox;*/
     display: flex;
     align-items: center;
     justify-content: flex-start;
