@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Slider from "react-slick";
-import {Link, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 import notFound from '../../image/not found.jpg'

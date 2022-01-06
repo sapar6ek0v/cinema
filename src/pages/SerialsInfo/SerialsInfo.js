@@ -30,7 +30,7 @@ const SerialsInfo = () => {
                 <Container>
                     <Row>
                         <div className='col-4 '>
-                            <div className='py-4 serials-img-box'>
+                            <div className='py-4 serials-bg-box'>
                                 <img className='serials-bg' src={serial.poster_path ? `${PHOTO_BASE}${serial.poster_path}` : notFound} alt="serials photo"/>
                             </div>
                         </div>
