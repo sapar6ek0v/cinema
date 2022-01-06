@@ -13,7 +13,7 @@ const CreditsTv = () => {
             .then(({data}) => {
                 setTv(data.cast)
             })
-    } , [])
+    } , [id])
     return (
         <div>
             <MainTvSlickSlider tv={tv} />
