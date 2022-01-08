@@ -23,19 +23,19 @@ const Credits = () => {
     return (
         <div className='credits-box'>
           <Container>
-              <h3 className='actors-title'>В главных ролях</h3>
-              <div className='px-3 py-4'>
+              <h3 className='actors-title'>#Starring</h3>
+              <div className='px-3 py-4 d-flex overflow-auto'>
                   {
                       credits?.slice(0, actors)?.map(people => {
                           return (
                               <div key={people.id} className='photo-page'>
-                                      <Link to={`/credits-info/${people.id}`} className='text-decoration-none d-flex'>
+                                      <Link to={`/credits-info/${people.id}`} className='text-decoration-none '>
                                           <div className='photo-box'>
                                               <img className='photo-box-img' src={people.profile_path ? `${PHOTO_BASE}${people.profile_path}` : anonym} alt={people.name}/>
                                           </div>
-                                          <div className='py-5'>
-                                              <div className='fw-bold text-white px-4 '>{people.name}</div>
-                                              <div className='px-4 '>{people.character}</div>
+                                          <div className='py-2 px-1'>
+                                              <div className='fw-bold text-white hover'>{people.name}</div>
+                                              <div className='hover'>{people.character}</div>
                                           </div>
                                       </Link>
                               </div>

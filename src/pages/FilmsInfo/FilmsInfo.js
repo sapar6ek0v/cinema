@@ -9,6 +9,15 @@ import Creators from "../../components/Creators/Creators";
 import notFound from '../../image/not found.jpg'
 import Loading from "../../components/Loading/Loading";
 import StartMovieTrailer from "../../components/Trailers/StartMovieTrailer";
+import Media from "../../components/Media/Media";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faHome, faExpandArrowsAlt} from "@fortawesome/free-solid-svg-icons";
+import FactsCard from "../../components/Facts/FactsCard";
+import ShowImage from "../../components/ShowImage/ShowImage";
+import FilmsRecommendation from "../../components/FilmCard/FilmsRecommendation";
+import 'react-circular-progressbar/dist/styles.css';
+import './films-info.css'
+import CircularBar from "../../components/CircularBar/CircularBar";
 
 const FilmsInfo = () => {
     const {id} = useParams()
@@ -17,6 +26,10 @@ const FilmsInfo = () => {
     const [modal, setModal] = useState(false)
     const [videoKey, setVideoKey] = useState('')
     const [loading, setLoading] = useState(true)
+    const [media, setMedia] = useState({})
+    const [keyWords, setKeyWords] = useState([])
+    const [modalImage, setModalImage] = useState(false)
+    const [recommendation, setRecommendation] = useState([])
 
     useEffect(() => {
         const prom1 = axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4eb03517df3f1b8227a751b8d89d9ee8&language=ru`)
@@ -29,7 +42,22 @@ const FilmsInfo = () => {
                 setVideos(data.results)
             })
 
-        Promise.all([prom1, prom2])
+        const prom3 = axios(`${URL_BASE}/movie/${id}/external_ids?api_key=${API_KEY}`)
+            .then(({data}) => {
+                setMedia(data)
+            })
+
+        const prom4 = axios(`${URL_BASE}/movie/${id}/keywords?api_key=${API_KEY}`)
+            .then(({data}) => {
+                setKeyWords(data.keywords)
+            })
+
+        const prom5 = axios(`${URL_BASE}/movie/${id}/recommendations?api_key=${API_KEY}`)
+            .then(({data}) => {
+                setRecommendation(data.results)
+            })
+
+        Promise.all([prom1, prom2, prom3, prom4, prom5])
             // .catch((e) => console.log(e))
             // .finally(() => setLoading(false))
             .then(() => setLoading(false))
@@ -44,83 +72,109 @@ const FilmsInfo = () => {
 
     }, [modal])
 
-
-    const input = film.release_date?.split('-')
-    const output = input?.slice(0, 1)
-
     const turnOn = (key) => {
         setVideoKey(key)
         setModal(true)
     }
 
+    useEffect(() => {
+        if (modalImage) {
+            document.body.style.overflow = "hidden"
+        } else {
+            document.body.style.overflow = "auto"
+        }
+
+    }, [modalImage])
+
+    const input = film.release_date?.split('-')
+    const output = input?.slice(0, 1)
+
     if (loading) {
         return (
-            <Loading />
+            <Loading/>
         )
     }
+
+
 
     return (
         <div key={film.id} className='about-film'>
             <>
                 <div className='info' style={{
-                    background: `rgba(0,0,0,0.7) url(https://image.tmdb.org/t/p/original/${film.backdrop_path}) center/cover`,
+                    background: `rgba(0,0,0,0.8) url(https://image.tmdb.org/t/p/original/${film.backdrop_path}) center/cover`,
                     backgroundBlendMode: 'darken'
                 }}>
                     <Container>
                         <div className='d-flex'>
                             <div className='title-block col-4'>
                                 <div className='film-info-box'>
-                                    {
-                                        film?.poster_path ?
-                                            <img className='film-info-img' src={"https://image.tmdb.org/t/p/w500" + film.poster_path} alt='film'/>
-                                            : <img src={notFound} alt='not-found'/>
-                                    }
+                                    <div onClick={() => setModalImage(true)} className='position-relative'>
+                                        <img className='film-info-img'
+                                             src={film.poster_path ? "https://image.tmdb.org/t/p/w500" + film.poster_path : notFound} alt='film'/>
+                                        <span className='image-text-grow'>Expand <span><FontAwesomeIcon icon={faExpandArrowsAlt} /></span></span>
+                                    </div>
                                 </div>
                             </div>
                             <div className='col-8'>
-                                <div className='film-title w-75'>{film.original_title}
+                                <div className='film-title'>{film.title}
                                     <span className='film-date'>({output})</span>
                                 </div>
                                 <div className='film-sub-title'>
-                                    <span className='film-pod-title'>Время : </span>
-                                    {film.runtime}мин
-                                </div>
-                                <div className='film-sub-title'>
-                                    <span className='film-pod-title'>Жанры : </span>
-                                    {film.genres?.map(it => {
+                                    <span className='film-pod-title'>{film.release_date?.split('-').join('/')}</span>
+                                    <span className='film-pod-title'>&bull;</span>
+                                    <span className='film-pod-title'>{film.genres?.map(it => {
                                         return (
-                                            <span className='film-sub-title'>
-                                            {it.name}, </span>
+                                            <span className='film-sub-title'>{it.name},</span>
                                         )
                                     })}
+                                        &bull;
+                                    </span>
+                                    <span className='film-pod-title'> {film.runtime}мин  </span>
                                 </div>
 
+                                <div className='d-flex align-items-center mb-5'>
+                                    <CircularBar item={film} />
+                                    <span className='actor-link-block'><a className='actor-link' href={film.homepage}> <FontAwesomeIcon
+                                        icon={faHome}/> </a></span>
+                                    <Media media={media}/>
+                                </div>
+                                <div className='film-tagline'>{film.tagline || ''}</div>
                                 <div className='info-block'>
                                     <h3 className='h3'>Overview</h3>
                                     <div>
                                         {film.overview ? film.overview : 'Sorry but we don\'t have information about this movie yet'}
                                     </div>
                                 </div>
-                                <Creators />
+                                <Creators/>
                             </div>
                         </div>
                     </Container>
 
                 </div>
-               <div className='films-info-box'>
-                   <Container>
-                       <Row>
-                           <div className='col-8'>
-                               <StartMovieTrailer videos={videos} turnOn={turnOn}/>
-                           </div>
-                           <div className='col-4'>
-                               <Credits/>
-                           </div>
-                       </Row>
-                   </Container>
-               </div>
+                <div className='films-info-box' style={{
+                    background: `rgba(0,0,0,0.9) url(https://image.tmdb.org/t/p/original/${film.backdrop_path}) center/cover`,
+                    backgroundBlendMode: 'darken'
+                }}>
+                    <Container>
+                        <Row>
+                            <div className='col-8' style={{
+                                background: '#020d18'
+                            }}>
+                                <Credits/>
+                                <StartMovieTrailer videos={videos} turnOn={turnOn}/>
+                                <FilmsRecommendation recommendation={recommendation} />
+                            </div>
+                            <div className='col-4' style={{
+                                background: '#020d18'
+                            }}>
+                                <FactsCard key={film.id} film={film} keyWords={keyWords} />
+                            </div>
+                        </Row>
+                    </Container>
+                </div>
             </>
-            {modal && <Trailers setModal={setModal} videoKey={videoKey} />}
+            {modal && <Trailers setModal={setModal} videoKey={videoKey}/>}
+            {modalImage && <ShowImage setModalImage={setModalImage} item={film}/> }
         </div>
     );
 };

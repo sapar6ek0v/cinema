@@ -19,7 +19,7 @@ const StartTVTrailers = ({turnOn, videos}) => {
     return (
         <div className='trailer-box'>
             <Container>
-                <h3 className='actors-title'>Media</h3>
+                <h3 className='actors-title'>#Media</h3>
                 <Trailer turnOn={turnOn} videos={videos} filmImg={filmImg} />
             </Container>
         </div>

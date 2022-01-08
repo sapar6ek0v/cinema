@@ -3,14 +3,13 @@
     width: 100%;
 }
 .serials-bg-box {
-    margin-right: 30px;
+    padding-left: 60px;
 }
-.serials-title {
+.serial-title {
     padding: 40px 0 0;
     font-size: 36px;
     font-weight: 700;
     text-transform: none;
-    margin-bottom: 25px;
     color: #ffffff;
     display: flex;
     align-items: center;

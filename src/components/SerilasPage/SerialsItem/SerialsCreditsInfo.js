@@ -22,21 +22,21 @@ const SerialsCreditsInfo = () => {
 
     return (
         <div className='serials-pod-page'>
-            <h3 className='serials-title'>В главных ролях</h3>
-            <div className='px-3 py-4'>
+            <h3 className='serials-title'>#Starring</h3>
+            <div className='px-3 py-4 d-flex overflow-auto'>
                 {
                     casts?.slice(0, actors)?.map(actors => {
                         return (
-                            <div key={actors.id} className='photo-page'>
-                                <Link to={`/credits-info/${actors.id}`} className='text-decoration-none d-flex'>
+                            <div key={actors.id} className='photo-page '>
+                                <Link to={`/credits-info/${actors.id}`} className='text-decoration-none '>
                                     <div className='photo-box'>
-                                        <img className='photo-box-img'
+                                        <img className='photo-box-img mb-2'
                                              src={actors.profile_path ? `${PHOTO_BASE}${actors.profile_path}` : anonym}
                                              alt={actors.name}/>
                                     </div>
-                                    <div className='py-5'>
-                                        <div className='fw-bold text-white px-4 '>{actors.name}</div>
-                                        <div className='px-4 '>{actors.roles?.map(it => {
+                                    <div className=''>
+                                        <div className='fw-bold text-white px-2 hover'>{actors.name}</div>
+                                        <div className='px-2 hover'>{actors.roles?.map(it => {
                                             return <div>
                                                 {it.character}
                                             </div>

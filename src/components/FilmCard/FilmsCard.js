@@ -9,7 +9,7 @@ const FilmsCard = ({film}) => {
                 <div className="block">
                     <Link to={`/movie-info/${film.id}`} className='text-decoration-none text-black'>
                         <img className='film-img'
-                             src={"https://image.tmdb.org/t/p/w500" + film.poster_path} alt=""/>
+                             src={"https://image.tmdb.org/t/p/w500" + film.poster_path} alt={film.title}/>
                         <div className='film-popular'>{film.vote_average}/10</div>
                         <div className='slider-text'>{film.title}</div>
                         <div className='slider-date'>({data})</div>
