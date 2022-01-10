@@ -2,5 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    background: #4280bf;
+    transform: translate(-33%, -50%);
 }

@@ -2,6 +2,8 @@ import Slider from "react-slick";
 import {useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faStar} from "@fortawesome/free-solid-svg-icons";
 
 
 export default function SimpleSlider() {
@@ -78,10 +80,11 @@ export default function SimpleSlider() {
                                     <button onMouseDown={(e) => setDirectory(e.clientX) } onClick={onClick}  className='slider-box slider-btn'>
                                         <img className='w-100' src={"https://image.tmdb.org/t/p/w500" + it.poster_path}
                                              alt={it.title}/>
-                                        <div className='slider-text'>{it.title}</div>
-                                        <div className='slider-popular'>
-                                            {it.vote_average}
+                                        <div className='slider-popular d-inline-block '>
+                                            <span className='content-slick-slider-star'><FontAwesomeIcon icon={faStar}/></span><span className='content-slick-slider-popular'>{it.vote_average}</span><span className='content-slick-slider-max-popular'>/10</span>
                                         </div>
+                                        <div className='slider-text d-inline-block'>{it.title}</div>
+
                                         <span className='slider-date'>({data})</span>
                                     </button>
                                 </div>

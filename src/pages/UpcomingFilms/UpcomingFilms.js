@@ -4,6 +4,9 @@ import {API_KEY, URL_BASE} from "../../constants/api";
 import Pages from "../../components/Pages/Pages";
 import {useSearchParams} from "react-router-dom";
 
+
+
+
 const UpcomingFilms = () => {
     const [query, setQuery] = useSearchParams()
     const [pages, setPages] = useState(+query.get('page') || 1)

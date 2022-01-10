@@ -267,18 +267,12 @@ input[type='text'] {
     padding: 5px 8px 0;
     font-size: 20px;
 }
-
 .slider-popular {
-    position: absolute;
-    top: 333px;
-    left: 8px;
-    color: yellow;
-    font-weight: bold;
-    background: black;
-    border-radius: 50%;
-    padding: 5px 8px;
+    margin-right: 10px;
 }
-
+span {
+    padding-right: 0;
+}
 .slider-date {
     display: inline-block;
     color: white;

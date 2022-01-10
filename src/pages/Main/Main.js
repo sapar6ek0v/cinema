@@ -13,16 +13,18 @@ import MainPageTitle from "../../components/MainPageTitle/MainPageTitle";
 import TvTopRated from "../Tv/TVTopRated";
 import TvOnTheAir from "../Tv/TVOnTheAir";
 import Trends from "../../components/Trends/Trends";
+import { Transition } from 'react-transition-group';
 
 
 const Main = () => {
     const activeBtn = document.querySelector('.active')
-
+    const [inProp, setInProp] = useState(false);
     const [active, setActive] = useState(activeBtn)
 
 
     const toggleContent = (event) => {
         setActive(event)
+        setInProp(true)
     }
 
     const switchContent = (value) => {
@@ -41,7 +43,10 @@ const Main = () => {
     const switchTVContent = (value) => {
         switch (value) {
             case 'popular':
-                return <TvPopular />
+                return(
+                <Transition in={inProp} timeout={500}>
+                    <TvPopular />
+                </Transition>)
             case 'on-the-air':
                 return <TvOnTheAir/>
             case 'top-rated':
@@ -95,9 +100,9 @@ const Main = () => {
                                             value='top-rated'>#TOP RATED
                                     </button>
                                 </div>
-                                {
-                                    switchTVContent(active)
-                                }
+                                    <Transition in={inProp} timeout={500}>
+                                        {switchTVContent(active)}
+                                    </Transition>
                             </div>
                         </div>
                         <div className='col-md-4 pad-lf'>
