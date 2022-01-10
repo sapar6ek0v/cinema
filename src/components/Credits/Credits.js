@@ -24,7 +24,7 @@ const Credits = () => {
         <div className='credits-box'>
           <Container>
               <h3 className='actors-title'>#Starring</h3>
-              <div className='px-3 py-4 d-flex overflow-auto'>
+              <div className='px-3 py-4 d-flex overflow-auto cr-pd'>
                   {
                       credits?.slice(0, actors)?.map(people => {
                           return (

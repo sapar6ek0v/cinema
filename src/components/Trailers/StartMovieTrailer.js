@@ -12,7 +12,8 @@ const StartTVTrailers = ({turnOn, videos}) => {
     useEffect(() => {
         axios(`${URL_BASE}/movie/${id}/images?api_key=${API_KEY}&language=ru,en`)
             .then(({data}) => {
-                setFilmImg(data.posters)
+                setFilmImg([...data.posters, ...data.backdrops])
+                // console.log(filmImg)
             })
     }, [id])
 

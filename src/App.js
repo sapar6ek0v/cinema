@@ -15,12 +15,13 @@ import OnTheAirSerials from "./pages/Serials/OnTheAirSerials";
 import TopRatedSerials from "./pages/Serials/TopRatedSerials";
 import SerialsInfo from "./pages/SerialsInfo/SerialsInfo";
 import NowPlayingFilms from "./pages/NowPlayingFilms/NowPlayingFilms";
+import LanguageProvider from "./context/LanguageContext";
 
 
 function App() {
 
     return (
-        <>
+        <LanguageProvider>
             <div className='d-flex wrapper'>
                 <div className='main'>
                     <Header/>
@@ -43,7 +44,7 @@ function App() {
                 </div>
             </div>
             <Footer/>
-        </>
+        </LanguageProvider>
     );
 }
 

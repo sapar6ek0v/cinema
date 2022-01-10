@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import axios from "axios";
 import {useParams} from "react-router-dom";
 import {Container, Row} from "react-bootstrap";
@@ -18,8 +18,10 @@ import FilmsRecommendation from "../../components/FilmCard/FilmsRecommendation";
 import 'react-circular-progressbar/dist/styles.css';
 import './films-info.css'
 import CircularBar from "../../components/CircularBar/CircularBar";
+import {LanguageContext} from "../../context/LanguageContext";
 
 const FilmsInfo = () => {
+    const {language} = useContext(LanguageContext)
     const {id} = useParams()
     const [film, setFilm] = useState({})
     const [videos, setVideos] = useState([])
@@ -32,7 +34,7 @@ const FilmsInfo = () => {
     const [recommendation, setRecommendation] = useState([])
 
     useEffect(() => {
-        const prom1 = axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4eb03517df3f1b8227a751b8d89d9ee8&language=ru`)
+        const prom1 = axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4eb03517df3f1b8227a751b8d89d9ee8&language=${language}`)
             .then(({data}) => {
                 setFilm(data)
             })
@@ -47,7 +49,7 @@ const FilmsInfo = () => {
                 setMedia(data)
             })
 
-        const prom4 = axios(`${URL_BASE}/movie/${id}/keywords?api_key=${API_KEY}`)
+        const prom4 = axios(`${URL_BASE}/movie/${id}/keywords?api_key=${API_KEY}&language=${language}`)
             .then(({data}) => {
                 setKeyWords(data.keywords)
             })
@@ -61,7 +63,7 @@ const FilmsInfo = () => {
             // .catch((e) => console.log(e))
             // .finally(() => setLoading(false))
             .then(() => setLoading(false))
-    }, [id])
+    }, [id, language])
 
     useEffect(() => {
         if (modal) {
@@ -105,7 +107,7 @@ const FilmsInfo = () => {
                     backgroundBlendMode: 'darken'
                 }}>
                     <Container>
-                        <div className='d-flex'>
+                        <div className='d-flex md-film-bl'>
                             <div className='title-block col-4'>
                                 <div className='film-info-box'>
                                     <div onClick={() => setModalImage(true)} className='position-relative'>
@@ -115,7 +117,7 @@ const FilmsInfo = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='col-8'>
+                            <div className='col-8 md-film-col-8'>
                                 <div className='film-title'>{film.title}
                                     <span className='film-date'>({output})</span>
                                 </div>
@@ -132,14 +134,14 @@ const FilmsInfo = () => {
                                     <span className='film-pod-title'> {film.runtime}мин  </span>
                                 </div>
 
-                                <div className='d-flex align-items-center mb-5'>
+                                <div className='d-flex align-items-center  md-film-over'>
                                     <CircularBar item={film} />
                                     <span className='actor-link-block'><a className='actor-link' href={film.homepage}> <FontAwesomeIcon
                                         icon={faHome}/> </a></span>
                                     <Media media={media}/>
                                 </div>
                                 <div className='film-tagline'>{film.tagline || ''}</div>
-                                <div className='info-block'>
+                                <div className='info-block md-film-over'>
                                     <h3 className='h3'>Overview</h3>
                                     <div>
                                         {film.overview ? film.overview : 'Sorry but we don\'t have information about this movie yet'}
@@ -156,20 +158,20 @@ const FilmsInfo = () => {
                     backgroundBlendMode: 'darken'
                 }}>
                     <Container>
-                        <Row>
-                            <div className='col-8' style={{
+                        <div className='d-flex md-block'>
+                            <div className='col-8 md-sub-film-col-8' style={{
                                 background: '#020d18'
                             }}>
                                 <Credits/>
                                 <StartMovieTrailer videos={videos} turnOn={turnOn}/>
                                 <FilmsRecommendation recommendation={recommendation} />
                             </div>
-                            <div className='col-4' style={{
+                            <div className='col-4 md-pod-film-col-8' style={{
                                 background: '#020d18'
                             }}>
                                 <FactsCard key={film.id} film={film} keyWords={keyWords} />
                             </div>
-                        </Row>
+                        </div>
                     </Container>
                 </div>
             </>

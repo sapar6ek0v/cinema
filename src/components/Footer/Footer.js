@@ -9,17 +9,17 @@ const Footer = () => {
     return (
         <footer>
             <Container>
-                <div className='d-flex justify-content-between mb-5'>
-                    <div>
+                <div className='d-flex justify-content-between mb-5 mb-ft'>
+                    <div className='md-ft-col'>
                         <a href="https://www.themoviedb.org/tv/132375-um-lugar-ao-sol">
                             <img className='footer-img' src={logo} alt="logo"/>
                         </a>
                     </div>
-                    <div>
+                    <div  className='md-ft-col'>
                         <h4 className='footer-title'>Resources</h4>
                         <div><Link className='footer-link' to={'/'}>About</Link></div>
                     </div>
-                    <div>
+                    <div  className='md-ft-col'>
                         <h4 className='footer-title'>Newsletter</h4>
                         <div className='footer-link w-75 mb-4'>Subscribe to our newsletter system now
                             to get latest news from us.</div>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import axios from "axios";
 import {API_KEY, PHOTO_BASE, URL_BASE} from "../../constants/api";
 import {useParams} from "react-router-dom";
@@ -43,7 +43,7 @@ const CreditsInfo = () => {
     const switchContent = (value) => {
         switch (value) {
             case 'overview':
-                return <ActorsInfo actor={actor}/>
+                return <ActorsInfo actor={actor} loading={loading}/>
             case 'personal-information':
                 return <ActorsPersonalInfo actor={actor}/>
             case 'media':

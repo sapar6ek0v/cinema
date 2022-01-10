@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Container, DropdownButton} from "react-bootstrap";
 import './header-dropdown.css'
 import HeaderDropDown from "./HeaderDropDown";
 import HeaderBtn from "./HeaderBtn";
 import {Link} from "react-router-dom";
+import {LanguageContext} from "../../context/LanguageContext";
 const Header = () => {
-
+    const {language, setLanguage} = useContext(LanguageContext)
 
     window.onscroll = function onScroll () {
 
@@ -18,11 +19,14 @@ const Header = () => {
         }
     }
 
+    const changeLang = () => {
+        setLanguage(language === 'ru' ? 'en' : 'ru')
+    }
 
     return (
         <header className='header'>
             <Container>
-                <div className='d-flex'>
+                <div className='d-flex md-header'>
                     <div className='about-box d-flex align-items-center'>
                         <HeaderBtn title={'home'} item={''} />
                         <HeaderDropDown />
@@ -48,6 +52,7 @@ const Header = () => {
                             sign up
                         </button>
                     </div>
+                    <button onClick={changeLang}>{language}</button>
                 </div>
             </Container>
         </header>

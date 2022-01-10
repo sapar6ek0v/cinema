@@ -23,7 +23,7 @@ const TopSearch = () => {
     }
 
     return (
-       <div className='py-5'>
+       <div className='py-5 md-pd'>
            <div className='search-box'>
                <input onChange={onChange} onKeyDown={onChangeDown} className='search-input' type="text"
                       placeholder='Search for a movie, TV Show or celebrity that you are looking for'/>

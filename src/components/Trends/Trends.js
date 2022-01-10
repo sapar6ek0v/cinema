@@ -19,7 +19,7 @@ const Trends = () => {
         <div className='trends-page'>
             <Container>
                 <Row>
-                    <div className='col-8'>
+                    <div className='col-8 md-col-8'>
                         <div className='trends-img-box'>
                             <div className='content-adrt'>-advertisement-</div>
                             <img className='trends-img' src={advertise} alt="advertise"/>
@@ -49,7 +49,7 @@ const Trends = () => {
                                    {
                                        trends?.slice(1,5).map( (it) => {
                                            return (
-                                               <Link to={`/movie-info/${it.id}`} key={it.id} className='col-6 text-decoration-none'>
+                                               <Link to={`/movie-info/${it.id}`} key={it.id} className='col-6 text-decoration-none md-col-6'>
                                                    <div>
                                                        <div className='trends-card-title mb-1'>{it.title}</div>
                                                        <div className='trends-card-time mb-1'>{it.release_date}</div>
@@ -63,7 +63,7 @@ const Trends = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='col-4'>
+                    <div className='col-4 md-col-4'>
                         <div>
 
                         </div>

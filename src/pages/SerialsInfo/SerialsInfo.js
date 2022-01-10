@@ -122,7 +122,7 @@ const SerialsInfo = () => {
                                     <span  className='actor-link-block'><a className='actor-link' href={serial.homepage}><FontAwesomeIcon icon={faHome}/></a></span>
                                     <SerialMedia />
                                 </div>
-                                <div className='film-tagline'>{serial.tagline || '' }</div>
+                                <div className='film-tagline'>"{serial.tagline || '' }"</div>
                                 <div className='info-block'>
                                     <h3 className='h3'>Overview</h3>
                                     <div>
