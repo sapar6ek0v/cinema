@@ -5,8 +5,6 @@ import {useParams} from "react-router-dom";
 import {Container} from "react-bootstrap";
 import ActorsInfo from "../../components/ActorsInfo/ActorsInfo";
 import ActorsPersonalInfo from "../../components/ActorsInfo/ActorsPersonalInfo";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebook, faInstagram, faTwitter} from "@fortawesome/free-brands-svg-icons";
 import CreditsMovie from "../../components/Credits/CreditsMovie";
 import CreditsTv from "../../components/Credits/CreditsTv";
 import CreditsPhotos from "../../components/Credits/CreditsPhotos";

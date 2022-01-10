@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import {Container} from "react-bootstrap";
-import {Link, useSearchParams} from "react-router-dom";
+import {useSearchParams} from "react-router-dom";
 import {API_KEY} from "../../constants/api";
 import Pages from "../../components/Pages/Pages";
 const NowPlayingFilms = () => {

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Container, Row} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import axios from "axios";
 import {API_KEY, URL_BASE} from "../../constants/api";
 import {useParams} from "react-router-dom";
