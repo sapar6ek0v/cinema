@@ -52,7 +52,6 @@ const MainTvSlickSlider = ({tv}) => {
         ]
     }
 
-
     return (
         <div className='content-slick-slider-page'>
             <Slider {...settings}>
@@ -67,7 +66,7 @@ const MainTvSlickSlider = ({tv}) => {
                             <div key={tv.id}>
                                     <button onMouseDown={(e) => setDirectory(e.clientX)} onClick={onClick} className='content-slick-slider slider-btn'>
                                         <div className='content-slick-slider-box-img'>
-                                            <img className='content-slick-slider-img' src={ tv.poster_path ? "https://image.tmdb.org/t/p/w500" + tv.poster_path : notFound }
+                                            <img className='content-slick-slider-img slider-box-img' src={ tv.poster_path ? "https://image.tmdb.org/t/p/w500" + tv.poster_path : notFound }
                                                  alt={tv.name}/>
                                         </div>
                                         <div className='content-slick-slider-title'>{tv.name}</div>

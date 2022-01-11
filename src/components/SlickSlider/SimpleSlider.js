@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
+import './slick-slider.css'
 
 
 export default function SimpleSlider() {
@@ -73,19 +74,22 @@ export default function SimpleSlider() {
                             }
                         }
                         const input = it.release_date.split('-')
-                        const data = input.slice(0,1);
+                        const data = input.slice(0, 1);
                         return (
                             <div key={it.id}>
                                 <div className='block'>
-                                    <button onMouseDown={(e) => setDirectory(e.clientX) } onClick={onClick}  className='slider-box slider-btn'>
-                                        <img className='w-100' src={"https://image.tmdb.org/t/p/w500" + it.poster_path}
+                                    <button onMouseDown={(e) => setDirectory(e.clientX)} onClick={onClick}
+                                            className='slider-box slider-btn position-relative'>
+                                        <img className='slider-box-img' src={"https://image.tmdb.org/t/p/w500" + it.poster_path}
                                              alt={it.title}/>
                                         <div className='slider-popular d-inline-block '>
-                                            <span className='content-slick-slider-star'><FontAwesomeIcon icon={faStar}/></span><span className='content-slick-slider-popular'>{it.vote_average}</span><span className='content-slick-slider-max-popular'>/10</span>
+                                            <span className='content-slick-slider-star'><FontAwesomeIcon icon={faStar}/></span><span
+                                            className='content-slick-slider-popular'>{it.vote_average}</span><span
+                                            className='content-slick-slider-max-popular'>/10</span>
                                         </div>
                                         <div className='slider-text d-inline-block'>{it.title}</div>
-
                                         <span className='slider-date'>({data})</span>
+
                                     </button>
                                 </div>
                             </div>

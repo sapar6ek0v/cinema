@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import Slider from "react-slick";
 import { useNavigate} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faStar} from "@fortawesome/free-solid-svg-icons";
+import {faStar, faAngleRight} from "@fortawesome/free-solid-svg-icons";
 import notFound from '../../image/not found.jpg'
+import '../SlickSlider/slick-slider.css'
+
 
 const MainSlickSlider = ({films}) => {
     const navigate = useNavigate()
@@ -52,8 +54,6 @@ const MainSlickSlider = ({films}) => {
         ]
     }
 
-
-
     return (
         <div className='content-slick-slider-page'>
             <Slider {...settings}>
@@ -66,10 +66,11 @@ const MainSlickSlider = ({films}) => {
                         }
                         return (
                             <div key={film.id}>
-                                    <button onMouseDown={(e) => setDirectory(e.clientX)} onClick={onClick} className='content-slick-slider slider-btn'>
-                                        <div className='content-slick-slider-box-img'>
-                                            <img className='content-slick-slider-img' src={film.poster_path ? "https://image.tmdb.org/t/p/w500" + film.poster_path : notFound}
+                                    <button onMouseDown={(e) => setDirectory(e.clientX)} onClick={onClick} className='content-slick-slider slider-btn position-relative'>
+                                        <div className='content-slick-slider-box-img '>
+                                            <img className='content-slick-slider-img slider-box-img' src={film.poster_path ? "https://image.tmdb.org/t/p/w500" + film.poster_path : notFound}
                                                  alt={film.title}/>
+                                            <span className='slider-img'>Read more <FontAwesomeIcon icon={faAngleRight} /> </span>
                                         </div>
                                         <div className='content-slick-slider-title'>{film.title}</div>
                                         <div className='content-slick-slider-block'>
