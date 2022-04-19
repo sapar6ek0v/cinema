@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import { Container, Row } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import Credits from '../../components/Credits/Credits'
 import { API_KEY, URL_BASE } from '../../constants/api'
 import Trailers from '../../components/Trailers/Trailers'
