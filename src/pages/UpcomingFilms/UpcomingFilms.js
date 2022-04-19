@@ -6,7 +6,6 @@ import {useSearchParams} from "react-router-dom";
 
 
 
-
 const UpcomingFilms = () => {
     const [query, setQuery] = useSearchParams()
     const [pages, setPages] = useState(+query.get('page') || 1)

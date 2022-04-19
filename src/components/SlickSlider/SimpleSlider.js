@@ -4,7 +4,9 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
+import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import './slick-slider.css'
+import FilmsCard from "../FilmCard/FilmsCard";
 
 
 export default function SimpleSlider() {
@@ -65,6 +67,17 @@ export default function SimpleSlider() {
 
     return (
         <>
+            {/*<TransitionGroup className="row">*/}
+            {/*    {windowFilm.map(it => (*/}
+            {/*        <CSSTransition*/}
+            {/*            key={it.id}*/}
+            {/*            timeout={500}*/}
+            {/*            classNames="item"*/}
+            {/*        >*/}
+            {/*            {}*/}
+            {/*        </CSSTransition>*/}
+            {/*    ))}*/}
+            {/*</TransitionGroup>*/}
             <Slider {...settings}>
                 {
                     windowFilm.map(it => {
