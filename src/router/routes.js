@@ -1,0 +1,16 @@
+﻿export const Paths = {
+  MAIN: '/',
+  All_FILMS: '/all-films',
+  POPULAR: '/popular',
+  TOP: '/top-rated',
+  NOW_PLAYING: '/now-playing',
+  UPCOMING: '/upcoming',
+  MOVIE_DETAILS: '/movie-info/:id',
+  SEARCH: '/search-films/:name',
+  CREDITS_DETAILS: '/credits-info/:id',
+  TV_SERIALS_POPULAR: '/tv-serials/popular',
+  TV_SERIALS_ON_THE_AIR: '/tv-serials/on-the-air',
+  TV_SERIALS_TOP_RATED: '/tv-serials/top-rated',
+  TV_SERIALS_DETAILS: '/tv-serials/serials-info/:id',
+  ANONYM: '*',
+}
