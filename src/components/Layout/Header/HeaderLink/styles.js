@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { fontStyleMdBold } from '../../../../helpers/cssFragments';
 
 export const HeaderLinkBtn = styled(Link)`
   background: transparent;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 20px;
+  ${fontStyleMdBold};
   color: #abb7c4;
   text-transform: uppercase;
   padding: 2px 8px;

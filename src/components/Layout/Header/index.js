@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Container, DropdownButton } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+
+import { useLanguageContext } from '../../../context/LanguageContext';
 import HeaderDropDown from './HeaderDropDown';
 import HeaderLink from './HeaderLink';
-import { useLanguageContext } from '../../../context/LanguageContext';
-import { HeaderWrapper, HeaderGroup } from './styles';
+import { HeaderWrapper, HeaderGroup, SignUpBtn, LangBtn } from './styles';
+import { navbarList } from './data';
 
 const Header = () => {
   const { language, setLanguage } = useLanguageContext();
@@ -19,35 +20,36 @@ const Header = () => {
   //   }
   // };
 
-  const changeLang = () => setLanguage(language === 'ru' ? 'en' : 'ru');
+  const toggleLang = () => setLanguage(language === 'ru' ? 'en' : 'ru');
 
   return (
     <HeaderWrapper>
       <Container>
         <HeaderGroup position="space-between" gap={20}>
           <HeaderGroup gap={10}>
-            <HeaderLink title="home" path={''} />
-            <HeaderDropDown />
-            <DropdownButton id="dropdown-basic-button" title="Serials">
-              <Link to="tv-serials/popular?page=1" className="dropdown-link">
-                Popular
-              </Link>
-              <Link to="tv-serials/on-the-air?page=1" className="dropdown-link">
-                On the air
-              </Link>
-              <Link to="tv-serials/top-rated?page=1" className="dropdown-link">
-                top rated
-              </Link>
-            </DropdownButton>
-            <HeaderLink title="community" path={''} />
-            <HeaderLink title="news" path={'/'} />
+            {navbarList.slice(0, 5).map((link) => {
+              return (
+                <>
+                  {link.submenu?.length ? (
+                    <HeaderDropDown title={link.title} list={link.submenu} />
+                  ) : (
+                    <HeaderLink key={link.id} title={link.title} path={link.path} />
+                  )}
+                </>
+              );
+            })}
           </HeaderGroup>
           <HeaderGroup gap={10}>
-            <HeaderLink title="help" path={''} />
-            <HeaderLink title="login" path={''} />
+            {navbarList.slice(5).map((link) => (
+              <HeaderLink key={link.id} title={link.title} path={link.path} />
+            ))}
 
-            <button className="register-button">sign up</button>
-            <button onClick={changeLang}>{language}</button>
+            <SignUpBtn aria-label="sig up button" type="button">
+              Sign Up
+            </SignUpBtn>
+            <LangBtn onClick={toggleLang} aria-label="language change button" type="button">
+              {language}
+            </LangBtn>
           </HeaderGroup>
         </HeaderGroup>
       </Container>

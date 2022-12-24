@@ -52,15 +52,15 @@ button {
   border: 2px solid white;
   background: #233a50;
   color: white;
-  border-radius: 8px;
-  margin-right: 8px;
+  /* border-radius: 8px; */
+  /* margin-right: 8px; */
 }
 .bor-rad {
   border-radius: 8px;
 }
 button:hover {
   background: transparent;
-  color: #233a50;
+  /* color: #233a50; */
 }
 
 span {
@@ -213,7 +213,7 @@ input[type='text'] {
   font-size: 14px;
   line-height: 1.42857143;
   color: #abb7c4;
-  background-color: #fff;
+  /* background-color: #fff; */
   /*border: 1px solid #aaa;*/
 }
 
@@ -738,7 +738,7 @@ footer {
   text-decoration: none;
 }
 input[type='text'] {
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 .footer-input {
   font-family: 'Nunito', sans-serif;
