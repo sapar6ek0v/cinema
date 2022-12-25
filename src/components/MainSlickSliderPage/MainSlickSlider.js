@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import notFound from '../../image/not found.jpg';
+import notFound from '../../images/not-found.jpg';
 // import '../SlickSlider/slick-slider.css'
 
 const MainSlickSlider = ({ films }) => {

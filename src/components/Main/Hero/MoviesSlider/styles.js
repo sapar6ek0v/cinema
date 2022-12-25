@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { colors } from '../../../../constants/colors';
 import {
   flexAlignCenter,
   flexColumn,
@@ -7,13 +9,23 @@ import {
 } from '../../../../helpers/cssFragments';
 
 export const SliderWrapper = styled.div`
+  padding: 5px 10px;
   margin-bottom: 20px;
-  padding: 2px 10px;
 `;
 
 export const SliderImage = styled.img`
   display: block;
   width: 100%;
+`;
+
+export const ImageLink = styled(Link)`
+  display: block;
+  text-decoration: none;
+  transition: all 0.4s linear;
+
+  &:hover {
+    filter: brightness(0.3);
+  }
 `;
 
 export const SliderFlexColumn = styled.div`
@@ -33,7 +45,7 @@ export const SliderStar = styled.div`
 
 export const SliderVotes = styled.p`
   ${fontStyleXlNormal};
-  color: #ffff;
+  color: ${colors.white};
   margin: 0;
 
   span {
@@ -41,16 +53,23 @@ export const SliderVotes = styled.p`
   }
 `;
 
-export const SliderTitle = styled.p`
+export const SliderLink = styled(Link)`
   ${fontStyleXlNormal};
-  color: #ffff;
+  color: ${colors.white};
   font-size: 20px;
   text-align: center;
-  margin: 0;
+  display: block;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: ${colors.yellow};
+  }
 `;
 
 export const SliderDate = styled.p`
   ${fontStyleMdNormal};
-  color: #ffff;
+  color: ${colors.white};
   margin: 0;
 `;

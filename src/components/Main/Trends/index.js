@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 
 import { getImage } from '../../../helpers/getImage';
-import advertise from '../../../image/advertisement-examples.webp';
+import advertise from '../../../images/advertisement-examples.webp';
 import { AdvertiseTitle } from '../../styles';
 import {
   AdvertiseImage,
@@ -16,17 +15,11 @@ import {
   TrendCardDate,
   TrendCardDesc,
 } from './styles';
+import { useQuery } from 'react-query';
+import { MovieTrendServices } from '../../../helpers/services/movieTrendServices';
 
 const Trends = () => {
-  const [trends, setTrends] = useState([]);
-
-  useEffect(() => {
-    axios(`https://api.themoviedb.org/3/trending/movie/day?api_key=4eb03517df3f1b8227a751b8d89d9ee8`).then(
-      ({ data }) => {
-        setTrends(data.results);
-      }
-    );
-  }, []);
+  const { data: trends } = useQuery('daily movie trends', () => MovieTrendServices.getDailyMovieTrends());
 
   return (
     <TrendWrapper>

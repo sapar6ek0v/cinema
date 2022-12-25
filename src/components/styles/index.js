@@ -6,7 +6,7 @@ export const Group = styled.div`
   display: flex;
   align-items: center;
   justify-content: ${(props) => props.position};
-  gap: ${(props) => props.gap};
+  gap: ${(props) => props.gap && `${props.gap}px`};
 `;
 
 export const Wrapper = styled.div`

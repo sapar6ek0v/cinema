@@ -153,10 +153,7 @@ ul {
 }
 
 .hero {
-  padding: 10px 0 60px;
-  height: 100vh;
-  min-height: 790px;
-  background: url('./image/bg.jpg') center/ cover;
+  background: url('./images/bg.jpg') center/ cover;
 }
 .search-page {
   padding: 170px 0 70px;
@@ -694,7 +691,7 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('./image/start-video.svg');
+  background: url('./images/start-video.svg');
 }
 
 .actors-title {
@@ -714,7 +711,7 @@ span {
 }
 footer {
   padding: 80px 0 0 0;
-  background: url('./image/bg.jpg');
+  background: url('./images/bg.jpg');
 }
 
 .footer-img {
@@ -750,7 +747,7 @@ input[type='text'] {
   /*-webkit-border-radius: 3px;*/
   /*-moz-border-radius: 3px;*/
   border-radius: 3px;
-  background: #020d18 url('./image/search-bg.png') no-repeat right 20px center;
+  background: #020d18 url('./images/search-bg.png') no-repeat right 20px center;
 }
 .footer-input:focus {
   outline: none;
@@ -813,7 +810,7 @@ input[type='text'] {
 .credits-page {
   height: 140vh;
   min-height: 500px;
-  background: rgba(0, 0, 0, 0.75) url('./image/sr-single.jpg') center/cover;
+  background: rgba(0, 0, 0, 0.75) url('./images/sr-single.jpg') center/cover;
   background-blend-mode: darken;
   padding: 50px 0 100px;
 }

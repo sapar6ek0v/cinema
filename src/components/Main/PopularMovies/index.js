@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import SlickPopularFilms from '../../FilmsSlickSlider/SlickPopularFilms';
-import SlickTopRated from '../../FilmsSlickSlider/SlickTopRated';
-import SlickUpcoming from '../../FilmsSlickSlider/SlickUpcoming';
+
 import { Button, Group, Title, ViewLink } from '../../styles';
 import { buttonTypes } from './data';
+import MoviesSlider from './MoviesSlider';
 import { PopularMoviesWrapper, PopularMoviesGroup } from './styles';
 
 const PopularMovies = () => {
@@ -14,13 +13,13 @@ const PopularMovies = () => {
   const switchContent = (type) => {
     switch (type) {
       case 'popular':
-        return <SlickPopularFilms />;
+        return <MoviesSlider type="popular" />;
       case 'coming-soon':
-        return <SlickUpcoming />;
+        return <MoviesSlider type="upcoming" />;
       case 'top-rated':
-        return <SlickTopRated />;
+        return <MoviesSlider type="top-rated" />;
       default:
-        return <SlickPopularFilms />;
+        return <MoviesSlider type="popular" />;
     }
   };
 

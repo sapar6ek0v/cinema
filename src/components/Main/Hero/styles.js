@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeroWrapper = styled.section`
-  padding: 10px 0 60px;
-  height: 100vh;
-  /* background: url(bg) center/cover; */
+  padding: 10px 0 70px;
+  position: relative;
+  /* background: url('./image/bg.jpg') center/ cover; */
 `;

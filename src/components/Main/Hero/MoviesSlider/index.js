@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import Slider from 'react-slick';
-import axios from 'axios';
+import { useQuery } from 'react-query';
 import dayjs from 'dayjs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
+import { MovieServices } from '../../../../helpers/services/movieServices';
 import { getImage } from '../../../../helpers/getImage';
 import {
   SliderFlexBox,
@@ -14,79 +14,24 @@ import {
   SliderImage,
   SliderStar,
   SliderVotes,
-  SliderTitle,
+  SliderLink,
   SliderDate,
+  ImageLink,
 } from './styles';
+import { settings } from './settings';
 
 const MoviesSlider = () => {
-  const navigate = useNavigate();
-  const [movies, setMovies] = useState([]);
-  const [directory, setDirectory] = useState(0);
-
-  useEffect(() => {
-    axios(
-      `https://api.themoviedb.org/3/movie/now_playing?api_key=4eb03517df3f1b8227a751b8d89d9ee8&language=ru&&page=1`
-    ).then(({ data }) => {
-      setMovies(data.results);
-    });
-  }, []);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1204,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 448,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
-  const handleNavigate = (e, id) => {
-    if (Math.abs(e.clientX - directory) < 5) {
-      navigate(`/movie-info/${id}`);
-    }
-  };
+  const { data: movies } = useQuery('slider list', () => MovieServices.getMoviesByType('now_playing'));
 
   return (
     <Slider {...settings}>
-      {movies.map((movie) => {
+      {movies?.map((movie) => {
         const { release_date, id, poster_path, title, vote_average } = movie;
         return (
-          <SliderWrapper key={id} onMouseDown={(e) => setDirectory(e)} onClick={(e) => handleNavigate(e, id)}>
-            <SliderImage src={getImage(poster_path)} alt={title} />
+          <SliderWrapper key={id}>
+            <ImageLink to={`/movie-info/${id}`}>
+              <SliderImage src={getImage(poster_path)} alt={title} />
+            </ImageLink>
 
             <SliderFlexColumn>
               <SliderFlexBox>
@@ -99,7 +44,7 @@ const MoviesSlider = () => {
                 </SliderVotes>
               </SliderFlexBox>
 
-              <SliderTitle>{title}</SliderTitle>
+              <SliderLink to={`/movie-info/${id}`}>{title}</SliderLink>
 
               <SliderDate>({dayjs(release_date).format('YYYY')})</SliderDate>
             </SliderFlexColumn>

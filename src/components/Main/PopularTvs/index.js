@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import TvOnTheAir from '../../../pages/Tv/TVOnTheAir';
-import TvPopular from '../../../pages/Tv/TVPopular';
-import TvTopRated from '../../../pages/Tv/TVTopRated';
+
 import { Group, Title, ViewLink, Button } from '../../styles';
 import { buttonTypes } from './data';
 import { PopularTvsGroup, PopularTvsWrapper } from './styles';
+import TvsSlider from './TvsSlider';
 
 const PopularTvs = () => {
   const [type, setType] = useState('popular');
@@ -14,13 +13,13 @@ const PopularTvs = () => {
   const switchContent = (type) => {
     switch (type) {
       case 'popular':
-        return <TvPopular />;
+        return <TvsSlider type="popular" />;
       case 'on-the-air':
-        return <TvOnTheAir />;
+        return <TvsSlider type="on_the_air" />;
       case 'top-rated':
-        return <TvTopRated />;
+        return <TvsSlider type="top_rated" />;
       default:
-        return <TvPopular />;
+        return <TvsSlider type="popular" />;
     }
   };
   return (

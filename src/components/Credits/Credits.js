@@ -3,7 +3,7 @@ import axios from 'axios';
 import { API_KEY, PHOTO_BASE, URL_BASE } from '../../constants/api';
 import { Link, useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import anonym from '../../image/profile.jpg';
+import anonym from '../../images/profile.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 

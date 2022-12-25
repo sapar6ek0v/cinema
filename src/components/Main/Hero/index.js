@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+
 import SearchForm from '../../SearchForm';
 import MoviesSlider from './MoviesSlider';
 import { HeroWrapper } from './styles';

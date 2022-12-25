@@ -1,4 +1,4 @@
-﻿export const Paths = {
+export const Paths = {
   MAIN: '/',
   All_FILMS: '/all-films',
   POPULAR: '/popular',
@@ -13,4 +13,4 @@
   TV_SERIALS_TOP_RATED: '/tv-serials/top-rated',
   TV_SERIALS_DETAILS: '/tv-serials/serials-info/:id',
   ANONYM: '*',
-}
+};

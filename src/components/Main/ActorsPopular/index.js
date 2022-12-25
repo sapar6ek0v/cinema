@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { useQuery } from 'react-query';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { API_KEY } from '../../../constants/api';
+import { ActorServices } from '../../../helpers/services/actorServices';
 import { getImage } from '../../../helpers/getImage';
-import advertise from '../../../image/advertise.jpg';
+import advertise from '../../../images/advertise.jpg';
 import {
   PopularActorWrapper,
   AdvertiseImage,
@@ -20,15 +20,7 @@ import {
 import { AdvertiseTitle } from '../../styles';
 
 const ActorsPopular = () => {
-  const [popularActors, setPopularActors] = useState([]);
-
-  useEffect(() => {
-    axios(`https://api.themoviedb.org/3/person/popular?api_key=${API_KEY}&language=en-US`).then(
-      ({ data }) => {
-        setPopularActors(data.results);
-      }
-    );
-  }, []);
+  const { data: popularActors } = useQuery('popular actor list', () => ActorServices.getPopularActors());
 
   return (
     <PopularActorWrapper>
@@ -38,7 +30,7 @@ const ActorsPopular = () => {
       </div>
       <PopularActorTitle>SPOTLIGHT CELEBRITIES</PopularActorTitle>
       <PopularActorVerticalWrapper>
-        {popularActors.slice(0, 4).map((person) => {
+        {popularActors?.slice(0, 4).map((person) => {
           const { id, profile_path, name, known_for_department } = person;
           return (
             <PopularActorLink key={id} to={`credits-info/${id}`}>
