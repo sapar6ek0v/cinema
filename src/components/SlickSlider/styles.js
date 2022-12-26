@@ -51,7 +51,7 @@ export const SlickSliderTitle = styled(Link)`
 `;
 
 export const SlickSliderVoteAverageStar = styled.div`
-  color: orange;
+  color: ${colors.orange};
   font-size: 20px;
 `;
 

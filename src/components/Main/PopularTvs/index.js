@@ -22,6 +22,7 @@ const PopularTvs = () => {
         return <TvsSlider type="popular" />;
     }
   };
+
   return (
     <PopularTvsWrapper>
       <Group position="space-between" gap={20}>

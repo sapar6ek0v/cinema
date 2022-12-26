@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 
-import { Wrapper } from '../../components/styles';
+import { Col4, Col8, Wrapper } from '../../components/styles';
 import SEO from '../../components/SEO';
 import Hero from '../../components/Main/Hero';
 import PopularMovies from '../../components/Main/PopularMovies';
@@ -18,13 +18,13 @@ const Main = () => {
       <Wrapper>
         <Container>
           <Row>
-            <div className="col-md-8 pad-rt">
+            <Col8>
               <PopularMovies />
               <PopularTvs />
-            </div>
-            <div className="col-md-4 pad-lf">
+            </Col8>
+            <Col4>
               <ActorsPopular />
-            </div>
+            </Col4>
           </Row>
         </Container>
       </Wrapper>

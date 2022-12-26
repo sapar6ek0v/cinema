@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { colors } from '../../../constants/colors';
 import {
   flexAlignCenter,
   flexColumn,
@@ -26,7 +27,7 @@ export const AdvertiseImage = styled.img`
 
 export const PopularActorTitle = styled(Title)`
   padding-bottom: 10px;
-  border-bottom: 1px solid #233a50;
+  border-bottom: 1px solid ${colors.lightBlue};
 `;
 
 export const PopularActorLink = styled(Link)`
@@ -46,13 +47,13 @@ export const PopularActorImage = styled.img`
 `;
 
 export const PopularActorName = styled.h6`
-  color: #fff;
+  color: ${colors.white};
   ${fontStyleSmBold};
   margin: 0;
 `;
 
 export const PopularActorKnownFor = styled.p`
-  color: #abb7c4;
+  color: ${colors.lightGray};
   ${fontStyleSmNormal};
   text-transform: uppercase;
   margin: 0;
@@ -60,11 +61,11 @@ export const PopularActorKnownFor = styled.p`
 
 export const ViewAllPopularActorLink = styled(Link)`
   ${fontStyleMdBold};
-  color: #abb7c4;
+  color: ${colors.lightGray};
   text-transform: uppercase;
   text-decoration: none;
 
   &:hover {
-    color: #dcf836;
+    color: ${colors.yellow};
   }
 `;

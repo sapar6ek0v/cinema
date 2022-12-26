@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../constants/colors';
 import { flexAlignCenter, flexJustifyCenter, fontStyleSmNormal } from '../../helpers/cssFragments';
 
 export const SearchFormWrapper = styled.form`
@@ -11,11 +12,11 @@ export const SearchFormInput = styled.input`
   width: 100%;
   border: none;
   outline: none;
-  background-color: #233a50;
-  color: #abb7c4;
+  background-color: ${colors.lightBlue};
+  color: ${colors.lightGray};
   ${fontStyleSmNormal};
   padding: 6px 12px;
-  border: 4px solid #020d18;
+  border: 4px solid ${colors.darkBlue2};
   border-right: none;
 `;
 
@@ -24,16 +25,22 @@ export const SearchFormBtn = styled.button`
   ${flexJustifyCenter};
   height: 46px;
   padding: 5px 14px;
-  background-color: #dd003f;
+  background-color: ${colors.pink};
   font-size: 15px;
-  color: #000;
-  border: 4px solid #020d18;
+  color: ${colors.black};
+  border: 4px solid ${colors.darkBlue2};
   transition: all 0.4s linear;
 
   &:hover,
   &:focus,
   &:active {
-    background-color: #233a50;
-    color: #dd003f;
+    background-color: ${colors.lightBlue};
+    color: ${colors.pink};
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: ${colors.pink};
+    color: ${colors.black};
   }
 `;

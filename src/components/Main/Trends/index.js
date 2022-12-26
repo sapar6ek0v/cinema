@@ -14,6 +14,8 @@ import {
   TrendCardLink,
   TrendCardDate,
   TrendCardDesc,
+  TrendColumn6,
+  TrendColumn8,
 } from './styles';
 import { useQuery } from 'react-query';
 import { MovieTrendServices } from '../../../helpers/services/movieTrendServices';
@@ -25,7 +27,7 @@ const Trends = () => {
     <TrendWrapper>
       <Container>
         <Row>
-          <TrendFlexColumn gap={30} className="col-8 md-col-8">
+          <TrendColumn8 gap={30}>
             <div>
               <AdvertiseTitle>advertisement</AdvertiseTitle>
               <AdvertiseImage src={advertise} alt="advertise-image" />
@@ -51,18 +53,18 @@ const Trends = () => {
                 {trends?.slice(1, 5).map((trend) => {
                   const { id, title, release_date, overview } = trend;
                   return (
-                    <TrendFlexColumn key={id} gap={10} className="col-6 md-col-6">
+                    <TrendColumn6 key={id} gap={10}>
                       <TrendCardLink to={`movie-info/${id}`}>{title}</TrendCardLink>
                       <TrendCardDate>{release_date}</TrendCardDate>
                       <TrendCardDesc>
                         Overview: <span>{overview}</span>
                       </TrendCardDesc>
-                    </TrendFlexColumn>
+                    </TrendColumn6>
                   );
                 })}
               </Row>
             </TrendFlexColumn>
-          </TrendFlexColumn>
+          </TrendColumn8>
           <div className="col-4 md-col-4"></div>
         </Row>
       </Container>

@@ -66,3 +66,24 @@ export const AdvertiseTitle = styled.p`
     display: inline-block;
   }
 `;
+
+export const Col4 = styled.div`
+  padding-left: 40px;
+  flex: 0 0 auto;
+  width: 33.33333333%;
+`;
+
+export const Col8 = styled.div`
+  flex: 0 0 auto;
+  padding-right: 40px;
+  width: 66.66666667%;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * 0);
+  margin-right: calc(-0.5 * 1.5rem);
+  margin-left: calc(-0.5 * 1.5rem);
+  gap: ${(props) => props.gap && `${props.gap}px`};
+`;

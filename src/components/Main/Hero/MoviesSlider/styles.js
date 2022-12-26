@@ -39,7 +39,7 @@ export const SliderFlexBox = styled.div`
 `;
 
 export const SliderStar = styled.div`
-  color: orange;
+  color: ${colors.orange};
   font-size: 20px;
 `;
 

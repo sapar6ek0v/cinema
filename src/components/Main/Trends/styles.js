@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { colors } from '../../../constants/colors';
 import {
   flexAlignCenter,
   flexColumn,
@@ -10,7 +11,7 @@ import { Title } from '../../styles';
 
 export const TrendWrapper = styled.section`
   padding: 70px 0;
-  background-color: #020d18;
+  background-color: ${colors.darkBlue2};
 `;
 
 export const TrendFlexColumn = styled.div`
@@ -38,28 +39,39 @@ export const TrendImage = styled.img`
 
 export const TrendCardLink = styled(Link)`
   ${fontStyleXlBold};
-  color: #4280bf;
+  color: ${colors.link};
   text-decoration: none;
   transition: all 0.4s linear;
 
   &:hover {
-    color: #dcf836;
+    color: ${colors.yellow};
   }
 `;
 
 export const TrendCardDate = styled.p`
   ${fontStyleMdNormal};
-  color: #abb7c4;
+  color: ${colors.lightGray};
   margin: 0;
 `;
 
 export const TrendCardDesc = styled(TrendCardDate)`
   ${fontStyleMdNormal};
-  color: #4280bf;
+  color: ${colors.link};
   margin: 0;
 
   span {
     ${fontStyleMdNormal};
-    color: #abb7c4;
+    color: ${colors.lightGray};
   }
+`;
+
+export const TrendColumn6 = styled(TrendFlexColumn)`
+  padding: 10px;
+  flex: 0 0 auto;
+  width: 50%;
+`;
+
+export const TrendColumn8 = styled(TrendFlexColumn)`
+  flex: 0 0 auto;
+  width: 66.66666667%;
 `;
