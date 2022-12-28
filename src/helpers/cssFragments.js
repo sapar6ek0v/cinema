@@ -6,6 +6,12 @@ export const flexJustifyCenter = css`
   justify-content: center;
 `;
 
+export const flexJustifySpaceBetween = css`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 export const flexAlignCenter = css`
   display: flex;
   align-items: center;

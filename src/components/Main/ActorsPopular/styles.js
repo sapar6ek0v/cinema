@@ -30,26 +30,27 @@ export const PopularActorTitle = styled(Title)`
   border-bottom: 1px solid ${colors.lightBlue};
 `;
 
-export const PopularActorLink = styled(Link)`
-  text-decoration: none;
-  cursor: pointer;
+export const PopularActorCard = styled.div`
   ${flexAlignCenter};
   gap: 20px;
 `;
 
 export const PopularActorImage = styled.img`
-  width: 70px;
+  width: 75px;
+  height: 100px;
   object-fit: cover;
   border-radius: 5px;
-  background-position: center;
-  background-size: cover;
-  margin-right: 20px;
 `;
 
-export const PopularActorName = styled.h6`
+export const PopularActorName = styled(Link)`
+  text-decoration: none;
   color: ${colors.white};
   ${fontStyleSmBold};
-  margin: 0;
+  transition: all 0.4s linear;
+
+  &:hover {
+    color: ${colors.yellow};
+  }
 `;
 
 export const PopularActorKnownFor = styled.p`

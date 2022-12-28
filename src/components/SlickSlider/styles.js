@@ -17,6 +17,8 @@ export const SlickSliderImageWrapper = styled.div`
 export const SlickSliderImage = styled.img`
   border-radius: 5px;
   width: 100%;
+  height: 264px;
+  object-fit: cover;
   cursor: pointer;
   transition: all 0.4s linear;
 

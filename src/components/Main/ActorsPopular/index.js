@@ -6,18 +6,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ActorServices } from '../../../helpers/services/actorServices';
 import { getImage } from '../../../helpers/getImage';
 import advertise from '../../../images/advertise.jpg';
+import { AdvertiseTitle } from '../../styles';
 import {
   PopularActorWrapper,
   AdvertiseImage,
   PopularActorTitle,
-  PopularActorLink,
+  PopularActorCard,
   PopularActorImage,
   PopularActorName,
   PopularActorKnownFor,
   PopularActorVerticalWrapper,
   ViewAllPopularActorLink,
 } from './styles';
-import { AdvertiseTitle } from '../../styles';
 
 const ActorsPopular = () => {
   const { data: popularActors } = useQuery('popular actor list', () => ActorServices.getPopularActors());
@@ -33,13 +33,13 @@ const ActorsPopular = () => {
         {popularActors?.slice(0, 4).map((person) => {
           const { id, profile_path, name, known_for_department } = person;
           return (
-            <PopularActorLink key={id} to={`credits-info/${id}`}>
+            <PopularActorCard key={id}>
               <PopularActorImage src={getImage(profile_path)} alt={name} />
               <div>
-                <PopularActorName>{name}</PopularActorName>
+                <PopularActorName to={`credits-info/${id}`}>{name}</PopularActorName>
                 <PopularActorKnownFor>{known_for_department}</PopularActorKnownFor>
               </div>
-            </PopularActorLink>
+            </PopularActorCard>
           );
         })}
         <ViewAllPopularActorLink to="/">

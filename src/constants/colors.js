@@ -9,4 +9,9 @@ export const colors = {
   darkBlue2: '#020d18',
   pink: '#dd003f',
   black: '#000',
+  mediaLink: '#0d6efd',
+  secondaryGray: '#4f5b68',
+  bg: 'rgba(0,0,0,0.8)',
+  bg2: 'rgba(0,0,0,0.9)',
+  pathBlue: 'rgba(62, 152, 199,0.3)',
 };

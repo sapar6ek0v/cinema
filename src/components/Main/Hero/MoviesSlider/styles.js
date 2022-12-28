@@ -15,6 +15,7 @@ export const SliderWrapper = styled.div`
 
 export const SliderImage = styled.img`
   display: block;
+  border-radius: 5px;
   width: 100%;
 `;
 
