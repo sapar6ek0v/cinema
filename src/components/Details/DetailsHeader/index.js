@@ -10,10 +10,11 @@ import { useLanguageContext } from '../../../context/LanguageContext';
 import { getImage } from '../../../helpers/getImage';
 import { colors } from '../../../constants/colors';
 import notFound from '../../../images/not-found.jpg';
+import MediaLinks from '../../MediaLinks';
 import { Group } from '../../styles';
 import FilmCrew from './FilmCrew';
-import MediaLinks from './MediaLinks';
 import CircularBar from './CircularBar';
+import ImageModal from './ImageModal';
 import {
   ImageContainer,
   ReleaseYear,
@@ -33,7 +34,6 @@ import {
   OverviewBlock,
   OverviewTitle,
 } from './styles';
-import ImageModal from './ImageModal';
 
 const DetailsHeader = ({ type, id }) => {
   const { language } = useLanguageContext();

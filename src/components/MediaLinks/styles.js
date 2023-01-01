@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { colors } from '../../../../constants/colors';
-import { flexAlignCenter } from '../../../../helpers/cssFragments';
+import { colors } from '../../constants/colors';
+import { flexAlignCenter } from '../../helpers/cssFragments';
 
 export const MediaLinksWrapper = styled.div`
   ${flexAlignCenter};
@@ -17,7 +17,7 @@ export const MediaLink = styled.a`
   &:hover,
   &:focus,
   &:active {
-    font-size: 28px;
+    transform: scale(0.8);
     color: ${colors.yellow};
   }
 `;

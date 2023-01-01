@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 import LanguageProvider from './context/LanguageContext';
 import TopSearchInfo from './pages/MovieDetails/TopSearchInfo';
-import CreditsInfo from './pages/CreditsInfo/CreditsInfo';
 import { Paths } from './constants/paths';
 import Layout from './components/Layout';
 import Main from './pages/Main';
@@ -13,6 +12,7 @@ import MovieDetails from './pages/MovieDetails';
 import SerialDetails from './pages/SerialDetails';
 import Movies from './pages/Movies';
 import Serials from './pages/Serials';
+import ActorInformation from './pages/ActorInformation';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -36,7 +36,7 @@ const App = () => {
                 <Route path="/movies" element={<Movies />} />
                 <Route path="/serials" element={<Serials />} />
                 <Route path={Paths.SEARCH} element={<TopSearchInfo />} />
-                <Route path={Paths.CREDITS_DETAILS} element={<CreditsInfo />} />
+                <Route path={Paths.CREDITS_DETAILS} element={<ActorInformation />} />
                 {/* <Route path={Paths.ANONYM} element={<Navigate to="/" />} /> */}
               </Routes>
             </Layout>

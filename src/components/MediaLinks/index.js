@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
+import { SocialMediaServices } from '../../helpers/services/socialMediaServices';
+import { useLanguageContext } from '../../context/LanguageContext';
 import { MediaLink, MediaLinksWrapper } from './styles';
-import { SocialMediaServices } from '../../../../helpers/services/socialMediaServices';
-import { useLanguageContext } from '../../../../context/LanguageContext';
 
-const MediaLinks = ({ homepage, type, id }) => {
+const MediaLinks = ({ type, id, homepage = '' }) => {
   const { language } = useLanguageContext();
   const { data: mediaLinks } = useQuery([`${type} social media links`, type, id, language], () =>
     SocialMediaServices.getSocialMediaLinksById(type, id, language)
@@ -20,9 +20,11 @@ const MediaLinks = ({ homepage, type, id }) => {
 
   return (
     <MediaLinksWrapper>
-      <MediaLink href={homepage} target="_blank">
-        <FontAwesomeIcon icon={faHome} />
-      </MediaLink>
+      {type !== 'person' ? (
+        <MediaLink href={homepage} target="_blank">
+          <FontAwesomeIcon icon={faHome} />
+        </MediaLink>
+      ) : null}
       {!!mediaLinks ? (
         <>
           <MediaLink href={`${instagramUrl}${mediaLinks.instagram_id}/` || `${instagramUrl}`} target="_blank">

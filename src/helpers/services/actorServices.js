@@ -20,4 +20,24 @@ export const ActorServices = {
     );
     return [...data.cast, ...data.crew];
   },
+  async getActorImages(id, lang = 'en') {
+    const { data } = await axios.get(`${URL_BASE}/person/${id}/images?api_key=${API_KEY}&language=${lang}`);
+    return data.profiles;
+  },
+  async getActorTvs(id, lang = 'en') {
+    const { data } = await axios.get(
+      `${URL_BASE}/person/${id}/tv_credits?api_key=${API_KEY}&language=${lang}`
+    );
+    return data.cast;
+  },
+  async getActorMovies(id, lang = 'en') {
+    const { data } = await axios.get(
+      `${URL_BASE}/person/${id}/movie_credits?api_key=${API_KEY}&language=${lang}`
+    );
+    return data.cast;
+  },
+  async getById(id, lang = 'en') {
+    const { data } = await axios.get(`${URL_BASE}/person/${id}?api_key=${API_KEY}&language=${lang}`);
+    return data;
+  },
 };

@@ -17,7 +17,7 @@ const Hero = () => {
   };
 
   return (
-    <HeroWrapper className="hero">
+    <HeroWrapper>
       <Container>
         <SearchForm value={value} setValue={setValue} handleSubmit={onSubmit} />
         <MoviesSlider />
