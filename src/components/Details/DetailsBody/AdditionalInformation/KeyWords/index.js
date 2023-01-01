@@ -6,7 +6,7 @@ import { KeyWordLink, KeyWordsWrapper } from './styles';
 
 const KeyWords = ({ type, id }) => {
   const { language } = useLanguageContext();
-  const { data: keyWords } = useQuery(`${type} keywords`, () =>
+  const { data: keyWords } = useQuery([`${type} keywords`, type, id, language], () =>
     KeyWordsServices.getKeyWordsById(type, id, language)
   );
 

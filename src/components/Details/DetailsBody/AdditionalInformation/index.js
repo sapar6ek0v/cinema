@@ -9,7 +9,7 @@ import { AdditionalInformationWrapper, TitleStack, Title, Stack, Description, Im
 
 const AdditionalInformation = ({ type, id }) => {
   const { language } = useLanguageContext();
-  const { data: item } = useQuery(`${type} additional information`, () =>
+  const { data: item } = useQuery([`${type} additional information`, type, id, language], () =>
     MovieServices.getById(type, id, language)
   );
 

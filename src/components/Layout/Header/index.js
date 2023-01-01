@@ -31,7 +31,7 @@ const Header = () => {
               return (
                 <>
                   {link.submenu?.length ? (
-                    <HeaderDropDown title={link.title} list={link.submenu} />
+                    <HeaderDropDown key={link.id} title={link.title} list={link.submenu} />
                   ) : (
                     <HeaderLink key={link.id} title={link.title} path={link.path} />
                   )}

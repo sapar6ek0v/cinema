@@ -37,7 +37,9 @@ import ImageModal from './ImageModal';
 
 const DetailsHeader = ({ type, id }) => {
   const { language } = useLanguageContext();
-  const { data: item } = useQuery(`${type} details`, () => MovieServices.getById(type, id, language));
+  const { data: item } = useQuery([`${type} details`, type, id, language], () =>
+    MovieServices.getById(type, id, language)
+  );
 
   const [isViewModalImage, setIsViewModalImage] = useState(false);
 
@@ -50,7 +52,10 @@ const DetailsHeader = ({ type, id }) => {
       {!!item ? (
         <DetailsHeaderWrapper
           style={{
-            background: `${colors.bg} url(${getImage(item.backdrop_path, 'original')}) center/cover`,
+            background: `${colors.bg} url(${getImage(
+              item.backdrop_path || item.poster_path,
+              'original'
+            )}) center/cover`,
             backgroundBlendMode: 'darken',
           }}
         >

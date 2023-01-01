@@ -12,10 +12,10 @@ import { Card, CardWrapper, Image, ImageWrapper, StartIcon, Header, QuantityTitl
 
 const TrailersAndVideos = ({ type, id }) => {
   const { language } = useLanguageContext();
-  const { data: videos } = useQuery(`${type} videos list`, () =>
+  const { data: videos } = useQuery([`${type} videos list`, type, id, language], () =>
     VideoServices.getTrailersById(type, id, language)
   );
-  const { data: images } = useQuery(`${type} images list`, () =>
+  const { data: images } = useQuery([`${type} images list`, id, type, language], () =>
     VideoServices.getImagesById(type, id, language)
   );
 
@@ -39,8 +39,8 @@ const TrailersAndVideos = ({ type, id }) => {
               {!!videos && !!images
                 ? videos.map((video, idx) => {
                     const poster = images[idx]
-                      ? `${getImage(images[idx].file_path)}`
-                      : `${getImage(images[0].file_path)}`;
+                      ? `${getImage(images[idx]?.file_path)}`
+                      : `${getImage(images[0]?.file_path)}`;
 
                     return (
                       <CardWrapper key={video.id}>

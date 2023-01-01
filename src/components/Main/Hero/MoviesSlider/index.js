@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
+import { useLanguageContext } from '../../../../context/LanguageContext';
 import { MovieServices } from '../../../../helpers/services/movieServices';
 import { getImage } from '../../../../helpers/getImage';
 import {
@@ -21,7 +22,10 @@ import {
 import { settings } from './settings';
 
 const MoviesSlider = () => {
-  const { data: movies } = useQuery('slider list', () => MovieServices.getMoviesByType('now_playing'));
+  const { language } = useLanguageContext();
+  const { data: movies } = useQuery(['slider list', language], () =>
+    MovieServices.getMoviesByType('now_playing', language)
+  );
 
   return (
     <Slider {...settings}>

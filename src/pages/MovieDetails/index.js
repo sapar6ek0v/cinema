@@ -15,7 +15,7 @@ const MovieDetails = () => {
         name="Movie Api Project"
         type="project"
       />
-      <Details id={id} type="movie" />
+      <Details id={id} type="movie" linkPath="movie-info" />
     </>
   );
 };

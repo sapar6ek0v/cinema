@@ -6,12 +6,12 @@ export const buttonTypes = [
   },
   {
     id: '2',
-    type: 'on-the-air',
+    type: 'on_the_air',
     title: 'On The Air',
   },
   {
     id: '3',
-    type: 'top-rated',
+    type: 'top_rated',
     title: 'Top rated',
   },
 ];

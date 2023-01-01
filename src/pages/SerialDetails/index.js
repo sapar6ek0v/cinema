@@ -15,7 +15,7 @@ const SerialDetails = () => {
         name="Movie Api Project"
         type="project"
       />
-      <Details id={id} type="tv" />
+      <Details id={id} type="tv" linkPath="tv-serials/serials-info" />
     </>
   );
 };

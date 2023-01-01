@@ -8,16 +8,16 @@ import { PopularMoviesWrapper, PopularMoviesGroup } from './styles';
 const PopularMovies = () => {
   const [type, setType] = useState('popular');
 
-  const toggleContent = (type) => setType(type);
+  const toggleContent = (value) => setType(value);
 
   const switchContent = (type) => {
     switch (type) {
       case 'popular':
         return <MoviesSlider type="popular" />;
-      case 'coming-soon':
+      case 'upcoming':
         return <MoviesSlider type="upcoming" />;
-      case 'top-rated':
-        return <MoviesSlider type="top-rated" />;
+      case 'top_rated':
+        return <MoviesSlider type="top_rated" />;
       default:
         return <MoviesSlider type="popular" />;
     }
@@ -27,7 +27,7 @@ const PopularMovies = () => {
     <PopularMoviesWrapper>
       <Group position="space-between" gap={20}>
         <Title>IN THEATER</Title>
-        <ViewLink to={'/all-films'}>View All</ViewLink>
+        <ViewLink to={`/movies?type=${type}`}>View All</ViewLink>
       </Group>
       <PopularMoviesGroup>
         {buttonTypes.map((button) => (

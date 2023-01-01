@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors } from '../../../constants/colors';
 import { flexColumn } from '../../../helpers/cssFragments';
 
-export const DetailsBodyWrapper = styled.div``;
+export const DetailsBodyWrapper = styled.section``;
 
 export const FlexContainer = styled.div`
   display: flex;

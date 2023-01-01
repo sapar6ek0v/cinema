@@ -1,7 +1,10 @@
 import React from 'react';
+import { useQuery } from 'react-query';
 import { Container, Row } from 'react-bootstrap';
 
 import { getImage } from '../../../helpers/getImage';
+import { MovieTrendServices } from '../../../helpers/services/movieTrendServices';
+import { useLanguageContext } from '../../../context/LanguageContext';
 import advertise from '../../../images/advertisement-examples.webp';
 import { AdvertiseTitle } from '../../styles';
 import {
@@ -17,11 +20,12 @@ import {
   TrendColumn6,
   TrendColumn8,
 } from './styles';
-import { useQuery } from 'react-query';
-import { MovieTrendServices } from '../../../helpers/services/movieTrendServices';
 
 const Trends = () => {
-  const { data: trends } = useQuery('daily movie trends', () => MovieTrendServices.getDailyMovieTrends());
+  const { language } = useLanguageContext();
+  const { data: trends } = useQuery(['daily movie trends', language], () =>
+    MovieTrendServices.getDailyMovieTrends(language)
+  );
 
   return (
     <TrendWrapper>

@@ -6,12 +6,12 @@ export const buttonTypes = [
   },
   {
     id: '2',
-    type: 'coming-soon',
+    type: 'upcoming',
     title: 'Coming soon',
   },
   {
     id: '3',
-    type: 'top-rated',
+    type: 'top_rated',
     title: 'Top rated',
   },
 ];

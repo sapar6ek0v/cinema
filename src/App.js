@@ -5,20 +5,14 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 import LanguageProvider from './context/LanguageContext';
 import TopSearchInfo from './pages/MovieDetails/TopSearchInfo';
-import AllFilms from './pages/AllFilms/AllFilms';
-import PopularFilms from './pages/PopularFilms/PopularFilms';
 import CreditsInfo from './pages/CreditsInfo/CreditsInfo';
-import UpcomingFilms from './pages/UpcomingFilms/UpcomingFilms';
-import TopRated from './pages/TopRated/TopRated';
-import PopularSerials from './pages/Serials/PopularSerials';
-import OnTheAirSerials from './pages/Serials/OnTheAirSerials';
-import TopRatedSerials from './pages/Serials/TopRatedSerials';
-import NowPlayingFilms from './pages/NowPlayingFilms/NowPlayingFilms';
 import { Paths } from './constants/paths';
 import Layout from './components/Layout';
 import Main from './pages/Main';
 import MovieDetails from './pages/MovieDetails';
 import SerialDetails from './pages/SerialDetails';
+import Movies from './pages/Movies';
+import Serials from './pages/Serials';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -39,17 +33,11 @@ const App = () => {
                 <Route path={Paths.MAIN} element={<Main />} />
                 <Route path={Paths.MOVIE_DETAILS} element={<MovieDetails />} />
                 <Route path={Paths.TV_SERIALS_DETAILS} element={<SerialDetails />} />
-                <Route path={Paths.All_FILMS} element={<AllFilms />} />
-                <Route path={Paths.POPULAR} element={<PopularFilms />} />
-                <Route path={Paths.TOP} element={<TopRated />} />
-                <Route path={Paths.NOW_PLAYING} element={<NowPlayingFilms />} />
-                <Route path={Paths.UPCOMING} element={<UpcomingFilms />} />
+                <Route path="/movies" element={<Movies />} />
+                <Route path="/serials" element={<Serials />} />
                 <Route path={Paths.SEARCH} element={<TopSearchInfo />} />
                 <Route path={Paths.CREDITS_DETAILS} element={<CreditsInfo />} />
-                <Route path={Paths.TV_SERIALS_POPULAR} element={<PopularSerials />} />
-                <Route path={Paths.TV_SERIALS_ON_THE_AIR} element={<OnTheAirSerials />} />
-                <Route path={Paths.TV_SERIALS_TOP_RATED} element={<TopRatedSerials />} />
-                <Route path={Paths.ANONYM} element={<Navigate to="/" />} />
+                {/* <Route path={Paths.ANONYM} element={<Navigate to="/" />} /> */}
               </Routes>
             </Layout>
           </LanguageProvider>

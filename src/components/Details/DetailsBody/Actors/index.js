@@ -13,7 +13,7 @@ import { ActorCharacter, ActorImage, ActorName, ActorsCard, Button, ButtonCenter
 
 const Actors = ({ type, id }) => {
   const { language } = useLanguageContext();
-  const { data: actors } = useQuery(`${type} actors list`, () =>
+  const { data: actors } = useQuery([`${type} actors list`, type, id, language], () =>
     ActorServices.getActorsById(type, id, language)
   );
   const [more, setMore] = useState(10);

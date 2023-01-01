@@ -8,15 +8,15 @@ import TvsSlider from './TvsSlider';
 const PopularTvs = () => {
   const [type, setType] = useState('popular');
 
-  const toggleContent = (type) => setType(type);
+  const toggleContent = (value) => setType(value);
 
   const switchContent = (type) => {
     switch (type) {
       case 'popular':
         return <TvsSlider type="popular" />;
-      case 'on-the-air':
+      case 'on_the_air':
         return <TvsSlider type="on_the_air" />;
-      case 'top-rated':
+      case 'top_rated':
         return <TvsSlider type="top_rated" />;
       default:
         return <TvsSlider type="popular" />;
@@ -27,7 +27,7 @@ const PopularTvs = () => {
     <PopularTvsWrapper>
       <Group position="space-between" gap={20}>
         <Title>ON TV</Title>
-        <ViewLink to={'/all-films'}>View All</ViewLink>
+        <ViewLink to={`/tv-serials/serials-info?type=${type}`}>View All</ViewLink>
       </Group>
       <PopularTvsGroup>
         {buttonTypes.map((button) => (

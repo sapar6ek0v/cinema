@@ -37,8 +37,7 @@ const SlickSlider = ({ list, linkPath }) => {
               <FontAwesomeIcon icon={faStar} />
             </SlickSliderVoteAverageStar>
             <SlickSliderVoteAverageTitle>
-              {item.vote_average}
-              <span>/10</span>
+              {item.vote_average}/<span>10</span>
             </SlickSliderVoteAverageTitle>
           </Group>
         </SlickSliderCard>

@@ -8,12 +8,12 @@ import { RecommendationServices } from '../../../../helpers/services/recommendat
 import { ContentFlexContainer, ContentWrapper, SliderContainer, Title } from '../styles';
 import { CardWrapper, Image, ImageWrapperLink, TitleGroup, TitleLink, VoteAverage } from './styles';
 
-const Recommendations = ({ type, id }) => {
+const Recommendations = ({ type, id, linkPath }) => {
   const { language } = useLanguageContext();
-  const { data: recommendations } = useQuery(`${type} recommendation list`, () =>
+  const { data: recommendations } = useQuery([`${type} recommendation list`, id, type, language], () =>
     RecommendationServices.getRecommendationsById(type, id, language)
   );
-  console.log({ recommendations });
+
   return (
     <ContentWrapper>
       <Container>
@@ -23,12 +23,12 @@ const Recommendations = ({ type, id }) => {
             {!!recommendations
               ? recommendations.map((recommendation) => (
                   <CardWrapper key={recommendation.id}>
-                    <ImageWrapperLink to={`/movie-info/${recommendation.id}`}>
+                    <ImageWrapperLink to={`/${linkPath}/${recommendation.id}`}>
                       <Image src={getImage(recommendation.poster_path)} alt={recommendation.title} />
                     </ImageWrapperLink>
 
                     <TitleGroup>
-                      <TitleLink to={`/movie-info/${recommendation.id}`}>
+                      <TitleLink to={`/${linkPath}/${recommendation.id}`}>
                         {recommendation.title || recommendation.name}
                       </TitleLink>
                       <VoteAverage>{(recommendation.vote_average * 10).toFixed(0)}%</VoteAverage>

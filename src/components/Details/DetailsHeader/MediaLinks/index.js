@@ -10,7 +10,7 @@ import { useLanguageContext } from '../../../../context/LanguageContext';
 
 const MediaLinks = ({ homepage, type, id }) => {
   const { language } = useLanguageContext();
-  const { data: mediaLinks } = useQuery(`${type} social media links`, () =>
+  const { data: mediaLinks } = useQuery([`${type} social media links`, type, id, language], () =>
     SocialMediaServices.getSocialMediaLinksById(type, id, language)
   );
 

@@ -8,17 +8,19 @@ import { FilmCrewCard, FilmCrewCol, JobTitle, FilmCrewMemberName } from './style
 
 const FilmCrew = ({ type, id }) => {
   const { language } = useLanguageContext();
-  const { data: list } = useQuery(`${type} film crew list`, () =>
+  const { data: list } = useQuery([`${type} film crew list`, type, id, language], () =>
     ActorServices.getFilmCrewById(type, id, language)
   );
 
   const filmCrew = useMemo(() => {
+    if (!list) return;
+
     if (type === 'movie') {
       const jobs = ['Director', 'Producer', 'Screenplay'];
-      return list?.filter((item) => jobs.includes(item?.job));
+      return list.filter((item) => jobs.includes(item.job));
     } else {
       const jobs = ['Executive Producer', 'Original Music Composer', 'Costume Design'];
-      return list?.filter((item) => jobs.includes(item?.job));
+      return list.filter((item) => jobs.includes(item.job));
     }
   }, [list, type]);
 

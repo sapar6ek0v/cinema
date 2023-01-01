@@ -1,6 +1,7 @@
 import React from 'react';
+import HeaderDropDownLink from './HeaderDropDownLink';
 
-import { DropDownWrapper, DropDownLink, DropDownMenu, DropDownButton } from './styles';
+import { DropDownWrapper, DropDownMenu, DropDownButton } from './styles';
 
 const HeaderDropDown = ({ title, list }) => {
   return (
@@ -9,9 +10,7 @@ const HeaderDropDown = ({ title, list }) => {
 
       <DropDownMenu>
         {list.map((item) => (
-          <DropDownLink key={item.id} to={item.path}>
-            {item.title}
-          </DropDownLink>
+          <HeaderDropDownLink key={item.id} item={item} />
         ))}
       </DropDownMenu>
     </DropDownWrapper>

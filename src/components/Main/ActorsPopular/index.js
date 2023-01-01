@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { useLanguageContext } from '../../../context/LanguageContext';
 import { ActorServices } from '../../../helpers/services/actorServices';
 import { getImage } from '../../../helpers/getImage';
 import advertise from '../../../images/advertise.jpg';
@@ -20,7 +21,10 @@ import {
 } from './styles';
 
 const ActorsPopular = () => {
-  const { data: popularActors } = useQuery('popular actor list', () => ActorServices.getPopularActors());
+  const { language } = useLanguageContext();
+  const { data: popularActors } = useQuery(['popular actor list', language], () =>
+    ActorServices.getPopularActors(language)
+  );
 
   return (
     <PopularActorWrapper>

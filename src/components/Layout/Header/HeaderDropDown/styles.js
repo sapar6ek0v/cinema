@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { fontStyleMdBold } from '../../../../helpers/cssFragments';
-import { Link } from 'react-router-dom';
 
 export const DropDownWrapper = styled(Dropdown)``;
 
@@ -34,7 +33,10 @@ export const DropDownMenu = styled(Dropdown.Menu)`
   padding: 0px !important;
 `;
 
-export const DropDownLink = styled(Link)`
+export const DropDownLink = styled.button`
+  width: 100%;
+  background-color: transparent;
+  border: none;
   ${fontStyleMdBold};
   display: block;
   color: #abb7c4;
@@ -46,6 +48,7 @@ export const DropDownLink = styled(Link)`
   &:hover,
   &:active,
   &:focus {
+    outline: none;
     background-color: #333844d1 !important;
     color: #dcf836 !important;
   }
