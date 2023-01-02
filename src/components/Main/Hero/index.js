@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-import SearchForm from '../../SearchForm';
+import SearchForm from './SearchForm';
 import MoviesSlider from './MoviesSlider';
 import { HeroWrapper } from './styles';
 
@@ -13,7 +13,7 @@ const Hero = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     if (!value) return;
-    navigate(`/search-films/${value}`);
+    navigate(`/search?query=${value}`);
   };
 
   return (

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { colors } from '../../constants/colors';
-import { flexAlignCenter, flexJustifyCenter, fontStyleSmNormal } from '../../helpers/cssFragments';
+import { colors } from '../../../../constants/colors';
+import { flexAlignCenter, flexJustifyCenter, fontStyleSmNormal } from '../../../../helpers/cssFragments';
 
 export const SearchFormWrapper = styled.form`
   padding: 48px 0;
@@ -10,7 +10,6 @@ export const SearchFormWrapper = styled.form`
 export const SearchFormInput = styled.input`
   height: 46px;
   width: 100%;
-  border: none;
   outline: none;
   background-color: ${colors.lightBlue};
   color: ${colors.lightGray};

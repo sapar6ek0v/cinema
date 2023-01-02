@@ -14,5 +14,8 @@ export const colors = {
   bg: 'rgba(0,0,0,0.8)',
   bg2: 'rgba(0,0,0,0.9)',
   bg3: 'rgba(0, 0, 0, 0.75)',
+  bg4: 'rgba(0, 0, 0, 0.3)',
   pathBlue: 'rgba(62, 152, 199,0.3)',
+  secondaryBlue: '#0e23387a',
+  shadow: 'rgba(255, 255, 255, 0.05)',
 };

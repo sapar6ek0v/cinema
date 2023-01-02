@@ -4,7 +4,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import LanguageProvider from './context/LanguageContext';
-import TopSearchInfo from './pages/MovieDetails/TopSearchInfo';
 import { Paths } from './constants/paths';
 import Layout from './components/Layout';
 import Main from './pages/Main';
@@ -13,6 +12,7 @@ import SerialDetails from './pages/SerialDetails';
 import Movies from './pages/Movies';
 import Serials from './pages/Serials';
 import ActorInformation from './pages/ActorInformation';
+import SearchResults from './pages/SearchResults';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,7 +35,7 @@ const App = () => {
                 <Route path={Paths.TV_SERIALS_DETAILS} element={<SerialDetails />} />
                 <Route path="/movies" element={<Movies />} />
                 <Route path="/serials" element={<Serials />} />
-                <Route path={Paths.SEARCH} element={<TopSearchInfo />} />
+                <Route path={Paths.SEARCH} element={<SearchResults />} />
                 <Route path={Paths.CREDITS_DETAILS} element={<ActorInformation />} />
                 {/* <Route path={Paths.ANONYM} element={<Navigate to="/" />} /> */}
               </Routes>
