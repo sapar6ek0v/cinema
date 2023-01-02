@@ -1,11 +1,11 @@
 export const determinePathByMediaType = (mediaType) => {
   switch (mediaType) {
     case 'tv':
-      return 'tv-serials/serials-info';
+      return 'tv-show-details';
     case 'movie':
-      return 'movie-info';
+      return 'movie-details';
     case 'person':
-      return 'credits-info';
+      return 'person-details';
     default:
       return '';
   }

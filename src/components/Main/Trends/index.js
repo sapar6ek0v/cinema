@@ -44,7 +44,7 @@ const Trends = () => {
                   <TrendBlock key={id}>
                     <TrendImage src={getImage(poster_path)} alt={title} />
                     <TrendFlexColumn gap={20}>
-                      <TrendCardLink to={`movie-info/${id}`}>{title}</TrendCardLink>
+                      <TrendCardLink to={`/movie-details/${id}`}>{title}</TrendCardLink>
                       <TrendCardDate>{release_date}</TrendCardDate>
                       <TrendCardDesc>
                         Overview: <span>{overview}</span>
@@ -58,7 +58,7 @@ const Trends = () => {
                   const { id, title, release_date, overview } = trend;
                   return (
                     <TrendColumn6 key={id} gap={10}>
-                      <TrendCardLink to={`movie-info/${id}`}>{title}</TrendCardLink>
+                      <TrendCardLink to={`/movie-details/${id}`}>{title}</TrendCardLink>
                       <TrendCardDate>{release_date}</TrendCardDate>
                       <TrendCardDesc>
                         Overview: <span>{overview}</span>

@@ -48,7 +48,7 @@ const Movies = () => {
           page={page}
           togglePage={togglePage}
           handleChangeType={handleChangeType}
-          linkPath="movie-info"
+          linkPath="movie-details"
         />
       ) : null}
     </>

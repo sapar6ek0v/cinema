@@ -40,7 +40,7 @@ const ActorsPopular = () => {
             <PopularActorCard key={id}>
               <PopularActorImage src={getImage(profile_path)} alt={name} />
               <div>
-                <PopularActorName to={`credits-info/${id}`}>{name}</PopularActorName>
+                <PopularActorName to={`/person-details/${id}`}>{name}</PopularActorName>
                 <PopularActorKnownFor>{known_for_department}</PopularActorKnownFor>
               </div>
             </PopularActorCard>

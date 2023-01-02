@@ -1,13 +1,15 @@
+import { Paths } from '../../../constants/paths';
+
 export const navbarList = [
   {
     id: Date.now() + Math.random() * 1000,
     title: 'home',
-    path: '/',
+    path: Paths.MAIN,
   },
   {
     id: Date.now() + Math.random() * 1000,
     title: 'movies',
-    path: '/movies',
+    path: Paths.MOVIES,
     submenu: [
       {
         id: Date.now() + Math.random() * 1000,
@@ -34,7 +36,7 @@ export const navbarList = [
   {
     id: Date.now() + Math.random() * 1000,
     title: 'tv serials',
-    path: '/tv-serials',
+    path: Paths.TV_SHOWS,
     submenu: [
       {
         id: Date.now() + Math.random() * 1000,

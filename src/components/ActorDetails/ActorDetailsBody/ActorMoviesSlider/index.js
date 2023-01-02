@@ -11,7 +11,7 @@ const ActorMoviesSlider = ({ id }) => {
     ActorServices.getActorMovies(id, language)
   );
 
-  return <>{!!data ? <SlickSlider list={data} linkPath="movie-info" /> : null}</>;
+  return <>{!!data ? <SlickSlider list={data} linkPath="movie-details" /> : null}</>;
 };
 
 export default ActorMoviesSlider;

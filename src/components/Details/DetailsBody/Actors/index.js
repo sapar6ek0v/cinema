@@ -32,7 +32,7 @@ const Actors = ({ type, id }) => {
                         src={actor.profile_path ? `${getImage(actor.profile_path)}` : anonym}
                         alt={actor.name}
                       />
-                      <ActorName to={`/credits-info/${actor.id}`}>{actor.name}</ActorName>
+                      <ActorName to={`/person-details/${actor.id}`}>{actor.name}</ActorName>
                       <ActorCharacter>{actor.character}</ActorCharacter>
                     </ActorsCard>
                   );

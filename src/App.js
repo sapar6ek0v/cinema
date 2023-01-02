@@ -33,8 +33,8 @@ const App = () => {
                 <Route path={Paths.MAIN} element={<Main />} />
                 <Route path={Paths.MOVIE_DETAILS} element={<MovieDetails />} />
                 <Route path={Paths.TV_SERIALS_DETAILS} element={<SerialDetails />} />
-                <Route path="/movies" element={<Movies />} />
-                <Route path="/serials" element={<Serials />} />
+                <Route path={Paths.MOVIES} element={<Movies />} />
+                <Route path={Paths.TV_SHOWS} element={<Serials />} />
                 <Route path={Paths.SEARCH} element={<SearchResults />} />
                 <Route path={Paths.CREDITS_DETAILS} element={<ActorInformation />} />
                 {/* <Route path={Paths.ANONYM} element={<Navigate to="/" />} /> */}

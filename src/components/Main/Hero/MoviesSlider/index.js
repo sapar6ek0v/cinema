@@ -33,7 +33,7 @@ const MoviesSlider = () => {
         const { release_date, id, poster_path, title, vote_average } = movie;
         return (
           <SliderWrapper key={id}>
-            <ImageLink to={`/movie-info/${id}`}>
+            <ImageLink to={`/movie-details/${id}`}>
               <SliderImage src={getImage(poster_path)} alt={title} />
             </ImageLink>
 
@@ -48,7 +48,7 @@ const MoviesSlider = () => {
                 </SliderVotes>
               </SliderFlexBox>
 
-              <SliderLink to={`/movie-info/${id}`}>{title}</SliderLink>
+              <SliderLink to={`/movie-details/${id}`}>{title}</SliderLink>
 
               <SliderDate>({dayjs(release_date).format('YYYY')})</SliderDate>
             </SliderFlexColumn>

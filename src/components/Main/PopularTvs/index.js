@@ -27,7 +27,7 @@ const PopularTvs = () => {
     <PopularTvsWrapper>
       <Group position="space-between" gap={20}>
         <Title>ON TV</Title>
-        <ViewLink to={`/tv-serials/serials-info?type=${type}`}>View All</ViewLink>
+        <ViewLink to={`/tv-show-details?type=${type}`}>View All</ViewLink>
       </Group>
       <PopularTvsGroup>
         {buttonTypes.map((button) => (

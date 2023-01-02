@@ -48,7 +48,7 @@ const Serials = () => {
           page={page}
           togglePage={togglePage}
           handleChangeType={handleChangeType}
-          linkPath="tv-serials/serials-info"
+          linkPath="tv-show-details"
         />
       ) : null}
     </>

@@ -11,7 +11,7 @@ const TvsSlider = ({ type }) => {
     MovieServices.getTvsByType(type, language)
   );
 
-  return <>{!!data ? <SlickSlider list={data} linkPath="tv-serials/serials-info" /> : null}</>;
+  return <>{!!data ? <SlickSlider list={data} linkPath="tv-show-details" /> : null}</>;
 };
 
 export default TvsSlider;

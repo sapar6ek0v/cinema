@@ -1,8 +1,10 @@
 export const Paths = {
   MAIN: '/',
-  MOVIE_DETAILS: '/movie-info/:id',
+  MOVIE_DETAILS: '/movie-details/:id',
+  CREDITS_DETAILS: '/person-details/:id',
+  TV_SERIALS_DETAILS: '/tv-show-details/:id',
+  MOVIES: '/movies',
+  TV_SHOWS: '/tv-show',
   SEARCH: '/search/*',
-  CREDITS_DETAILS: '/credits-info/:id',
-  TV_SERIALS_DETAILS: '/tv-serials/serials-info/:id',
   ANONYM: '*',
 };
