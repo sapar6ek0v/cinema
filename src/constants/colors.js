@@ -18,4 +18,5 @@ export const colors = {
   pathBlue: 'rgba(62, 152, 199,0.3)',
   secondaryBlue: '#0e23387a',
   shadow: 'rgba(255, 255, 255, 0.05)',
+  darkGray: '#405266',
 };

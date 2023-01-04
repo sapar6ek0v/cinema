@@ -17,13 +17,13 @@ export const Card = styled.div`
 
 export const ImageWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 300px;
   position: relative;
 `;
 
 export const Image = styled.img`
-  height: 300px;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
 `;

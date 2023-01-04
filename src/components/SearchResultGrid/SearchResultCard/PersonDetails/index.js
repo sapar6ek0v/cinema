@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { getImage } from '../../../../helpers/getImage';
-import anonym from '../../../../images/profile.jpg';
+import anonym from '../../../../images/anonym.jpg';
 import { determinePathByMediaType } from '../../helpers/functions';
 import { Image, TitleLink } from '../styles';
 import { Details, Group, ImageWrapper, KnownForLink, KnownForTitle } from './styles';

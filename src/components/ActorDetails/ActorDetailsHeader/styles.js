@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { colors } from '../../../constants/colors';
 import { flexColumn, fontStyleXlBold } from '../../../helpers/cssFragments';
-import bg from '../../../images/sr-single.jpg';
+import cityViewBg from '../../../images/city-view.jpg';
 import { Group } from '../../styles';
 
 export const Wrapper = styled.section`
   height: 100vh;
   min-height: 600px;
-  background: ${colors.bg3} url(${bg}) center/cover;
+  background: ${colors.bg3} url(${cityViewBg}) center/cover;
   background-blend-mode: darken;
   padding: 50px 0px;
 `;

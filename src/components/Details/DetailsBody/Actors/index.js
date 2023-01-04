@@ -7,7 +7,7 @@ import { useQuery } from 'react-query';
 import { useLanguageContext } from '../../../../context/LanguageContext';
 import { getImage } from '../../../../helpers/getImage';
 import { ActorServices } from '../../../../helpers/services/actorServices';
-import anonym from '../../../../images/profile.jpg';
+import anonym from '../../../../images/anonym.jpg';
 import { ContentFlexContainer, ContentWrapper, SliderContainer, Title } from '../styles';
 import { ActorCharacter, ActorImage, ActorName, ActorsCard, Button, ButtonCenter } from './styles';
 

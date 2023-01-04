@@ -5,7 +5,7 @@ import { Container, Row } from 'react-bootstrap';
 import { getImage } from '../../../helpers/getImage';
 import { MovieTrendServices } from '../../../helpers/services/movieTrendServices';
 import { useLanguageContext } from '../../../context/LanguageContext';
-import advertise from '../../../images/advertisement-examples.webp';
+import cocaColaAdvertisement from '../../../images/coca-cola-advertisement.webp';
 import { AdvertiseTitle } from '../../styles';
 import {
   AdvertiseImage,
@@ -34,7 +34,7 @@ const Trends = () => {
           <TrendColumn8 gap={30}>
             <div>
               <AdvertiseTitle>advertisement</AdvertiseTitle>
-              <AdvertiseImage src={advertise} alt="advertise-image" />
+              <AdvertiseImage src={cocaColaAdvertisement} alt="coca-cola-advertisement-image" />
             </div>
             <TrendFlexColumn gap={25}>
               <TrendTitle>LATEST MOVIES</TrendTitle>
