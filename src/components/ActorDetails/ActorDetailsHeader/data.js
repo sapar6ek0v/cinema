@@ -1,22 +1,19 @@
+import { idGenerator } from '../../../helpers/idGenerator';
+
 export const buttonTypes = [
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'Overview',
     type: 'overview',
   },
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'Personal - Information',
     type: 'personal_information',
   },
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'Media',
     type: 'media',
-  },
-  {
-    id: Date.now() + Math.random() * 1000,
-    title: 'More',
-    type: '+ more',
   },
 ];

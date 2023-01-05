@@ -8,7 +8,13 @@ import {
 } from '../../../helpers/cssFragments';
 import { Group } from '../../styles';
 
-export const DetailsHeaderWrapper = styled.section`
+export const Wrapper = styled.section`
+  min-height: calc(100vh - 74px);
+  position: relative;
+  background-color: ${(props) => props.active && colors.darkBlue};
+`;
+
+export const DetailsHeaderWrapper = styled.div`
   padding: 50px 0;
 `;
 

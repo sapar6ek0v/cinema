@@ -10,7 +10,7 @@ const SerialDetails = () => {
   return (
     <>
       <SEO
-        title="Serial details"
+        title="Tv Show details"
         description="More information about this serial"
         name="Movie Api Project"
         type="project"

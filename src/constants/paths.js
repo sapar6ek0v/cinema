@@ -4,7 +4,7 @@ export const Paths = {
   CREDITS_DETAILS: '/person-details/:id',
   TV_SERIALS_DETAILS: '/tv-show-details/:id',
   MOVIES: '/movies',
-  TV_SHOWS: '/tv-show',
+  TV_SHOWS: '/tv-shows',
   SEARCH: '/search/*',
   ANONYM: '*',
 };

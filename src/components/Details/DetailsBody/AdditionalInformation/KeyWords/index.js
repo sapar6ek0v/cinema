@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import { useLanguageContext } from '../../../../../context/LanguageContext';
 import { KeyWordsServices } from '../../../../../helpers/services/keyWordsServices';
+import { NoFoundTitle } from '../../../../styles';
 import { KeyWordLink, KeyWordsWrapper } from './styles';
 
 const KeyWords = ({ type, id }) => {
@@ -11,15 +12,19 @@ const KeyWords = ({ type, id }) => {
   );
 
   return (
-    <KeyWordsWrapper>
-      {!!keyWords
-        ? keyWords.map((keyword) => (
+    <>
+      {!!keyWords?.length ? (
+        <KeyWordsWrapper>
+          {keyWords.map((keyword) => (
             <KeyWordLink to={'/'} key={keyword.id}>
               {keyword.name}
             </KeyWordLink>
-          ))
-        : null}
-    </KeyWordsWrapper>
+          ))}
+        </KeyWordsWrapper>
+      ) : (
+        <NoFoundTitle>No key words.</NoFoundTitle>
+      )}
+    </>
   );
 };
 

@@ -8,8 +8,12 @@ const SearchResultNavbar = ({ list }) => {
 
   const toggleMediaType = (typeValue) => setMediaType(typeValue);
 
-  const displayListQuantity = (listArray, type) =>
-    listArray.filter((item) => item.media_type === type).length;
+  const displayListQuantity = (type) => {
+    if (!!list) {
+      return list.filter((item) => item.media_type === type).length;
+    }
+    return 0;
+  };
 
   return (
     <Wrapper>
@@ -19,7 +23,7 @@ const SearchResultNavbar = ({ list }) => {
         {mediaTypes.map((item) => (
           <Link key={item.id} active={item.type === mediaType} onClick={() => toggleMediaType(item.type)}>
             <LinkTitle>{item.title}</LinkTitle>
-            <Quantity>{displayListQuantity(list, item.type)}</Quantity>
+            <Quantity>{displayListQuantity(item.type)}</Quantity>
           </Link>
         ))}
       </List>

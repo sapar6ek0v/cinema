@@ -6,6 +6,7 @@ import { useQuery } from 'react-query';
 import MediaTypeProvider from '../../context/MediaTypeContext';
 import { useLanguageContext } from '../../context/LanguageContext';
 import { SearchServices } from '../../helpers/services/searchServices';
+import { useDebounce } from '../../hooks/useDebounce';
 import SearchResultGrid from '../../components/SearchResultGrid';
 import SEO from '../../components/SEO';
 import { SearchInput, Wrapper, FlexContainer } from './styles';
@@ -13,10 +14,15 @@ import { SearchInput, Wrapper, FlexContainer } from './styles';
 const SearchResults = () => {
   const { language } = useLanguageContext();
   const [queryParams, setQueryParams] = useSearchParams();
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(queryParams.get('query'));
+  const debounceValue = useDebounce(query, 500);
 
-  const { data, isLoading } = useQuery(['search results', query, language], () =>
-    SearchServices.multiSearch(queryParams.get('query'), language)
+  const { data, isLoading } = useQuery(
+    ['search results', debounceValue, language],
+    () => SearchServices.multiSearch(debounceValue, language),
+    {
+      enabled: !!debounceValue,
+    }
   );
 
   const handleOnChange = (event) => {

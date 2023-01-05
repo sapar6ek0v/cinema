@@ -21,12 +21,6 @@ const ActorDetailsHeader = ({ item }) => {
         return <PersonalInformation item={item} />;
       case 'media':
         return <PhotoGallery id={item.id} alt={item.name} />;
-      case 'more':
-        return (
-          <div>
-            <p>More Content Here</p>
-          </div>
-        );
       default:
         return <Overview item={item} />;
     }

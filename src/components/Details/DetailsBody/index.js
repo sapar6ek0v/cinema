@@ -6,6 +6,7 @@ import { useLanguageContext } from '../../../context/LanguageContext';
 import { MovieServices } from '../../../helpers/services/movieServices';
 import { getImage } from '../../../helpers/getImage';
 import { colors } from '../../../constants/colors';
+import Loader from '../../Loader';
 import Actors from './Actors';
 import AdditionalInformation from './AdditionalInformation';
 import Recommendations from './Recommendations';
@@ -14,14 +15,14 @@ import { Column4, Column8, DetailsBodyWrapper, FlexContainer } from './styles';
 
 const DetailsBody = ({ id, type, linkPath }) => {
   const { language } = useLanguageContext();
-  const { data: item } = useQuery([`${type} more details`, id, type], () =>
+  const { data: item, isLoading } = useQuery([`${type} more details`, id, type], () =>
     MovieServices.getById(type, id, language)
   );
 
   return (
-    <>
-      {!!item ? (
-        <DetailsBodyWrapper
+    <DetailsBodyWrapper active={isLoading}>
+      {!isLoading && !!item ? (
+        <div
           style={{
             background: `${colors.bg2} url(${getImage(
               item.backdrop_path || item.poster_path,
@@ -42,9 +43,11 @@ const DetailsBody = ({ id, type, linkPath }) => {
               </Column4>
             </FlexContainer>
           </Container>
-        </DetailsBodyWrapper>
-      ) : null}
-    </>
+        </div>
+      ) : (
+        <Loader />
+      )}
+    </DetailsBodyWrapper>
   );
 };
 

@@ -1,16 +1,18 @@
+import { idGenerator } from '../../../helpers/idGenerator';
+
 export const mediaTypes = [
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'Movies',
     type: 'movie',
   },
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'Tv Shows',
     type: 'tv',
   },
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'People',
     type: 'person',
   },

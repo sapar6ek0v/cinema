@@ -1,5 +1,6 @@
 import React from 'react';
 import { useMediaTypeContext } from '../../context/MediaTypeContext';
+import { NoFoundTitle } from '../styles';
 import Loader from '../Loader';
 import SearchResultCard from './SearchResultCard';
 import SearchResultNavbar from './SearchResultNavbar';
@@ -22,7 +23,9 @@ const SearchResultGrid = ({ list, isLoading }) => {
                   <SearchResultCard key={item.id} item={item} />
                 ))}
             </FlexContainer>
-          ) : null}
+          ) : (
+            <NoFoundTitle>There are no results, that matched your query.</NoFoundTitle>
+          )}
         </Grid>
       ) : (
         <Loader />

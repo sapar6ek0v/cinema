@@ -10,24 +10,19 @@ import PageWithPagination from '../../components/PageWithPagination';
 
 const Movies = () => {
   const { language } = useLanguageContext();
-
   const [query, setQuery] = useSearchParams();
-
   const [page, setPage] = useState(query.get('page') || 1);
-  const [type, setType] = useState(query.get('type') || 'popular');
-
-  const { data } = useQuery(['movie list', type, page], () =>
-    MovieServices.getMoviesByType(type, language, page)
+  const { data } = useQuery(['movie list', query.get('type'), language, page], () =>
+    MovieServices.getMoviesByType(query.get('type'), language, page)
   );
 
   const togglePage = (num) => {
     setPage(num);
-    const params = { type, page: num };
+    const params = { type: query.get('type'), page: num };
     setQuery(params);
   };
 
   const handleChangeType = (type) => {
-    setType(type);
     const params = { type, page };
     setQuery(params);
   };
@@ -35,8 +30,8 @@ const Movies = () => {
   return (
     <>
       <SEO
-        title={`${firstLetterUpperCase(type)} movies`}
-        description={`${firstLetterUpperCase(type)} movie list`}
+        title={`${firstLetterUpperCase(query.get('type'))} movies`}
+        description={`${firstLetterUpperCase(query.get('type'))} movie list`}
         name="Movie Api Project"
         type="project"
       />
@@ -44,7 +39,7 @@ const Movies = () => {
         <PageWithPagination
           list={data}
           types={['now_playing', 'popular', 'top_rated', 'upcoming']}
-          currentType={type}
+          currentType={query.get('type')}
           page={page}
           togglePage={togglePage}
           handleChangeType={handleChangeType}

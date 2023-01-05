@@ -10,6 +10,7 @@ import { useLanguageContext } from '../../../context/LanguageContext';
 import { getImage } from '../../../helpers/getImage';
 import { colors } from '../../../constants/colors';
 import notFound from '../../../images/not-found.jpg';
+import Loader from '../../Loader';
 import MediaLinks from '../../MediaLinks';
 import { Group } from '../../styles';
 import FilmCrew from './FilmCrew';
@@ -33,11 +34,12 @@ import {
   Overview,
   OverviewBlock,
   OverviewTitle,
+  Wrapper,
 } from './styles';
 
 const DetailsHeader = ({ type, id }) => {
   const { language } = useLanguageContext();
-  const { data: item } = useQuery([`${type} details`, type, id, language], () =>
+  const { data: item, isLoading } = useQuery([`${type} details`, type, id, language], () =>
     MovieServices.getById(type, id, language)
   );
 
@@ -48,67 +50,72 @@ const DetailsHeader = ({ type, id }) => {
   const handleClose = () => setIsViewModalImage(false);
 
   return (
-    <>
-      {!!item ? (
-        <DetailsHeaderWrapper
-          style={{
-            background: `${colors.bg} url(${getImage(
-              item.backdrop_path || item.poster_path,
-              'original'
-            )}) center/cover`,
-            backgroundBlendMode: 'darken',
-          }}
-        >
-          <Container>
-            <FlexContainer>
-              <ImageContainer>
-                <ImageWrapper onClick={handleOpen}>
-                  <Image src={getImage(item.poster_path) || notFound} alt={item.title || item.name} />
-                  <Expand>
-                    Expand
-                    <FontAwesomeIcon icon={faExpandArrowsAlt} />
-                  </Expand>
-                </ImageWrapper>
-              </ImageContainer>
+    <Wrapper active={isLoading}>
+      {!isLoading && !!item ? (
+        <>
+          <DetailsHeaderWrapper
+            style={{
+              background: `${colors.bg} url(${getImage(
+                item.backdrop_path || item.poster_path,
+                'original'
+              )}) center/cover`,
+              backgroundBlendMode: 'darken',
+            }}
+          >
+            <Container>
+              <FlexContainer>
+                <ImageContainer>
+                  <ImageWrapper onClick={handleOpen}>
+                    <Image src={getImage(item.poster_path) || notFound} alt={item.title || item.name} />
+                    <Expand>
+                      Expand
+                      <FontAwesomeIcon icon={faExpandArrowsAlt} />
+                    </Expand>
+                  </ImageWrapper>
+                </ImageContainer>
 
-              <Column8>
-                <Title>
-                  {item.title || item.name}
-                  <ReleaseYear>({dayjs(item.release_date).format('YYYY')})</ReleaseYear>
-                </Title>
+                <Column8>
+                  <Title>
+                    {item.title || item.name}
+                    <ReleaseYear>({dayjs(item.release_date).format('YYYY')})</ReleaseYear>
+                  </Title>
 
-                <TextGroup gap={15}>
-                  <Time after>{dayjs(item.release_date || item.first_air_date).format('YYYY/MM/DD')}</Time>
-                  <Group gap={5}>
-                    {item.genres?.map((genre, idx) => (
-                      <Genre key={genre + idx}>{genre.name}</Genre>
-                    ))}
-                  </Group>
-                  <Time before>{item.runtime || item.episode_run_time} min</Time>
-                </TextGroup>
+                  <TextGroup gap={15}>
+                    <Time after>{dayjs(item.release_date || item.first_air_date).format('YYYY/MM/DD')}</Time>
+                    <Group gap={5}>
+                      {item.genres?.map((genre, idx) => (
+                        <Genre key={genre + idx}>{genre.name}</Genre>
+                      ))}
+                    </Group>
+                    <Time before>{item.runtime || item.episode_run_time} min</Time>
+                  </TextGroup>
 
-                <MediaGroup gap={30}>
-                  <CircularBar item={item} />
-                  <MediaLinks id={id} type={type} homepage={item.homepage} />
-                </MediaGroup>
+                  <MediaGroup gap={30}>
+                    <CircularBar item={item} />
+                    <MediaLinks id={id} type={type} homepage={item.homepage} />
+                  </MediaGroup>
 
-                {<Tagline>"{item.tagline}"</Tagline> || 'No tagline'}
-                <OverviewBlock>
-                  <OverviewTitle>Overview</OverviewTitle>
-                  <Overview>
-                    {item.overview || "Sorry but we don't have information about this movie yet"}
-                  </Overview>
-                </OverviewBlock>
-                <FilmCrew id={id} type={type} />
-              </Column8>
-            </FlexContainer>
-          </Container>
-        </DetailsHeaderWrapper>
-      ) : null}
-      {isViewModalImage && (
-        <ImageModal onClose={handleClose} path={item?.backdrop_path} alt={item?.title || item?.name} />
+                  {<Tagline>"{item.tagline}"</Tagline> || 'No tagline'}
+                  <OverviewBlock>
+                    <OverviewTitle>Overview</OverviewTitle>
+                    <Overview>
+                      {item.overview || "Sorry but we don't have information about this movie yet"}
+                    </Overview>
+                  </OverviewBlock>
+                  <FilmCrew id={id} type={type} />
+                </Column8>
+              </FlexContainer>
+            </Container>
+          </DetailsHeaderWrapper>
+
+          {isViewModalImage && (
+            <ImageModal onClose={handleClose} path={item.backdrop_path} alt={item.title || item.name} />
+          )}
+        </>
+      ) : (
+        <Loader />
       )}
-    </>
+    </Wrapper>
   );
 };
 

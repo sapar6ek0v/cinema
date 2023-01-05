@@ -1,82 +1,83 @@
 import { Paths } from '../../../constants/paths';
+import { idGenerator } from '../../../helpers/idGenerator';
 
 export const navbarList = [
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'home',
     path: Paths.MAIN,
   },
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'movies',
     path: Paths.MOVIES,
     submenu: [
       {
-        id: Date.now() + Math.random() * 1000,
+        id: idGenerator(),
         title: 'now playing',
-        path: 'now_playing',
+        path: `${Paths.MOVIES}?type=now_playing`,
       },
       {
-        id: Date.now() + Math.random() * 1000,
+        id: idGenerator(),
         title: 'popular',
-        path: 'popular',
+        path: `${Paths.MOVIES}?type=popular`,
       },
       {
-        id: Date.now() + Math.random() * 1000,
+        id: idGenerator(),
         title: 'top rated',
-        path: 'top_rated',
+        path: `${Paths.MOVIES}?type=top_rated`,
       },
       {
-        id: Date.now() + Math.random() * 1000,
+        id: idGenerator(),
         title: 'upcoming',
-        path: 'upcoming',
+        path: `${Paths.MOVIES}?type=upcoming`,
       },
     ],
   },
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'tv serials',
     path: Paths.TV_SHOWS,
     submenu: [
       {
-        id: Date.now() + Math.random() * 1000,
+        id: idGenerator(),
         title: 'popular',
-        path: 'popular',
+        path: `${Paths.TV_SHOWS}?type=popular`,
       },
       {
-        id: Date.now() + Math.random() * 1000,
+        id: idGenerator(),
         title: 'on the air',
-        path: 'on_the_air',
+        path: `${Paths.TV_SHOWS}?type=on_the_air`,
       },
       {
-        id: Date.now() + Math.random() * 1000,
+        id: idGenerator(),
         title: 'top rated',
-        path: 'top_rated',
+        path: `${Paths.TV_SHOWS}?type=top_rated`,
       },
       {
-        id: Date.now() + Math.random() * 1000,
+        id: idGenerator(),
         title: 'airing today',
-        path: 'airing_today',
+        path: `${Paths.TV_SHOWS}?type=airing_today`,
       },
     ],
   },
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'community',
     path: '/community',
   },
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'news',
     path: '/news',
   },
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'help',
     path: '/help',
   },
   {
-    id: Date.now() + Math.random() * 1000,
+    id: idGenerator(),
     title: 'login',
     path: '/login',
   },

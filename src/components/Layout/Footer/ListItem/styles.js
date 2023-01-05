@@ -7,6 +7,8 @@ export const List = styled.ul`
   ${flexColumn};
   gap: 10px;
   list-style: none;
+  padding: 0;
+  margin: 0;
 `;
 
 export const LinkItem = styled(Link)`

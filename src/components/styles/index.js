@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { fontStyleSmNormal, flexJustifyCenter } from '../../helpers/cssFragments';
+import { colors } from '../../constants/colors';
+import {
+  fontStyleSmNormal,
+  flexJustifyCenter,
+  fontStyleXlBold,
+  fontStyleMdBold,
+} from '../../helpers/cssFragments';
 
 export const Group = styled.div`
   display: flex;
@@ -11,47 +17,44 @@ export const Group = styled.div`
 
 export const Wrapper = styled.div`
   padding: 70px 0 140px;
-  background: #020d18;
-  font-family: 'Dosis', sans-serif;
+  background: ${colors.darkBlue2};
 `;
 
 export const Title = styled.h4`
   font-size: 22px;
-  color: #ffffff;
+  color: ${colors.white};
   font-weight: bold;
   text-transform: uppercase;
 `;
 
 export const ViewLink = styled(Link)`
-  font-size: 16px;
-  color: #abb7c4;
-  font-weight: 600;
+  ${fontStyleMdBold};
+  color: ${colors.lightGray};
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.4s linear;
 
   &:hover {
-    color: #dcf836;
+    color: ${colors.lightGray};
   }
 `;
 
 export const Button = styled.button`
-  font-size: 16px;
-  color: ${(props) => (props.active ? '#dcf836' : '#abb7c4')};
+  ${fontStyleMdBold};
+  color: ${(props) => (props.active ? colors.yellow : colors.lightGray)};
   padding: 0 20px 0 0;
-  font-weight: bold;
   text-transform: uppercase;
   background: transparent;
   border: none;
   transition: all 0.4s ease-in-out;
 
   &:hover {
-    color: #dcf836;
+    color: ${colors.yellow};
   }
 `;
 
 export const AdvertiseTitle = styled.p`
-  color: #233a50;
+  color: ${colors.lightBlue};
   ${fontStyleSmNormal};
   ${flexJustifyCenter};
   gap: 2px;
@@ -62,7 +65,7 @@ export const AdvertiseTitle = styled.p`
     content: '';
     width: 5px;
     height: 1px;
-    background-color: #233a50;
+    background-color: ${colors.lightBlue};
     display: inline-block;
   }
 `;
@@ -86,4 +89,10 @@ export const Row = styled.div`
   margin-right: calc(-0.5 * 1.5rem);
   margin-left: calc(-0.5 * 1.5rem);
   gap: ${(props) => props.gap && `${props.gap}px`};
+`;
+
+export const NoFoundTitle = styled.p`
+  margin: 0;
+  ${fontStyleXlBold};
+  color: ${colors.lightGray};
 `;

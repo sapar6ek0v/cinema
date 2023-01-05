@@ -22,6 +22,7 @@ export const SlickSliderCard = styled.div`
 
 export const SlickSliderImageWrapper = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 export const SlickSliderImage = styled.img`

@@ -1,16 +1,18 @@
+import { idGenerator } from '../../../helpers/idGenerator';
+
 export const buttonTypes = [
   {
-    id: '1',
+    id: idGenerator(),
     type: 'popular',
     title: 'Popular',
   },
   {
-    id: '2',
+    id: idGenerator(),
     type: 'upcoming',
     title: 'Coming soon',
   },
   {
-    id: '3',
+    id: idGenerator(),
     type: 'top_rated',
     title: 'Top rated',
   },

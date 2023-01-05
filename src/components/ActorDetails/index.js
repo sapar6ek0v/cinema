@@ -2,22 +2,28 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import { useLanguageContext } from '../../context/LanguageContext';
 import { ActorServices } from '../../helpers/services/actorServices';
+import Loader from '../Loader';
 import ActorDetailsBody from './ActorDetailsBody';
 import ActorDetailsHeader from './ActorDetailsHeader';
+import { Wrapper } from './styles';
 
 const ActorDetails = ({ id }) => {
   const { language } = useLanguageContext();
-  const { data: item } = useQuery(['actor details', id, language], () => ActorServices.getById(id, language));
-  console.log({ item });
+  const { data: item, isLoading } = useQuery(['actor details', id, language], () =>
+    ActorServices.getById(id, language)
+  );
+
   return (
-    <>
-      {!!item ? (
+    <Wrapper active={isLoading}>
+      {!isLoading && !!item ? (
         <>
           <ActorDetailsHeader item={item} />
           <ActorDetailsBody id={id} />
         </>
-      ) : null}
-    </>
+      ) : (
+        <Loader />
+      )}
+    </Wrapper>
   );
 };
 

@@ -2,7 +2,11 @@ import styled from 'styled-components';
 import { colors } from '../../../constants/colors';
 import { flexColumn } from '../../../helpers/cssFragments';
 
-export const DetailsBodyWrapper = styled.section``;
+export const DetailsBodyWrapper = styled.section`
+  min-height: calc(100vh - 74px);
+  position: relative;
+  background-color: ${(props) => props.active && colors.darkBlue};
+`;
 
 export const FlexContainer = styled.div`
   display: flex;

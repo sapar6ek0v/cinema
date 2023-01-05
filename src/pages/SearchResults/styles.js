@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { flexColumn, fontStyleSmNormal } from '../../helpers/cssFragments';
 import { colors } from '../../constants/colors';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   position: relative;
   min-height: calc(100vh - 74px);
   background: ${colors.darkBlue2};
