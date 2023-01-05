@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { useLanguageContext } from '../../context/LanguageContext';
 import { firstLetterUpperCase } from '../../helpers/firstLetterUpperCase';
@@ -9,6 +10,7 @@ import SEO from '../../components/SEO';
 import PageWithPagination from '../../components/PageWithPagination';
 
 const Movies = () => {
+  const { t } = useTranslation();
   const { language } = useLanguageContext();
   const [query, setQuery] = useSearchParams();
   const [page, setPage] = useState(query.get('page') || 1);
@@ -30,10 +32,10 @@ const Movies = () => {
   return (
     <>
       <SEO
-        title={`${firstLetterUpperCase(query.get('type'))} movies`}
-        description={`${firstLetterUpperCase(query.get('type'))} movie list`}
-        name="Movie Api Project"
-        type="project"
+        title={t('movies.helmetTitle', { title: firstLetterUpperCase(query.get('type')) })}
+        description={t('movies.helmetDescription', { title: firstLetterUpperCase(query.get('type')) })}
+        name={t('movies.helmetName')}
+        type={t('movies.helmetType')}
       />
       {!!data ? (
         <PageWithPagination

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslation } from 'react-i18next';
 
 import {
   OverviewButton,
@@ -13,6 +14,7 @@ import {
 } from './styles';
 
 const Overview = ({ item }) => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -27,13 +29,13 @@ const Overview = ({ item }) => {
       <OverviewTitle>{item.name}</OverviewTitle>
 
       <OverviewHiddenWrapper gap={10} ref={ref} isVisible={isVisible}>
-        <OverviewHeader>Biography</OverviewHeader>
+        <OverviewHeader>{t('actorDetails.biography')}</OverviewHeader>
         <OverviewDescription>{item.biography}</OverviewDescription>
         <OverviewVisibleWrapper hidden={isVisible}></OverviewVisibleWrapper>
       </OverviewHiddenWrapper>
 
       <OverviewButton hidden={isVisible} onClick={() => setIsVisible(true)}>
-        More <FontAwesomeIcon icon={faAngleRight} />
+        {t('actorDetails.viewMore')} <FontAwesomeIcon icon={faAngleRight} />
       </OverviewButton>
     </OverviewFlexColumn>
   );

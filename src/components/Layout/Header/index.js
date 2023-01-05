@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+import { changeLanguage } from 'i18next';
 
 import { useLanguageContext } from '../../../context/LanguageContext';
 import HeaderDropDown from './HeaderDropDown';
@@ -8,6 +10,7 @@ import { HeaderWrapper, HeaderGroup, SignUpBtn, LangBtn } from './styles';
 import { navbarList } from './data';
 
 const Header = () => {
+  const { t } = useTranslation();
   const { language, setLanguage } = useLanguageContext();
 
   // window.onscroll = function onScroll() {
@@ -20,7 +23,10 @@ const Header = () => {
   //   }
   // };
 
-  const toggleLang = () => setLanguage(language === 'ru' ? 'en' : 'ru');
+  const toggleLang = () => {
+    setLanguage(language === 'ru' ? 'en' : 'ru');
+    changeLanguage(language === 'ru' ? 'en' : 'ru');
+  };
 
   return (
     <HeaderWrapper>
@@ -45,7 +51,7 @@ const Header = () => {
             ))}
 
             <SignUpBtn aria-label="sig up button" type="button">
-              Sign Up
+              {t('layout.header.signUp')}
             </SignUpBtn>
             <LangBtn onClick={toggleLang} aria-label="language change button" type="button">
               {language}

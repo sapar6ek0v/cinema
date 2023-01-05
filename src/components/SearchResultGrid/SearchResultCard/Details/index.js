@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { getImage } from '../../../../helpers/getImage';
 import notFound from '../../../../images/not-found.jpg';
@@ -7,6 +8,8 @@ import { Image, TitleLink } from '../styles';
 import { Date, ImageWrapper, Overview, Stack } from './styles';
 
 const Details = ({ item }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <ImageWrapper>
@@ -29,7 +32,7 @@ const Details = ({ item }) => {
           <Date>{item.release_date || item.first_air_date}</Date>
         </div>
 
-        <Overview>{item.overview || 'Don`t have any overview!'}</Overview>
+        <Overview>{item.overview || t('search.notFoundOverviewTitle')}</Overview>
       </Stack>
     </>
   );

@@ -4,6 +4,7 @@ import { useQuery } from 'react-query';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons';
 import dayjs from 'dayjs';
+import { useTranslation } from 'react-i18next';
 
 import { MovieServices } from '../../../helpers/services/movieServices';
 import { useLanguageContext } from '../../../context/LanguageContext';
@@ -38,6 +39,7 @@ import {
 } from './styles';
 
 const DetailsHeader = ({ type, id }) => {
+  const { t } = useTranslation();
   const { language } = useLanguageContext();
   const { data: item, isLoading } = useQuery([`${type} details`, type, id, language], () =>
     MovieServices.getById(type, id, language)
@@ -68,7 +70,7 @@ const DetailsHeader = ({ type, id }) => {
                   <ImageWrapper onClick={handleOpen}>
                     <Image src={getImage(item.poster_path) || notFound} alt={item.title || item.name} />
                     <Expand>
-                      Expand
+                      {t('details.imageExpand')}
                       <FontAwesomeIcon icon={faExpandArrowsAlt} />
                     </Expand>
                   </ImageWrapper>
@@ -87,7 +89,9 @@ const DetailsHeader = ({ type, id }) => {
                         <Genre key={genre + idx}>{genre.name}</Genre>
                       ))}
                     </Group>
-                    <Time before>{item.runtime || item.episode_run_time} min</Time>
+                    <Time before>
+                      {item.runtime || item.episode_run_time} {t('details.minutes')}
+                    </Time>
                   </TextGroup>
 
                   <MediaGroup gap={30}>
@@ -95,12 +99,10 @@ const DetailsHeader = ({ type, id }) => {
                     <MediaLinks id={id} type={type} homepage={item.homepage} />
                   </MediaGroup>
 
-                  {<Tagline>"{item.tagline}"</Tagline> || 'No tagline'}
+                  {<Tagline>"{item.tagline || t('details.notFoundTagline')}"</Tagline>}
                   <OverviewBlock>
-                    <OverviewTitle>Overview</OverviewTitle>
-                    <Overview>
-                      {item.overview || "Sorry but we don't have information about this movie yet"}
-                    </Overview>
+                    <OverviewTitle> {t('details.overview')}</OverviewTitle>
+                    <Overview>{item.overview || t('details.notFoundOverviewTitle')}</Overview>
                   </OverviewBlock>
                   <FilmCrew id={id} type={type} />
                 </Column8>

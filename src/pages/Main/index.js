@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 import { Col4, Col8, Wrapper } from '../../components/styles';
 import SEO from '../../components/SEO';
@@ -11,9 +12,16 @@ import Trends from '../../components/Main/Trends';
 import Trailers from '../../components/Main/Trailers';
 
 const Main = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <SEO title="Dashboard" description="Welcome to Dashboard!" name="Movie Api Project" type="project" />
+      <SEO
+        title={t('dashboard.helmetTitle')}
+        description={t('dashboard.helmetDescription')}
+        name={t('dashboard.helmetName')}
+        type={t('dashboard.helmetType')}
+      />
       <Hero />
       <Wrapper>
         <Container>

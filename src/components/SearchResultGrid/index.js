@@ -1,4 +1,6 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { useMediaTypeContext } from '../../context/MediaTypeContext';
 import { NoFoundTitle } from '../styles';
 import Loader from '../Loader';
@@ -7,6 +9,7 @@ import SearchResultNavbar from './SearchResultNavbar';
 import { FlexContainer, Grid } from './styles';
 
 const SearchResultGrid = ({ list, isLoading }) => {
+  const { t } = useTranslation();
   const { mediaType } = useMediaTypeContext();
 
   return (
@@ -24,7 +27,7 @@ const SearchResultGrid = ({ list, isLoading }) => {
                 ))}
             </FlexContainer>
           ) : (
-            <NoFoundTitle>There are no results, that matched your query.</NoFoundTitle>
+            <NoFoundTitle>{t('search.notFoundTitle')}</NoFoundTitle>
           )}
         </Grid>
       ) : (

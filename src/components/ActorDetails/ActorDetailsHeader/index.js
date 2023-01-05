@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
+
 import { getImage } from '../../../helpers/getImage';
 import MediaLinks from '../../MediaLinks';
 import { buttonTypes } from './data';

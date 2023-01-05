@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Group, Title, ViewLink, Button } from '../../styles';
 import { buttonTypes } from './data';
@@ -6,6 +7,7 @@ import { PopularTvsGroup, PopularTvsWrapper } from './styles';
 import TvsSlider from './TvsSlider';
 
 const PopularTvs = () => {
+  const { t } = useTranslation();
   const [type, setType] = useState('popular');
 
   const toggleContent = (value) => setType(value);
@@ -26,8 +28,8 @@ const PopularTvs = () => {
   return (
     <PopularTvsWrapper>
       <Group position="space-between" gap={20}>
-        <Title>ON TV</Title>
-        <ViewLink to={`/tv-show-details?type=${type}`}>View All</ViewLink>
+        <Title>{t('dashboard.tvTitle')}</Title>
+        <ViewLink to={`/tv-show-details?type=${type}`}>{t('dashboard.viewAll')}</ViewLink>
       </Group>
       <PopularTvsGroup>
         {buttonTypes.map((button) => (

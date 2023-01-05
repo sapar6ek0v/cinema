@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
+import { useTranslation } from 'react-i18next';
 
 import MediaTypeProvider from '../../context/MediaTypeContext';
 import { useLanguageContext } from '../../context/LanguageContext';
@@ -12,6 +13,7 @@ import SEO from '../../components/SEO';
 import { SearchInput, Wrapper, FlexContainer } from './styles';
 
 const SearchResults = () => {
+  const { t } = useTranslation();
   const { language } = useLanguageContext();
   const [queryParams, setQueryParams] = useSearchParams();
   const [query, setQuery] = useState(queryParams.get('query'));
@@ -35,10 +37,10 @@ const SearchResults = () => {
   return (
     <MediaTypeProvider>
       <SEO
-        title="Search"
-        description="Search for a movie, TV Show or celebrity that you are looking for"
-        name="Movie Api Project"
-        type="project"
+        title={t('search.helmetTitle')}
+        description={t('search.helmetDescription')}
+        name={t('search.helmetName')}
+        type={t('search.helmetType')}
       />
       <Wrapper>
         <Container>
@@ -48,7 +50,7 @@ const SearchResults = () => {
               value={query}
               type="text"
               aria-label="search"
-              placeholder="Search for a movie, TV Show or celebrity that you are looking for"
+              placeholder={t('search.inputPlaceholder')}
             />
 
             <SearchResultGrid list={data} isLoading={isLoading} />

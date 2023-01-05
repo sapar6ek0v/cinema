@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { useLanguageContext } from '../../context/LanguageContext';
 import { firstLetterUpperCase } from '../../helpers/firstLetterUpperCase';
@@ -9,6 +10,7 @@ import SEO from '../../components/SEO';
 import PageWithPagination from '../../components/PageWithPagination';
 
 const Serials = () => {
+  const { t } = useTranslation();
   const { language } = useLanguageContext();
   const [query, setQuery] = useSearchParams();
   const [page, setPage] = useState(query.get('page') || 1);
@@ -30,10 +32,10 @@ const Serials = () => {
   return (
     <>
       <SEO
-        title={`${firstLetterUpperCase(query.get('type'))} tvs`}
-        description={`${firstLetterUpperCase(query.get('type'))} tv list`}
-        name="Movie Api Project"
-        type="project"
+        title={t('tvShows.helmetTitle', { title: firstLetterUpperCase(query.get('type')) })}
+        description={t('tvShows.helmetDescription', { title: firstLetterUpperCase(query.get('type')) })}
+        name={t('tvShows.helmetName')}
+        type={t('tvShows.helmetType')}
       />
       {!!data ? (
         <PageWithPagination

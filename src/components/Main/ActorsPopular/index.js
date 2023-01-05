@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslation } from 'react-i18next';
 
 import { useLanguageContext } from '../../../context/LanguageContext';
 import { ActorServices } from '../../../helpers/services/actorServices';
@@ -21,6 +22,7 @@ import {
 } from './styles';
 
 const ActorsPopular = () => {
+  const { t } = useTranslation();
   const { language } = useLanguageContext();
   const { data: popularActors } = useQuery(['popular actor list', language], () =>
     ActorServices.getPopularActors(language)
@@ -29,25 +31,27 @@ const ActorsPopular = () => {
   return (
     <PopularActorWrapper>
       <div>
-        <AdvertiseTitle>advertisement</AdvertiseTitle>
+        <AdvertiseTitle>{t('dashboard.advertisement')}</AdvertiseTitle>
         <AdvertiseImage src={advertise} alt="advertise-image" />
       </div>
-      <PopularActorTitle>SPOTLIGHT CELEBRITIES</PopularActorTitle>
+      <PopularActorTitle>{t('dashboard.sidebarTitle')}</PopularActorTitle>
       <PopularActorVerticalWrapper>
-        {popularActors?.slice(0, 4).map((person) => {
-          const { id, profile_path, name, known_for_department } = person;
-          return (
-            <PopularActorCard key={id}>
-              <PopularActorImage src={getImage(profile_path)} alt={name} />
-              <div>
-                <PopularActorName to={`/person-details/${id}`}>{name}</PopularActorName>
-                <PopularActorKnownFor>{known_for_department}</PopularActorKnownFor>
-              </div>
-            </PopularActorCard>
-          );
-        })}
+        {!!popularActors
+          ? popularActors.slice(0, 4).map((person) => {
+              const { id, profile_path, name, known_for_department } = person;
+              return (
+                <PopularActorCard key={id}>
+                  <PopularActorImage src={getImage(profile_path)} alt={name} />
+                  <div>
+                    <PopularActorName to={`/person-details/${id}`}>{name}</PopularActorName>
+                    <PopularActorKnownFor>{known_for_department}</PopularActorKnownFor>
+                  </div>
+                </PopularActorCard>
+              );
+            })
+          : null}
         <ViewAllPopularActorLink to="/">
-          SEE ALL CELEBRITIES <FontAwesomeIcon icon={faAngleRight} />
+          {t('dashboard.sidebarLink')} <FontAwesomeIcon icon={faAngleRight} />
         </ViewAllPopularActorLink>
       </PopularActorVerticalWrapper>
     </PopularActorWrapper>

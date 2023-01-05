@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
+import { useTranslation } from 'react-i18next';
 
 import { useLanguageContext } from '../../../../context/LanguageContext';
 import { getImage } from '../../../../helpers/getImage';
@@ -13,17 +14,18 @@ import { ContentFlexContainer, ContentWrapper, SliderContainer, Title } from '..
 import { ActorCharacter, ActorImage, ActorName, ActorsCard, Button, ButtonCenter } from './styles';
 
 const Actors = ({ type, id }) => {
+  const { t } = useTranslation();
   const { language } = useLanguageContext();
   const { data: actors } = useQuery([`${type} actors list`, type, id, language], () =>
     ActorServices.getActorsById(type, id, language)
   );
   const [more, setMore] = useState(10);
-  console.log(!!actors);
+
   return (
     <ContentWrapper>
       <Container>
         <ContentFlexContainer>
-          <Title>#Starring</Title>
+          <Title>#{t('details.castTitle')}</Title>
           <SliderContainer>
             {!!actors?.length ? (
               actors.slice(0, more).map((actor) => {
@@ -39,12 +41,12 @@ const Actors = ({ type, id }) => {
                 );
               })
             ) : (
-              <NoFoundTitle>The cast is missing.</NoFoundTitle>
+              <NoFoundTitle>{t('details.notFoundCastTitle')}</NoFoundTitle>
             )}
             {more < actors?.length ? (
               <ButtonCenter>
                 <Button onClick={() => setMore(more + 10)} type="button" aria-label="more actors button">
-                  Смотреть ещё...
+                  {t('details.viewMore')}...
                   <span>
                     <FontAwesomeIcon icon={faUserPlus} />
                   </span>

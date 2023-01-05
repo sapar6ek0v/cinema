@@ -1,11 +1,14 @@
 import React from 'react';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
+import { useTranslation } from 'react-i18next';
 
 import { colors } from '../../../../constants/colors';
 import { CircularBarTitle, CircularBarWrapper } from './styles';
 import 'react-circular-progressbar/dist/styles.css';
 
 const CircularBar = ({ item, size = '22' }) => {
+  const { t } = useTranslation();
+
   return (
     <CircularBarWrapper>
       <CircularProgressbar
@@ -20,7 +23,7 @@ const CircularBar = ({ item, size = '22' }) => {
           backgroundColor: `${colors.lightBlue}`,
         })}
       />
-      <CircularBarTitle>Custom check</CircularBarTitle>
+      <CircularBarTitle>{t('details.circularBarTitle')}</CircularBarTitle>
     </CircularBarWrapper>
   );
 };

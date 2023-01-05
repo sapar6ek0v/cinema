@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Button, Group, Title, ViewLink } from '../../styles';
 import { buttonTypes } from './data';
@@ -6,6 +7,7 @@ import MoviesSlider from './MoviesSlider';
 import { PopularMoviesWrapper, PopularMoviesGroup } from './styles';
 
 const PopularMovies = () => {
+  const { t } = useTranslation();
   const [type, setType] = useState('popular');
 
   const toggleContent = (value) => setType(value);
@@ -26,8 +28,8 @@ const PopularMovies = () => {
   return (
     <PopularMoviesWrapper>
       <Group position="space-between" gap={20}>
-        <Title>IN THEATER</Title>
-        <ViewLink to={`/movies?type=${type}`}>View All</ViewLink>
+        <Title>{t('dashboard.movieTitle')}</Title>
+        <ViewLink to={`/movies?type=${type}`}>{t('dashboard.viewAll')}</ViewLink>
       </Group>
       <PopularMoviesGroup>
         {buttonTypes.map((button) => (

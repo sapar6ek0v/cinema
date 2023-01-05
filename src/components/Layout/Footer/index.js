@@ -1,6 +1,7 @@
 import React from 'react';
 import dayjs from 'dayjs';
 import { Container } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 import TMDBlogo from '../../../images/svgs/TMDB.svg';
 import ListItem from './ListItem';
@@ -8,6 +9,8 @@ import SubscribeBlock from './SubscribeBlock';
 import { Wrapper, Grid, ImageWrapper, Image, InformTitle } from './styles';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <Wrapper>
       <Container>
@@ -25,7 +28,7 @@ const Footer = () => {
 
         <InformTitle>
           &copy; {dayjs(Date.now()).format('YYYY')}
-          TMDB. All Rights Reserved. Designed and Developed by Eldiiar.
+          {t('layout.footer.title')}
         </InformTitle>
       </Container>
     </Wrapper>

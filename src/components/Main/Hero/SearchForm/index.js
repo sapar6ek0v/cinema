@@ -1,10 +1,13 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 import { SearchFormBtn, SearchFormInput, SearchFormWrapper } from './styles';
 
 const SearchForm = ({ value, setValue, handleSubmit }) => {
+  const { t } = useTranslation();
+
   const handleOnChange = (event) => setValue(event.target.value.trim());
 
   const handleKeyDown = (event) => {
@@ -20,7 +23,7 @@ const SearchForm = ({ value, setValue, handleSubmit }) => {
         value={value}
         type="text"
         aria-label="search"
-        placeholder="Search for a movie, TV Show or celebrity that you are looking for"
+        placeholder={t('dashboard.inputPlaceholder')}
       />
 
       <SearchFormBtn type="submit" disabled={!value}>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import { Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
+import { useTranslation } from 'react-i18next';
 
 import { getImage } from '../../../../helpers/getImage';
 import { VideoServices } from '../../../../helpers/services/videoServices';
@@ -12,6 +13,7 @@ import TrailerModal from './TrailerModal';
 import { Card, CardWrapper, Image, ImageWrapper, StartIcon, Header, QuantityTitle } from './styles';
 
 const TrailersAndVideos = ({ type, id }) => {
+  const { t } = useTranslation();
   const { language } = useLanguageContext();
   const { data: videos } = useQuery([`${type} videos list`, type, id, language], () =>
     VideoServices.getTrailersById(type, id, language)
@@ -35,7 +37,7 @@ const TrailersAndVideos = ({ type, id }) => {
       <ContentWrapper>
         <Container>
           <ContentFlexContainer>
-            <Title>#Media</Title>
+            <Title>#{t('details.mediaTitle')}</Title>
             <SliderContainer>
               {!!videos?.length && !!images ? (
                 videos.map((video, idx) => {
@@ -60,7 +62,7 @@ const TrailersAndVideos = ({ type, id }) => {
                   );
                 })
               ) : (
-                <NoFoundTitle>No trailers.</NoFoundTitle>
+                <NoFoundTitle>{t('details.notFoundTrailerTitle')}</NoFoundTitle>
               )}
             </SliderContainer>
           </ContentFlexContainer>

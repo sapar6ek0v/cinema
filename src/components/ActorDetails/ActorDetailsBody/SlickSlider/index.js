@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 import { getImage } from '../../../../helpers/getImage';
 import notFound from '../../../../images/not-found.jpg';
@@ -20,6 +21,8 @@ import {
 } from './styles';
 
 const SlickSlider = ({ list, linkPath }) => {
+  const { t } = useTranslation();
+
   return (
     <SlickSliderWrapper>
       <Slider {...settings}>
@@ -32,7 +35,7 @@ const SlickSlider = ({ list, linkPath }) => {
                   alt={item.title}
                 />
                 <ExpandMore>
-                  Read more <FontAwesomeIcon icon={faAngleRight} />
+                  {t('actorDetails.readMore')} <FontAwesomeIcon icon={faAngleRight} />
                 </ExpandMore>
               </SlickSliderImageWrapper>
 
