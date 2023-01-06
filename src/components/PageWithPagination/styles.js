@@ -3,7 +3,7 @@ import { colors } from '../../constants/colors';
 import { flexColumn, fontStyleMdNormal } from '../../helpers/cssFragments';
 import { Group } from '../styles';
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.div`
   padding: 70px 0;
   background-color: ${colors.darkBlue2};
 `;
@@ -17,7 +17,7 @@ export const Grid = styled.div`
   display: grid;
   gap: 40px;
   /* @media (max-width: 992px) { */
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   /* } */
 
   @media (max-width: 768px) {

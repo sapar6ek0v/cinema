@@ -9,9 +9,8 @@ import {
 import { Group } from '../../styles';
 
 export const Wrapper = styled.section`
-  min-height: calc(100vh - 74px);
+  min-height: calc(100vh - 75px);
   position: relative;
-  background-color: ${(props) => props.active && colors.darkBlue};
 `;
 
 export const DetailsHeaderWrapper = styled.div`

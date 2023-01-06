@@ -3,14 +3,15 @@ import { colors } from '../../constants/colors';
 
 export const LoaderWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  background: ${(props) => props.bg && props.bg};
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: ${(props) => props.fixedCenter && '50%'};
+  left: ${(props) => props.fixedCenter && '50%'};
+  transform: ${(props) => props.fixedCenter && 'translate(-50%, -50%)'};
   z-index: 10000;
 `;
 

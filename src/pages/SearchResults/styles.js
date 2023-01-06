@@ -4,7 +4,7 @@ import { colors } from '../../constants/colors';
 
 export const Wrapper = styled.section`
   position: relative;
-  min-height: calc(100vh - 74px);
+  min-height: calc(100vh - 75px);
   background: ${colors.darkBlue2};
   padding: 50px 0px;
 `;

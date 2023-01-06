@@ -1,9 +1,9 @@
 import React from 'react';
 import { LoaderWrapper, Line } from './styles';
 
-const Loader = () => {
+const Loader = ({ bg = 'transparent', fixedCenter = false }) => {
   return (
-    <LoaderWrapper>
+    <LoaderWrapper bg={bg} fixedCenter={fixedCenter}>
       <Line>
         <Line>
           <Line>

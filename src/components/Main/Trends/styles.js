@@ -12,6 +12,7 @@ import { Title } from '../../styles';
 export const TrendWrapper = styled.section`
   padding: 70px 0;
   min-height: 100vh;
+  position: relative;
   background-color: ${colors.darkBlue2};
 `;
 

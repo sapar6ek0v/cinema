@@ -1,45 +1,49 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Paths } from '../../../../constants/paths';
 import { idGenerator } from '../../../../helpers/idGenerator';
-import { Stack, Title } from '../styles';
-import { List, LinkItem } from './styles';
 
-const ListItem = () => {
+export const useListItem = () => {
   const { t } = useTranslation();
 
-  const footerList = [
+  const listItem = [
+    {
+      id: idGenerator(),
+      title: t('layout.header.home'),
+      path: Paths.MAIN,
+    },
     {
       id: idGenerator(),
       title: t('movie.title'),
-      links: [
+      path: Paths.MOVIES,
+      submenu: [
         {
           id: idGenerator(),
           title: t('movie.nowPlaying'),
-          path: `${Paths.MOVIES}?type=now_playing&page=1`,
+          path: `${Paths.MOVIES}?type=now_playing`,
         },
         {
           id: idGenerator(),
           title: t('movie.popular'),
-          path: `${Paths.MOVIES}?type=popular&page=1`,
+          path: `${Paths.MOVIES}?type=popular`,
         },
         {
           id: idGenerator(),
           title: t('movie.topRated'),
-          path: `${Paths.MOVIES}?type=top_rated&page=1`,
+          path: `${Paths.MOVIES}?type=top_rated`,
         },
         {
           id: idGenerator(),
           title: t('movie.upcoming'),
-          path: `${Paths.MOVIES}?type=upcoming&page=1`,
+          path: `${Paths.MOVIES}?type=upcoming`,
         },
       ],
     },
     {
       id: idGenerator(),
       title: t('tvShow.title'),
-      links: [
+      path: Paths.TV_SHOWS,
+      submenu: [
         {
           id: idGenerator(),
           title: t('tvShow.popular'),
@@ -62,24 +66,27 @@ const ListItem = () => {
         },
       ],
     },
+    {
+      id: idGenerator(),
+      title: t('layout.header.community'),
+      path: '/community',
+    },
+    {
+      id: idGenerator(),
+      title: t('layout.header.news'),
+      path: '/news',
+    },
+    {
+      id: idGenerator(),
+      title: t('layout.header.help'),
+      path: '/help',
+    },
+    {
+      id: idGenerator(),
+      title: t('layout.header.login'),
+      path: '/login',
+    },
   ];
 
-  return (
-    <>
-      {footerList.map((item) => (
-        <Stack key={item.id}>
-          <Title>{item.title}</Title>
-          <List>
-            {item.links.map((link) => (
-              <LinkItem to={link.path} key={link.id}>
-                {link.title}
-              </LinkItem>
-            ))}
-          </List>
-        </Stack>
-      ))}
-    </>
-  );
+  return listItem;
 };
-
-export default ListItem;

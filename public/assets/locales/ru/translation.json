@@ -40,6 +40,7 @@
     "mediaTitle": "Медиа",
     "notFoundTrailerTitle": "Нет трейлеров.",
     "recommendationTitle": "Рекомендации",
+    "notFoundRecommendationTitle": "Нет рекомендаций.",
     "originalName": "Оригинальное название",
     "status": "Статус",
     "budget": "Бюджет",
@@ -67,7 +68,9 @@
     "biography": "Биография",
     "viewMore": "Еще",
     "filmography": "ФИЛЬМОГРАФИЯ",
-    "readMore": "Читать ещё"
+    "readMore": "Читать ещё",
+    "notFoundTvShowTitle": "Нету сериалов.",
+    "notFoundMoviesTitle": "Нету фильмов."
   },
 
   "slider": {
@@ -82,18 +85,27 @@
     "notFoundTitle": "По вашему запросу нет результатов.",
     "navbarResultTitle": "Результаты поиска",
     "notFoundOverviewTitle": "Нет обзоров!",
-    "inputPlaceholder": "Поиск фильма, телешоу или знаменитости, которую вы ищете"
+    "inputPlaceholder": "Поиск фильма, телешоу или знаменитости, которую вы ищете",
+    "navbarMoviesTitle": "Фильмы",
+    "navbarTvShowsTitle": "Тв Сериалы",
+    "navbarPeopleTitle": "Люди"
   },
 
   "layout": {
     "header": {
-      "signUp": "Зарегистрироваться"
+      "signUp": "Регистрация",
+      "home": "главная",
+      "community": "сообщество",
+      "news": "Новости",
+      "help": "Помощь",
+      "login": "войти"
     },
     "footer": {
       "title": "TMDB. Все права защищены. Спроектировано и разработано Eldiiar.",
       "newsletter": "Информационная рассылка",
       "subscribeTitle": "Подпишитесь на нашу систему рассылки сейчас, чтобы получать от нас последние новости.",
-      "subscribeLink": "подписаться сейчас"
+      "subscribeLink": "подписаться сейчас",
+      "inputPlaceholder": "Введите адрес почты..."
     }
   },
 
@@ -109,5 +121,21 @@
     "helmetDescription": "{{title}} список телешоу",
     "helmetName": "Проект Cinema",
     "helmetType": "Проект"
+  },
+
+  "movie": {
+    "title": "Фильмы",
+    "nowPlaying": "Сейчас Играет",
+    "popular": "Популярные",
+    "topRated": "Лучшие По Рейтингу",
+    "upcoming": "Предстоящие"
+  },
+
+  "tvShow": {
+    "title": "Тв Сериалы",
+    "popular": "Популярные",
+    "onTheAir": "В Прямом Эфире",
+    "topRated": "Лучшие По Рейтингу",
+    "airingToday": "Сегодня В Эфире"
   }
 }

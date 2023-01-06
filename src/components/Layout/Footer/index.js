@@ -27,8 +27,7 @@ const Footer = () => {
         </Grid>
 
         <InformTitle>
-          &copy; {dayjs(Date.now()).format('YYYY')}
-          {t('layout.footer.title')}
+          &copy; {dayjs(Date.now()).format('YYYY')} {t('layout.footer.title')}
         </InformTitle>
       </Container>
     </Wrapper>

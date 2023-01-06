@@ -40,6 +40,7 @@
     "mediaTitle": "Media",
     "notFoundTrailerTitle": "No trailers.",
     "recommendationTitle": "Recommendations",
+    "notFoundRecommendationTitle": "No recommendations.",
     "originalName": "Original name",
     "status": "Status",
     "budget": "Budget",
@@ -67,7 +68,9 @@
     "biography": "Biography",
     "viewMore": "More",
     "filmography": "FILMOGRAPHY",
-    "readMore": "Read more"
+    "readMore": "Read more",
+    "notFoundTvShowTitle": "No serials.",
+    "notFoundMoviesTitle": "No movies."
   },
 
   "slider": {
@@ -82,18 +85,27 @@
     "notFoundTitle": "There are no results, that matched your query.",
     "navbarResultTitle": "Search Results",
     "notFoundOverviewTitle": "Don`t have any overview!",
-    "inputPlaceholder": "Search for a movie, TV Show or celebrity that you are looking for"
+    "inputPlaceholder": "Search for a movie, TV Show or celebrity that you are looking for",
+    "navbarMoviesTitle": "Movies",
+    "navbarTvShowsTitle": "Tv Serials",
+    "navbarPeopleTitle": "People"
   },
 
   "layout": {
     "header": {
-      "signUp": "Sign Up"
+      "signUp": "Sign Up",
+      "home": "home",
+      "community": "community",
+      "news": "news",
+      "help": "help",
+      "login": "login"
     },
     "footer": {
       "title": "TMDB. All Rights Reserved. Designed and Developed by Eldiiar.",
       "newsletter": "Newsletter",
       "subscribeTitle": "Subscribe to our newsletter system now to get latest news from us.",
-      "subscribeLink": "subscribe now"
+      "subscribeLink": "subscribe now",
+      "inputPlaceholder": "Enter your email..."
     }
   },
 
@@ -109,5 +121,21 @@
     "helmetDescription": "{{title}} tv show list",
     "helmetName": "Project Cinema",
     "helmetType": "project"
+  },
+
+  "movie": {
+    "title": "Movies",
+    "nowPlaying": "Now Playing",
+    "popular": "Popular",
+    "topRated": "Top Rated",
+    "upcoming": "Upcoming"
+  },
+
+  "tvShow": {
+    "title": "Tv Serials",
+    "onTheAir": "On The Air",
+    "popular": "Popular",
+    "topRated": "Top Rated",
+    "airingToday": "Airing Today"
   }
 }

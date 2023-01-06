@@ -18,7 +18,7 @@ const SearchResultGrid = ({ list, isLoading }) => {
         <Grid>
           <SearchResultNavbar list={list} />
 
-          {!!list ? (
+          {!!list?.length ? (
             <FlexContainer>
               {list
                 .filter((item) => item.media_type === mediaType)
@@ -31,7 +31,7 @@ const SearchResultGrid = ({ list, isLoading }) => {
           )}
         </Grid>
       ) : (
-        <Loader />
+        <Loader fixedCenter />
       )}
     </>
   );

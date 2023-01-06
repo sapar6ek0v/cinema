@@ -19,8 +19,8 @@ export const CardWrapper = styled.div`
 export const ImageWrapper = styled(Link)`
   display: block;
   border-radius: 8px;
-  height: 216px;
-  width: 144px;
+  height: 265px;
+  width: 100%;
   transition: all 0.4s ease-in-out;
 
   &:hover {

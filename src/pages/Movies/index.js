@@ -6,15 +6,18 @@ import { useTranslation } from 'react-i18next';
 import { useLanguageContext } from '../../context/LanguageContext';
 import { firstLetterUpperCase } from '../../helpers/firstLetterUpperCase';
 import { MovieServices } from '../../helpers/services/movieServices';
+import { colors } from '../../constants/colors';
 import SEO from '../../components/SEO';
 import PageWithPagination from '../../components/PageWithPagination';
+import { Wrapper } from '../../components/styles';
+import Loader from '../../components/Loader';
 
 const Movies = () => {
   const { t } = useTranslation();
   const { language } = useLanguageContext();
   const [query, setQuery] = useSearchParams();
   const [page, setPage] = useState(query.get('page') || 1);
-  const { data } = useQuery(['movie list', query.get('type'), language, page], () =>
+  const { data, isLoading } = useQuery(['movie list', query.get('type'), language, page], () =>
     MovieServices.getMoviesByType(query.get('type'), language, page)
   );
 
@@ -30,14 +33,14 @@ const Movies = () => {
   };
 
   return (
-    <>
+    <Wrapper>
       <SEO
         title={t('movies.helmetTitle', { title: firstLetterUpperCase(query.get('type')) })}
         description={t('movies.helmetDescription', { title: firstLetterUpperCase(query.get('type')) })}
         name={t('movies.helmetName')}
         type={t('movies.helmetType')}
       />
-      {!!data ? (
+      {!isLoading && !!data ? (
         <PageWithPagination
           list={data}
           types={['now_playing', 'popular', 'top_rated', 'upcoming']}
@@ -47,8 +50,10 @@ const Movies = () => {
           handleChangeType={handleChangeType}
           linkPath="movie-details"
         />
-      ) : null}
-    </>
+      ) : (
+        <Loader bg={colors.darkBlue} />
+      )}
+    </Wrapper>
   );
 };
 

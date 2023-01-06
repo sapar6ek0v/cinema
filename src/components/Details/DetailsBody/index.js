@@ -20,7 +20,7 @@ const DetailsBody = ({ id, type, linkPath }) => {
   );
 
   return (
-    <DetailsBodyWrapper active={isLoading}>
+    <DetailsBodyWrapper>
       {!isLoading && !!item ? (
         <div
           style={{
@@ -45,7 +45,7 @@ const DetailsBody = ({ id, type, linkPath }) => {
           </Container>
         </div>
       ) : (
-        <Loader />
+        <Loader bg={colors.darkBlue2} />
       )}
     </DetailsBodyWrapper>
   );

@@ -14,7 +14,7 @@ const SubscribeBlock = () => {
       <Title>{t('layout.footer.newsletter')}</Title>
       <Description>{t('layout.footer.subscribeTitle')}</Description>
       <InputWrapper>
-        <Input type="text" placeholder="Enter your email..." />
+        <Input type="text" placeholder={t('layout.footer.inputPlaceholder')} />
         <Icon icon={faEnvelope} />
       </InputWrapper>
       <SubscribeLink to={'/'}>

@@ -15,11 +15,6 @@ export const Group = styled.div`
   gap: ${(props) => props.gap && `${props.gap}px`};
 `;
 
-export const Wrapper = styled.div`
-  padding: 70px 0 140px;
-  background: ${colors.darkBlue2};
-`;
-
 export const Title = styled.h4`
   font-size: 22px;
   color: ${colors.white};
@@ -70,18 +65,6 @@ export const AdvertiseTitle = styled.p`
   }
 `;
 
-export const Col4 = styled.div`
-  padding-left: 40px;
-  flex: 0 0 auto;
-  width: 33.33333333%;
-`;
-
-export const Col8 = styled.div`
-  flex: 0 0 auto;
-  padding-right: 40px;
-  width: 66.66666667%;
-`;
-
 export const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -95,4 +78,9 @@ export const NoFoundTitle = styled.p`
   margin: 0;
   ${fontStyleXlBold};
   color: ${colors.lightGray};
+`;
+
+export const Wrapper = styled.section`
+  min-height: calc(100vh - 75px);
+  position: relative;
 `;

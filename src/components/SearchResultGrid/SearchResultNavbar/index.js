@@ -2,8 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useMediaTypeContext } from '../../../context/MediaTypeContext';
+import { idGenerator } from '../../../helpers/idGenerator';
 import { Quantity, Header, Wrapper, List, Link, LinkTitle } from './styles';
-import { mediaTypes } from './data';
 
 const SearchResultNavbar = ({ list }) => {
   const { t } = useTranslation();
@@ -17,6 +17,24 @@ const SearchResultNavbar = ({ list }) => {
     }
     return 0;
   };
+
+  const mediaTypes = [
+    {
+      id: idGenerator(),
+      title: t('search.navbarMoviesTitle'),
+      type: 'movie',
+    },
+    {
+      id: idGenerator(),
+      title: t('search.navbarTvShowsTitle'),
+      type: 'tv',
+    },
+    {
+      id: idGenerator(),
+      title: t('search.navbarPeopleTitle'),
+      type: 'person',
+    },
+  ];
 
   return (
     <Wrapper>

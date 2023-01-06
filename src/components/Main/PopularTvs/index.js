@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { idGenerator } from '../../../helpers/idGenerator';
 import { Group, Title, ViewLink, Button } from '../../styles';
-import { buttonTypes } from './data';
 import { PopularTvsGroup, PopularTvsWrapper } from './styles';
 import TvsSlider from './TvsSlider';
 
@@ -24,6 +24,24 @@ const PopularTvs = () => {
         return <TvsSlider type="popular" />;
     }
   };
+
+  const buttonTypes = [
+    {
+      id: idGenerator(),
+      type: 'popular',
+      title: t('tvShow.popular'),
+    },
+    {
+      id: idGenerator(),
+      type: 'on_the_air',
+      title: t('tvShow.onTheAir'),
+    },
+    {
+      id: idGenerator(),
+      type: 'top_rated',
+      title: t('tvShow.topRated'),
+    },
+  ];
 
   return (
     <PopularTvsWrapper>

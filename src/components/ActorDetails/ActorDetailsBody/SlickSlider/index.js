@@ -44,7 +44,7 @@ const SlickSlider = ({ list, linkPath }) => {
               <SlickSliderVoteAverage>
                 <SlickSliderVoteAverageStar icon={faStar} />
                 <SlickSliderVoteAverageTitle>
-                  {item.vote_average}
+                  {item.vote_average.toFixed(2)}
                   <span>/10</span>
                 </SlickSliderVoteAverageTitle>
               </SlickSliderVoteAverage>

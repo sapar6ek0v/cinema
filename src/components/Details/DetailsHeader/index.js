@@ -115,7 +115,7 @@ const DetailsHeader = ({ type, id }) => {
           )}
         </>
       ) : (
-        <Loader />
+        <Loader bg={colors.darkBlue} />
       )}
     </Wrapper>
   );

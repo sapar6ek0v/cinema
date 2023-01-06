@@ -8,6 +8,7 @@ import { getImage } from '../../../../helpers/getImage';
 import { RecommendationServices } from '../../../../helpers/services/recommendationServices';
 import { ContentFlexContainer, ContentWrapper, SliderContainer, Title } from '../styles';
 import { CardWrapper, Image, ImageWrapperLink, TitleGroup, TitleLink, VoteAverage } from './styles';
+import { NoFoundTitle } from '../../../styles';
 
 const Recommendations = ({ type, id, linkPath }) => {
   const { t } = useTranslation();
@@ -22,22 +23,24 @@ const Recommendations = ({ type, id, linkPath }) => {
         <ContentFlexContainer>
           <Title>#{t('details.recommendationTitle')}</Title>
           <SliderContainer>
-            {!!recommendations
-              ? recommendations.map((recommendation) => (
-                  <CardWrapper key={recommendation.id}>
-                    <ImageWrapperLink to={`/${linkPath}/${recommendation.id}`}>
-                      <Image src={getImage(recommendation.poster_path)} alt={recommendation.title} />
-                    </ImageWrapperLink>
+            {!!recommendations?.length ? (
+              recommendations.map((recommendation) => (
+                <CardWrapper key={recommendation.id}>
+                  <ImageWrapperLink to={`/${linkPath}/${recommendation.id}`}>
+                    <Image src={getImage(recommendation.poster_path)} alt={recommendation.title} />
+                  </ImageWrapperLink>
 
-                    <TitleGroup>
-                      <TitleLink to={`/${linkPath}/${recommendation.id}`}>
-                        {recommendation.title || recommendation.name}
-                      </TitleLink>
-                      <VoteAverage>{(recommendation.vote_average * 10).toFixed(0)}%</VoteAverage>
-                    </TitleGroup>
-                  </CardWrapper>
-                ))
-              : null}
+                  <TitleGroup>
+                    <TitleLink to={`/${linkPath}/${recommendation.id}`}>
+                      {recommendation.title || recommendation.name}
+                    </TitleLink>
+                    <VoteAverage>{(recommendation.vote_average * 10).toFixed(0)}%</VoteAverage>
+                  </TitleGroup>
+                </CardWrapper>
+              ))
+            ) : (
+              <NoFoundTitle>{t('details.notFoundRecommendationTitle')}</NoFoundTitle>
+            )}
           </SliderContainer>
         </ContentFlexContainer>
       </Container>

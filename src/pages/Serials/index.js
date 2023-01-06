@@ -6,15 +6,18 @@ import { useTranslation } from 'react-i18next';
 import { useLanguageContext } from '../../context/LanguageContext';
 import { firstLetterUpperCase } from '../../helpers/firstLetterUpperCase';
 import { MovieServices } from '../../helpers/services/movieServices';
+import { colors } from '../../constants/colors';
 import SEO from '../../components/SEO';
 import PageWithPagination from '../../components/PageWithPagination';
+import Loader from '../../components/Loader';
+import { Wrapper } from '../../components/styles';
 
 const Serials = () => {
   const { t } = useTranslation();
   const { language } = useLanguageContext();
   const [query, setQuery] = useSearchParams();
   const [page, setPage] = useState(query.get('page') || 1);
-  const { data } = useQuery(['tv list', query.get('type'), page, language], () =>
+  const { data, isLoading } = useQuery(['tv list', query.get('type'), page, language], () =>
     MovieServices.getTvsByType(query.get('type'), language, page)
   );
 
@@ -30,14 +33,14 @@ const Serials = () => {
   };
 
   return (
-    <>
+    <Wrapper>
       <SEO
         title={t('tvShows.helmetTitle', { title: firstLetterUpperCase(query.get('type')) })}
         description={t('tvShows.helmetDescription', { title: firstLetterUpperCase(query.get('type')) })}
         name={t('tvShows.helmetName')}
         type={t('tvShows.helmetType')}
       />
-      {!!data ? (
+      {!isLoading && !!data ? (
         <PageWithPagination
           list={data}
           types={['airing_today', 'on_the_air', 'popular', 'top_rated']}
@@ -47,8 +50,10 @@ const Serials = () => {
           handleChangeType={handleChangeType}
           linkPath="tv-show-details"
         />
-      ) : null}
-    </>
+      ) : (
+        <Loader bg={colors.darkBlue} />
+      )}
+    </Wrapper>
   );
 };
 

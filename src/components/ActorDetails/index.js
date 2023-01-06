@@ -1,5 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+
+import { colors } from '../../constants/colors';
 import { useLanguageContext } from '../../context/LanguageContext';
 import { ActorServices } from '../../helpers/services/actorServices';
 import Loader from '../Loader';
@@ -14,14 +16,14 @@ const ActorDetails = ({ id }) => {
   );
 
   return (
-    <Wrapper active={isLoading}>
+    <Wrapper>
       {!isLoading && !!item ? (
         <>
           <ActorDetailsHeader item={item} />
           <ActorDetailsBody id={id} />
         </>
       ) : (
-        <Loader />
+        <Loader bg={colors.darkBlue} />
       )}
     </Wrapper>
   );

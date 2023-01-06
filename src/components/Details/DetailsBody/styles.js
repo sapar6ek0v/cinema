@@ -3,9 +3,8 @@ import { colors } from '../../../constants/colors';
 import { flexColumn } from '../../../helpers/cssFragments';
 
 export const DetailsBodyWrapper = styled.section`
-  min-height: calc(100vh - 74px);
+  min-height: 100vh;
   position: relative;
-  background-color: ${(props) => props.active && colors.darkBlue};
 `;
 
 export const FlexContainer = styled.div`

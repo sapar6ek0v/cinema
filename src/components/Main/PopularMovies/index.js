@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { idGenerator } from '../../../helpers/idGenerator';
 import { Button, Group, Title, ViewLink } from '../../styles';
-import { buttonTypes } from './data';
 import MoviesSlider from './MoviesSlider';
 import { PopularMoviesWrapper, PopularMoviesGroup } from './styles';
 
@@ -24,6 +24,24 @@ const PopularMovies = () => {
         return <MoviesSlider type="popular" />;
     }
   };
+
+  const buttonTypes = [
+    {
+      id: idGenerator(),
+      type: 'popular',
+      title: t('movie.popular'),
+    },
+    {
+      id: idGenerator(),
+      type: 'upcoming',
+      title: t('movie.upcoming'),
+    },
+    {
+      id: idGenerator(),
+      type: 'top_rated',
+      title: t('movie.topRated'),
+    },
+  ];
 
   return (
     <PopularMoviesWrapper>
