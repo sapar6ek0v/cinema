@@ -11,7 +11,7 @@ const Trailers = () => {
   return (
     <TrailersWrapper>
       <Container>
-        <Title>{t('dashboard.trailerTitle')}</Title>
+        <Title>{t('main.trailerTitle')}</Title>
       </Container>
     </TrailersWrapper>
   );

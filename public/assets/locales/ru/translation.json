@@ -1,7 +1,7 @@
 {
-  "dashboard": {
-    "helmetTitle": "Панель управления",
-    "helmetDescription": "Добро пожаловать в панель управления!",
+  "main": {
+    "helmetTitle": "Главная",
+    "helmetDescription": "Добро пожаловать в главную страницу!",
     "helmetName": "Проект API фильмов",
     "helmetType": "Проект",
     "inputPlaceholder": "Найдите фильм, телешоу или знаменитость, которую вы ищете",

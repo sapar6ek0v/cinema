@@ -37,11 +37,11 @@ const Trends = () => {
           <Row>
             <TrendColumn8 gap={30}>
               <div>
-                <AdvertiseTitle>{t('dashboard.advertisement')}</AdvertiseTitle>
+                <AdvertiseTitle>{t('main.advertisement')}</AdvertiseTitle>
                 <AdvertiseImage src={cocaColaAdvertisement} alt="coca-cola-advertisement-image" />
               </div>
               <TrendFlexColumn gap={25}>
-                <TrendTitle>{t('dashboard.trendTitle')}</TrendTitle>
+                <TrendTitle>{t('main.trendTitle')}</TrendTitle>
                 {trends.slice(0, 1).map((trend) => {
                   const { id, title, release_date, overview, poster_path } = trend;
                   return (
@@ -51,7 +51,7 @@ const Trends = () => {
                         <TrendCardLink to={`/movie-details/${id}`}>{title}</TrendCardLink>
                         <TrendCardDate>{release_date}</TrendCardDate>
                         <TrendCardDesc>
-                          {t('dashboard.trendOverview')}: <span>{overview}</span>
+                          {t('main.trendOverview')}: <span>{overview}</span>
                         </TrendCardDesc>
                       </TrendFlexColumn>
                     </TrendBlock>
@@ -65,7 +65,7 @@ const Trends = () => {
                         <TrendCardLink to={`/movie-details/${id}`}>{title}</TrendCardLink>
                         <TrendCardDate>{release_date}</TrendCardDate>
                         <TrendCardDesc>
-                          {t('dashboard.trendOverview')}: <span>{overview}</span>
+                          {t('main.trendOverview')}: <span>{overview}</span>
                         </TrendCardDesc>
                       </TrendColumn6>
                     );

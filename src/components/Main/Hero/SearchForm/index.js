@@ -23,7 +23,7 @@ const SearchForm = ({ value, setValue, handleSubmit }) => {
         value={value}
         type="text"
         aria-label="search"
-        placeholder={t('dashboard.inputPlaceholder')}
+        placeholder={t('main.inputPlaceholder')}
       />
 
       <SearchFormBtn type="submit" disabled={!value}>

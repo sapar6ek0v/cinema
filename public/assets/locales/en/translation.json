@@ -1,7 +1,7 @@
 {
-  "dashboard": {
-    "helmetTitle": "Dashboard",
-    "helmetDescription": "Welcome to Dashboard!",
+  "main": {
+    "helmetTitle": "Main",
+    "helmetDescription": "Welcome to main page!",
     "helmetName": "Project Cinema",
     "helmetType": "project",
     "inputPlaceholder": "Search for a movie, TV Show or celebrity that you are looking for",

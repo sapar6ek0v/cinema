@@ -22,8 +22,9 @@ export const TrendFlexColumn = styled.div`
 `;
 
 export const AdvertiseImage = styled.img`
-  height: 250px;
+  height: 260px;
   width: 100%;
+  object-fit: cover;
 `;
 
 export const TrendTitle = styled(Title)``;

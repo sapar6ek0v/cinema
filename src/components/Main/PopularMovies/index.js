@@ -46,8 +46,8 @@ const PopularMovies = () => {
   return (
     <PopularMoviesWrapper>
       <Group position="space-between" gap={20}>
-        <Title>{t('dashboard.movieTitle')}</Title>
-        <ViewLink to={`/movies?type=${type}`}>{t('dashboard.viewAll')}</ViewLink>
+        <Title>{t('main.movieTitle')}</Title>
+        <ViewLink to={`/movies?type=${type}`}>{t('main.viewAll')}</ViewLink>
       </Group>
       <PopularMoviesGroup>
         {buttonTypes.map((button) => (

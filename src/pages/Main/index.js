@@ -17,10 +17,10 @@ const Main = () => {
   return (
     <>
       <SEO
-        title={t('dashboard.helmetTitle')}
-        description={t('dashboard.helmetDescription')}
-        name={t('dashboard.helmetName')}
-        type={t('dashboard.helmetType')}
+        title={t('main.helmetTitle')}
+        description={t('main.helmetDescription')}
+        name={t('main.helmetName')}
+        type={t('main.helmetType')}
       />
       <Hero />
       <Wrapper>

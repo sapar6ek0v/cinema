@@ -31,10 +31,10 @@ const ActorsPopular = () => {
   return (
     <PopularActorWrapper>
       <div>
-        <AdvertiseTitle>{t('dashboard.advertisement')}</AdvertiseTitle>
+        <AdvertiseTitle>{t('main.advertisement')}</AdvertiseTitle>
         <AdvertiseImage src={advertise} alt="advertise-image" />
       </div>
-      <PopularActorTitle>{t('dashboard.sidebarTitle')}</PopularActorTitle>
+      <PopularActorTitle>{t('main.sidebarTitle')}</PopularActorTitle>
       <PopularActorVerticalWrapper>
         {!!popularActors
           ? popularActors.slice(0, 4).map((person) => {
@@ -51,7 +51,7 @@ const ActorsPopular = () => {
             })
           : null}
         <ViewAllPopularActorLink to="/">
-          {t('dashboard.sidebarLink')} <FontAwesomeIcon icon={faAngleRight} />
+          {t('main.sidebarLink')} <FontAwesomeIcon icon={faAngleRight} />
         </ViewAllPopularActorLink>
       </PopularActorVerticalWrapper>
     </PopularActorWrapper>
