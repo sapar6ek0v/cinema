@@ -5,8 +5,7 @@ import cityViewBg from '../../../images/city-view.jpg';
 import { Group } from '../../styles';
 
 export const Wrapper = styled.section`
-  height: 100vh;
-  min-height: 600px;
+  min-height: calc(100vh - 75px);
   background: ${colors.bg3} url(${cityViewBg}) center/cover;
   background-blend-mode: darken;
   padding: 50px 0px;

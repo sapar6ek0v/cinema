@@ -12,10 +12,11 @@ import {
   SlickSliderCard,
   SlickSliderImage,
   SlickSliderImageWrapper,
-  SlickSliderLink,
+  SlickSliderButton,
   SlickSliderTitle,
   SlickSliderVoteAverageStar,
   SlickSliderVoteAverageTitle,
+  SlickSliderLink,
 } from './styles';
 
 const SlickSlider = ({ list, linkPath }) => {
@@ -30,9 +31,11 @@ const SlickSlider = ({ list, linkPath }) => {
               src={item.poster_path ? getImage(item.poster_path) : notFound}
               alt={item.title || item.name}
             />
-            <SlickSliderLink to={`/${linkPath}/${item.id}`}>
-              {t('slider.readMore')} <FontAwesomeIcon icon={faAngleRight} />
-            </SlickSliderLink>
+            <SlickSliderButton>
+              <SlickSliderLink to={`/${linkPath}/${item.id}`}>
+                {t('slider.readMore')} <FontAwesomeIcon icon={faAngleRight} />
+              </SlickSliderLink>
+            </SlickSliderButton>
           </SlickSliderImageWrapper>
           <SlickSliderTitle to={`/${linkPath}/${item.id}`}>{item.title || item.name}</SlickSliderTitle>
           <Group position="center" gap={4}>

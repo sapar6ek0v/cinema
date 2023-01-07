@@ -66,15 +66,20 @@
     "placeOfBirth": "Место рождения",
     "alsoKnownAs": "Также известен как",
     "biography": "Биография",
+    "notFoundBiographyTitle": "Нету информация о биографии",
     "viewMore": "Еще",
     "filmography": "ФИЛЬМОГРАФИЯ",
-    "readMore": "Читать ещё",
+    "readMore": "Ещё",
     "notFoundTvShowTitle": "Нету сериалов.",
-    "notFoundMoviesTitle": "Нету фильмов."
+    "notFoundMoviesTitle": "Нету фильмов.",
+    "overview": "Обзор",
+    "media": "Медиа",
+    "movies": "Фильмы",
+    "tvShows": "Сериалы"
   },
 
   "slider": {
-    "readMore": "Читать ещё"
+    "readMore": "Ещё"
   },
 
   "search": {

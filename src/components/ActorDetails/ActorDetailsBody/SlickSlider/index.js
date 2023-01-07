@@ -18,6 +18,7 @@ import {
   SlickSliderVoteAverageTitle,
   SlickSliderVoteAverageStar,
   SlickSliderWrapper,
+  ExpandMoreLink,
 } from './styles';
 
 const SlickSlider = ({ list, linkPath }) => {
@@ -26,7 +27,7 @@ const SlickSlider = ({ list, linkPath }) => {
   return (
     <SlickSliderWrapper>
       <Slider {...settings}>
-        {list.map((item) => (
+        {list.slice(0, 11).map((item) => (
           <SlickSliderCard key={item.id}>
             <Stack>
               <SlickSliderImageWrapper>
@@ -35,7 +36,9 @@ const SlickSlider = ({ list, linkPath }) => {
                   alt={item.title}
                 />
                 <ExpandMore>
-                  {t('actorDetails.readMore')} <FontAwesomeIcon icon={faAngleRight} />
+                  <ExpandMoreLink to={`/${linkPath}/${item.id}`}>
+                    {t('actorDetails.readMore')} <FontAwesomeIcon icon={faAngleRight} />
+                  </ExpandMoreLink>
                 </ExpandMore>
               </SlickSliderImageWrapper>
 

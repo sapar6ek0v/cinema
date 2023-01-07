@@ -19,7 +19,7 @@ const Overview = ({ item }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (parseInt(window.getComputedStyle(ref.current).height) < 300) {
+    if (parseInt(window.getComputedStyle(ref.current).height) < 200) {
       setIsVisible(true);
     }
   }, []);
@@ -30,7 +30,9 @@ const Overview = ({ item }) => {
 
       <OverviewHiddenWrapper gap={10} ref={ref} isVisible={isVisible}>
         <OverviewHeader>{t('actorDetails.biography')}</OverviewHeader>
-        <OverviewDescription>{item.biography}</OverviewDescription>
+        <OverviewDescription>
+          {item.biography || t('actorDetails.notFoundBiographyTitle')}
+        </OverviewDescription>
         <OverviewVisibleWrapper hidden={isVisible}></OverviewVisibleWrapper>
       </OverviewHiddenWrapper>
 

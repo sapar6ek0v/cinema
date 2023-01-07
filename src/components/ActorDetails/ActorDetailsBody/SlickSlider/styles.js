@@ -20,9 +20,17 @@ export const SlickSliderCard = styled.div`
   padding: 20px;
 `;
 
-export const SlickSliderImageWrapper = styled.div`
+export const SlickSliderImageWrapper = styled.figure`
   position: relative;
   width: 100%;
+  transition: all 0.5s ease-out;
+  &:hover {
+    filter: brightness(50%);
+
+    figcaption {
+      opacity: 1;
+    }
+  }
 `;
 
 export const SlickSliderImage = styled.img`
@@ -30,28 +38,33 @@ export const SlickSliderImage = styled.img`
   height: 305px;
   object-fit: cover;
   border-radius: 5px;
-  vertical-align: middle;
-  transition: all 0.5s ease-out;
-
-  &:hover {
-    filter: brightness(50%);
-
-    & + span {
-      opacity: 1;
-    }
-  }
 `;
 
-export const ExpandMore = styled.span`
+export const ExpandMore = styled.figcaption`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50, -50%);
+  transform: translate(-50%, -50%);
   opacity: 0;
-  transition: all 0.5s ease-out;
+  z-index: 10;
+  background-color: ${colors.pink};
+  padding: 5px 8px;
+  border-radius: 5px;
+`;
+
+export const ExpandMoreLink = styled(Link)`
+  text-decoration: none;
   ${flexAlignCenter};
   gap: 4px;
-  user-select: none;
+  ${fontStyleMdBold};
+  color: ${colors.white};
+  transition: all 0.4s linear;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: ${colors.pinkHover};
+  }
 `;
 
 export const Stack = styled.div`

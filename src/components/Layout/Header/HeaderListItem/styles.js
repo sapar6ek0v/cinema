@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { fontStyleSmNormal } from "../../../../helpers/cssFragments";
+import styled from 'styled-components';
+import { colors } from '../../../../constants/colors';
+import { fontStyleSmNormal } from '../../../../helpers/cssFragments';
 
 export const HeaderGroup = styled.div`
   display: flex;
@@ -11,29 +12,29 @@ export const HeaderGroup = styled.div`
 export const SignUpBtn = styled.button`
   ${fontStyleSmNormal};
   text-transform: uppercase;
-  color: #fff;
-  background-color: #dd003f;
+  color: ${colors.white};
+  background-color: ${colors.pink};
   padding: 5px 10px;
-  border: 2px solid #fff;
+  border: 2px solid ${colors.white};
   border-radius: 5px;
   transition: all 0.4s linear;
 
   &:hover,
   &:active,
   &:focus {
-    color: #dd003f;
-    border: 2px solid #dd003f;
-    background-color: #fff;
+    color: ${colors.pink};
+    border: 2px solid ${colors.pink};
+    background-color: ${colors.white};
   }
 `;
 
 export const LangBtn = styled(SignUpBtn)`
-  background-color: #233a50;
+  background-color: ${colors.lightBlue};
 
   &:hover,
   &:active,
   &:focus {
-    color: #233a50;
-    border: 2px solid #233a50;
+    color: ${colors.lightBlue};
+    border: 2px solid ${colors.lightBlue};
   }
 `;

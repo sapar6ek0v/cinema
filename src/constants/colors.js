@@ -19,4 +19,7 @@ export const colors = {
   secondaryBlue: '#0e23387a',
   shadow: 'rgba(255, 255, 255, 0.05)',
   darkGray: '#405266',
+  pinkHover: '#590348',
+  lightBlue2: '#20232a',
+  lightGray2: '#333844d1',
 };

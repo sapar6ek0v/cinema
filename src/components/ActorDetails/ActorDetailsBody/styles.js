@@ -6,6 +6,8 @@ import { Group } from '../../styles';
 export const Wrapper = styled.section`
   padding: 50px 0px;
   background-color: ${colors.darkBlue2};
+  min-height: 100vh;
+  position: relative;
 `;
 
 export const Title = styled.h5`

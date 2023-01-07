@@ -66,15 +66,20 @@
     "placeOfBirth": "Place of birth",
     "alsoKnownAs": "Also known as",
     "biography": "Biography",
+    "notFoundBiographyTitle": "No information about biography",
     "viewMore": "More",
     "filmography": "FILMOGRAPHY",
-    "readMore": "Read more",
+    "readMore": "More",
     "notFoundTvShowTitle": "No serials.",
-    "notFoundMoviesTitle": "No movies."
+    "notFoundMoviesTitle": "No movies.",
+    "overview": "Overview",
+    "media": "Media",
+    "movies": "Movies",
+    "tvShows": "Serials"
   },
 
   "slider": {
-    "readMore": "Read more"
+    "readMore": "More"
   },
 
   "search": {

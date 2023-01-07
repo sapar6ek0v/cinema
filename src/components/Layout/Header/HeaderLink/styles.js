@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { colors } from '../../../../constants/colors';
 import { fontStyleMdBold } from '../../../../helpers/cssFragments';
 
 export const HeaderLinkBtn = styled(Link)`
   background: transparent;
   ${fontStyleMdBold};
-  color: #abb7c4;
+  color: ${colors.lightGray};
   text-transform: uppercase;
   padding: 2px 8px;
   cursor: pointer;
@@ -15,6 +16,6 @@ export const HeaderLinkBtn = styled(Link)`
   &:hover,
   &:active,
   &:focus {
-    color: #dcf836;
+    color: ${colors.yellow};
   }
 `;

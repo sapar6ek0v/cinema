@@ -23,8 +23,8 @@ export const OverviewFlexColumn = styled.div`
 
 export const OverviewHiddenWrapper = styled(OverviewFlexColumn)`
   position: relative;
-  max-height: ${(props) => (props.isVisible ? '300px' : 'auto')};
-  overflow: ${(props) => (props.isVisible ? 'hidden' : 'visible')};
+  max-height: ${(props) => (props.isVisible ? 'auto' : '240px')};
+  overflow: ${(props) => (props.isVisible ? 'visible' : 'hidden')};
 `;
 
 export const OverviewHeader = styled.p`
@@ -40,11 +40,13 @@ export const OverviewDescription = styled.p`
 `;
 
 export const OverviewButton = styled.button`
+  width: 64px;
   padding: 4px 8px;
-  border: 2px solid ${colors.white};
-  background: ${colors.lightBlue};
+  border: 2px solid ${colors.lightBlue};
+  border-radius: 5px;
   ${fontStyleMdNormal};
-  color: ${colors.white};
+  background-color: transparent;
+  color: ${colors.lightBlue};
   ${flexAlignCenter};
   gap: 4px;
   transition: all 0.4s linear;
@@ -52,9 +54,9 @@ export const OverviewButton = styled.button`
   &:active,
   &:focus,
   &:hover {
-    border-color: ${colors.lightBlue};
-    background: transparent;
-    color: ${colors.lightBlue};
+    border-color: ${colors.white};
+    background-color: ${colors.lightBlue};
+    color: ${colors.white};
   }
 `;
 
@@ -65,5 +67,5 @@ export const OverviewVisibleWrapper = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, transparent 0%, transparent 80%, ${colors.lightBlue} 100%);
+  background: linear-gradient(to bottom, transparent 0%, transparent 83%, ${colors.bg2} 100%);
 `;

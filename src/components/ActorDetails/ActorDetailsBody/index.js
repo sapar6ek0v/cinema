@@ -2,14 +2,28 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
+import { idGenerator } from '../../../helpers/idGenerator';
 import ActorMoviesSlider from './ActorMoviesSlider';
 import ActorTvsSlider from './ActorTvsSlider';
-import { buttonTypes } from './data';
 import { Title, Wrapper, ButtonGroup, Button } from './styles';
 
 const ActorDetailsBody = ({ id }) => {
   const { t } = useTranslation();
-  const [type, setType] = useState(buttonTypes[0].title);
+
+  const buttonTypes = [
+    {
+      id: idGenerator(),
+      title: t('actorDetails.movies'),
+      type: 'movies',
+    },
+    {
+      id: idGenerator(),
+      title: t('actorDetails.tvShows'),
+      type: 'tv-shows',
+    },
+  ];
+
+  const [type, setType] = useState(buttonTypes[0].type);
 
   const toggleContent = (value) => setType(value);
 
