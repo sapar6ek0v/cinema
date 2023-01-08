@@ -1,13 +1,21 @@
 import styled from 'styled-components';
+import { breakpoints } from '../../../constants/breakpoints';
 import { colors } from '../../../constants/colors';
 import { fontStyleXlBold } from '../../../helpers/cssFragments';
 import { Group } from '../../styles';
 
 export const Wrapper = styled.section`
-  padding: 50px 0px;
   background-color: ${colors.darkBlue2};
   min-height: 100vh;
   position: relative;
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    padding: 50px 12px;
+  }
+
+  @media (min-width: ${breakpoints.sm}) {
+    padding: 50px 0;
+  }
 `;
 
 export const Title = styled.h5`
@@ -17,14 +25,29 @@ export const Title = styled.h5`
   color: ${colors.white};
   text-transform: uppercase;
   margin-bottom: 8px;
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    font-size: 24px;
+  }
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    font-size: 28px;
+  }
 `;
 
 export const ButtonGroup = styled(Group)`
-  gap: 20px;
+  @media (min-width: ${breakpoints.extraSmall}) {
+    gap: 10px;
+  }
+
+  @media (min-width: ${breakpoints.sm}) {
+    gap: 20px;
+  }
 `;
 
 export const Button = styled.button`
   border: none;
+  padding: 0;
   background: transparent;
   ${fontStyleXlBold};
   font-size: 22px;
@@ -37,5 +60,13 @@ export const Button = styled.button`
   &:active {
     outline: none;
     color: ${colors.yellow};
+  }
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    font-size: 18px;
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+    font-size: 22px;
   }
 `;

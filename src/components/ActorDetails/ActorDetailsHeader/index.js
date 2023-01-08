@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import { getImage } from '../../../helpers/getImage';
 import { idGenerator } from '../../../helpers/idGenerator';
 import MediaLinks from '../../MediaLinks';
+import { StyledContainer } from '../../styles';
 import Overview from './Overview';
 import PersonalInformation from './PersonalInformation';
 import PhotoGallery from './PhotoGallery';
@@ -50,7 +50,7 @@ const ActorDetailsHeader = ({ item }) => {
 
   return (
     <Wrapper>
-      <Container>
+      <StyledContainer>
         <FlexContainer>
           <Image src={getImage(item.profile_path)} alt={item.name} />
 
@@ -71,7 +71,7 @@ const ActorDetailsHeader = ({ item }) => {
             {switchContent(type)}
           </Stack>
         </FlexContainer>
-      </Container>
+      </StyledContainer>
     </Wrapper>
   );
 };

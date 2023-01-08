@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { colors } from '../../../../constants/colors';
+import { breakpoints } from '../../../../constants/breakpoints';
 import {
   flexAlignCenter,
   flexColumn,
@@ -12,8 +13,15 @@ import {
 } from '../../../../helpers/cssFragments';
 
 export const SlickSliderWrapper = styled.div`
-  padding: 40px 0px;
-  margin: 0px -20px;
+  @media (min-width: ${breakpoints.extraSmall}) {
+    overflow: hidden;
+    padding: 30px 0px;
+  }
+
+  @media (min-width: ${breakpoints.sm}) {
+    padding: 40px 0px;
+    overflow: visible;
+  }
 `;
 
 export const SlickSliderCard = styled.div`
@@ -21,6 +29,7 @@ export const SlickSliderCard = styled.div`
 `;
 
 export const SlickSliderImageWrapper = styled.figure`
+  margin: 0;
   position: relative;
   width: 100%;
   transition: all 0.5s ease-out;
@@ -38,6 +47,16 @@ export const SlickSliderImage = styled.img`
   height: 305px;
   object-fit: cover;
   border-radius: 5px;
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    margin: 0 auto;
+    width: 78%;
+  }
+
+  @media (min-width: ${breakpoints.small}) {
+    margin: 0 auto;
+    width: 100%;
+  }
 `;
 
 export const ExpandMore = styled.figcaption`
