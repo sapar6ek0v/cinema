@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 
+import { StyledContainer } from '../styles';
 import Card from './Card';
 import FilterButtons from './FilterButtons';
 import PaginationButtons from './PaginationButtons';
@@ -9,9 +9,9 @@ import { ButtonGroup, Grid, Stack, Wrapper } from './styles';
 const PageWithPagination = ({ list, types, currentType, page, togglePage, linkPath, handleChangeType }) => {
   return (
     <Wrapper>
-      <Container>
+      <StyledContainer>
         <Stack>
-          <ButtonGroup gap={20} position="space-between">
+          <ButtonGroup>
             <FilterButtons types={types} currentType={currentType} handleChangeType={handleChangeType} />
 
             <PaginationButtons page={page} togglePage={togglePage} />
@@ -23,11 +23,11 @@ const PageWithPagination = ({ list, types, currentType, page, togglePage, linkPa
             ))}
           </Grid>
 
-          <ButtonGroup position="flex-end">
+          <ButtonGroup>
             <PaginationButtons page={page} togglePage={togglePage} />
           </ButtonGroup>
         </Stack>
-      </Container>
+      </StyledContainer>
     </Wrapper>
   );
 };

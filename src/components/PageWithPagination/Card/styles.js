@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { breakpoints } from '../../../constants/breakpoints';
 import { colors } from '../../../constants/colors';
 import {
   flexColumn,
@@ -13,18 +14,37 @@ import {
 export const CardWrapper = styled.div`
   ${flexColumn};
   align-items: center;
-  gap: 8px;
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    gap: 4px;
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+    gap: 8px;
+  }
 `;
 
 export const ImageWrapper = styled(Link)`
   display: block;
   border-radius: 8px;
-  height: 265px;
-  width: 100%;
   transition: all 0.4s ease-in-out;
 
   &:hover {
     filter: brightness(0.3);
+  }
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    width: 70%;
+    height: 284px;
+  }
+
+  @media (min-width: ${breakpoints.small}) {
+    width: 85%;
+    height: 265px;
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+    width: 100%;
   }
 `;
 
