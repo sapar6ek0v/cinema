@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import { useTranslation } from 'react-i18next';
 
@@ -10,6 +9,7 @@ import { SearchServices } from '../../helpers/services/searchServices';
 import { useDebounce } from '../../hooks/useDebounce';
 import SearchResultGrid from '../../components/SearchResultGrid';
 import SEO from '../../components/SEO';
+import { StyledContainer } from '../../components/styles';
 import { SearchInput, Wrapper, FlexContainer } from './styles';
 
 const SearchResults = () => {
@@ -43,7 +43,7 @@ const SearchResults = () => {
         type={t('search.helmetType')}
       />
       <Wrapper>
-        <Container>
+        <StyledContainer>
           <FlexContainer>
             <SearchInput
               onChange={handleOnChange}
@@ -55,7 +55,7 @@ const SearchResults = () => {
 
             <SearchResultGrid list={data} isLoading={isLoading} />
           </FlexContainer>
-        </Container>
+        </StyledContainer>
       </Wrapper>
     </MediaTypeProvider>
   );

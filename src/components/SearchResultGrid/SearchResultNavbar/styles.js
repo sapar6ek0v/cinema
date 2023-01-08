@@ -27,6 +27,7 @@ export const Header = styled.h4`
 export const List = styled.ul`
   ${flexColumn};
   padding: 8px 0px;
+  margin: 0;
   list-style: none;
 `;
 

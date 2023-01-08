@@ -1,11 +1,21 @@
 import styled from 'styled-components';
+import { breakpoints } from '../../../../constants/breakpoints';
 import { colors } from '../../../../constants/colors';
 import { flexColumn, fontStyleMdNormal, fontStyleSmNormal } from '../../../../helpers/cssFragments';
 
 export const ImageWrapper = styled.div`
-  min-width: 94px;
-  width: 94px;
-  height: 141px;
+  height: inherit;
+  object-fit: cover;
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    min-width: 104px;
+    width: 104px;
+  }
+
+  @media (min-width: ${breakpoints.small}) {
+    min-width: 94px;
+    width: 94px;
+  }
 `;
 
 export const Stack = styled.div`
