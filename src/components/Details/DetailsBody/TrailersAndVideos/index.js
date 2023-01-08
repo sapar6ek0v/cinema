@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
-import { Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import { useTranslation } from 'react-i18next';
 
 import { getImage } from '../../../../helpers/getImage';
 import { VideoServices } from '../../../../helpers/services/videoServices';
 import { useLanguageContext } from '../../../../context/LanguageContext';
-import { NoFoundTitle } from '../../../styles';
+import { NoFoundTitle, StyledContainer } from '../../../styles';
 import { ContentFlexContainer, ContentWrapper, SliderContainer, Title } from '../styles';
 import TrailerModal from './TrailerModal';
 import { Card, CardWrapper, Image, ImageWrapper, StartIcon, Header, QuantityTitle } from './styles';
@@ -35,7 +34,7 @@ const TrailersAndVideos = ({ type, id }) => {
   return (
     <>
       <ContentWrapper>
-        <Container>
+        <StyledContainer>
           <ContentFlexContainer>
             <Title>#{t('details.mediaTitle')}</Title>
             <SliderContainer>
@@ -66,7 +65,7 @@ const TrailersAndVideos = ({ type, id }) => {
               )}
             </SliderContainer>
           </ContentFlexContainer>
-        </Container>
+        </StyledContainer>
       </ContentWrapper>
       {isVideoModalOpen && <TrailerModal onClose={handleClose} videoKey={videoKey} />}
     </>

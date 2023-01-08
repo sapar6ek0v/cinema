@@ -1,14 +1,13 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import { useTranslation } from 'react-i18next';
 
 import { useLanguageContext } from '../../../../context/LanguageContext';
 import { getImage } from '../../../../helpers/getImage';
 import { RecommendationServices } from '../../../../helpers/services/recommendationServices';
+import { NoFoundTitle, StyledContainer } from '../../../styles';
 import { ContentFlexContainer, ContentWrapper, SliderContainer, Title } from '../styles';
 import { CardWrapper, Image, ImageWrapperLink, TitleGroup, TitleLink, VoteAverage } from './styles';
-import { NoFoundTitle } from '../../../styles';
 
 const Recommendations = ({ type, id, linkPath }) => {
   const { t } = useTranslation();
@@ -19,7 +18,7 @@ const Recommendations = ({ type, id, linkPath }) => {
 
   return (
     <ContentWrapper>
-      <Container>
+      <StyledContainer>
         <ContentFlexContainer>
           <Title>#{t('details.recommendationTitle')}</Title>
           <SliderContainer>
@@ -43,7 +42,7 @@ const Recommendations = ({ type, id, linkPath }) => {
             )}
           </SliderContainer>
         </ContentFlexContainer>
-      </Container>
+      </StyledContainer>
     </ContentWrapper>
   );
 };

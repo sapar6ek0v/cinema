@@ -1,10 +1,9 @@
 import React, { useMemo } from 'react';
-import { Row } from 'react-bootstrap';
 import { useQuery } from 'react-query';
+
 import { useLanguageContext } from '../../../../context/LanguageContext';
 import { ActorServices } from '../../../../helpers/services/actorServices';
-
-import { FilmCrewCard, FilmCrewCol, JobTitle, FilmCrewMemberName } from './styles';
+import { FilmCrewCard, FilmCrewCol, JobTitle, FilmCrewMemberName, StyledRow } from './styles';
 
 const FilmCrew = ({ type, id }) => {
   const { language } = useLanguageContext();
@@ -25,7 +24,7 @@ const FilmCrew = ({ type, id }) => {
   }, [list, type]);
 
   return (
-    <Row>
+    <StyledRow>
       {!!filmCrew
         ? filmCrew.map((crew, idx) => (
             <FilmCrewCol key={crew.id + idx + Date.now()}>
@@ -36,7 +35,7 @@ const FilmCrew = ({ type, id }) => {
             </FilmCrewCol>
           ))
         : null}
-    </Row>
+    </StyledRow>
   );
 };
 

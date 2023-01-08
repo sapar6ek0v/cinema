@@ -6,7 +6,7 @@ import { useLanguageContext } from '../../../../context/LanguageContext';
 import { getImage } from '../../../../helpers/getImage';
 import { MovieServices } from '../../../../helpers/services/movieServices';
 import KeyWords from './KeyWords';
-import { AdditionalInformationWrapper, TitleStack, Title, Stack, Description, Image } from './styles';
+import { AdditionalInformationWrapper, TitleStack, Title, Grid, Description, Image } from './styles';
 
 const AdditionalInformation = ({ type, id }) => {
   const { t } = useTranslation();
@@ -18,7 +18,7 @@ const AdditionalInformation = ({ type, id }) => {
   return (
     <AdditionalInformationWrapper>
       {!!item ? (
-        <Stack>
+        <Grid>
           <TitleStack>
             <Title>{t('details.originalName')}</Title>
             <Description>{item.original_title || item.original_name || '-'}</Description>
@@ -62,7 +62,7 @@ const AdditionalInformation = ({ type, id }) => {
             <Title>{t('details.keywords')}</Title>
             <KeyWords id={id} type={type} />
           </TitleStack>
-        </Stack>
+        </Grid>
       ) : null}
     </AdditionalInformationWrapper>
   );

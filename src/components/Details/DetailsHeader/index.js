@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +12,7 @@ import { colors } from '../../../constants/colors';
 import notFound from '../../../images/not-found.jpg';
 import Loader from '../../Loader';
 import MediaLinks from '../../MediaLinks';
-import { Group } from '../../styles';
+import { Group, StyledContainer } from '../../styles';
 import FilmCrew from './FilmCrew';
 import CircularBar from './CircularBar';
 import ImageModal from './ImageModal';
@@ -23,7 +22,7 @@ import {
   Column8,
   DetailsHeaderWrapper,
   Expand,
-  FlexContainer,
+  Grid,
   Image,
   ImageWrapper,
   Title,
@@ -64,8 +63,8 @@ const DetailsHeader = ({ type, id }) => {
               backgroundBlendMode: 'darken',
             }}
           >
-            <Container>
-              <FlexContainer>
+            <StyledContainer>
+              <Grid>
                 <ImageContainer>
                   <ImageWrapper onClick={handleOpen}>
                     <Image src={getImage(item.poster_path) || notFound} alt={item.title || item.name} />
@@ -82,7 +81,7 @@ const DetailsHeader = ({ type, id }) => {
                     <ReleaseYear>({dayjs(item.release_date).format('YYYY')})</ReleaseYear>
                   </Title>
 
-                  <TextGroup gap={15}>
+                  <TextGroup>
                     <Time after>{dayjs(item.release_date || item.first_air_date).format('YYYY/MM/DD')}</Time>
                     <Group gap={5}>
                       {item.genres?.map((genre, idx) => (
@@ -94,7 +93,7 @@ const DetailsHeader = ({ type, id }) => {
                     </Time>
                   </TextGroup>
 
-                  <MediaGroup gap={30}>
+                  <MediaGroup>
                     <CircularBar item={item} />
                     <MediaLinks id={id} type={type} homepage={item.homepage} />
                   </MediaGroup>
@@ -106,8 +105,8 @@ const DetailsHeader = ({ type, id }) => {
                   </OverviewBlock>
                   <FilmCrew id={id} type={type} />
                 </Column8>
-              </FlexContainer>
-            </Container>
+              </Grid>
+            </StyledContainer>
           </DetailsHeaderWrapper>
 
           {isViewModalImage && (

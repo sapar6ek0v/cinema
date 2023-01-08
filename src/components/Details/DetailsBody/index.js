@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 
 import { useLanguageContext } from '../../../context/LanguageContext';
 import { MovieServices } from '../../../helpers/services/movieServices';
 import { getImage } from '../../../helpers/getImage';
 import { colors } from '../../../constants/colors';
+import { StyledContainer } from '../../styles';
 import Loader from '../../Loader';
 import Actors from './Actors';
 import AdditionalInformation from './AdditionalInformation';
@@ -31,7 +31,7 @@ const DetailsBody = ({ id, type, linkPath }) => {
             backgroundBlendMode: 'darken',
           }}
         >
-          <Container>
+          <StyledContainer>
             <FlexContainer>
               <Column8>
                 <Actors id={id} type={type} />
@@ -42,7 +42,7 @@ const DetailsBody = ({ id, type, linkPath }) => {
                 <AdditionalInformation id={id} type={type} />
               </Column4>
             </FlexContainer>
-          </Container>
+          </StyledContainer>
         </div>
       ) : (
         <Loader bg={colors.darkBlue2} />

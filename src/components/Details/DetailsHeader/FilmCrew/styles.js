@@ -1,19 +1,28 @@
+import { Row } from 'react-bootstrap';
 import styled from 'styled-components';
+import { breakpoints } from '../../../../constants/breakpoints';
 import { colors } from '../../../../constants/colors';
 import { fontStyleXlBold, fontStyleXlNormal } from '../../../../helpers/cssFragments';
 
-export const FilmCrewCol = styled.div`
-  flex: 0 0 auto;
-  width: 25%;
-
-  @media (max-width: 768px) {
-    flex: 0 0 auto;
-    width: 33.33333333%;
+export const StyledRow = styled(Row)`
+  @media (min-width: ${breakpoints.extraSmall}) {
+    justify-content: center;
   }
 
-  @media (max-width: 576px) {
-    flex: 0 0 auto;
-    width: 50%;
+  @media (min-width: ${breakpoints.md}) {
+    justify-content: normal;
+  }
+`;
+
+export const FilmCrewCol = styled.div`
+  flex: 0 0 auto;
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    width: 25%;
+  }
+
+  @media (min-width: ${breakpoints.small}) {
+    width: 33.33333333%;
   }
 `;
 
