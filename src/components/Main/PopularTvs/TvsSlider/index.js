@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import { useLanguageContext } from '../../../../context/LanguageContext';
 
 import { MovieServices } from '../../../../helpers/services/movieServices';
-import SlickSlider from '../../../SlickSlider';
+import SlickSlider from '../../SlickSlider';
 
 const TvsSlider = ({ type }) => {
   const { language } = useLanguageContext();

@@ -1,4 +1,5 @@
 export const settings = {
+  arrows: false,
   dots: true,
   infinite: true,
   slidesToShow: 4,
@@ -32,7 +33,7 @@ export const settings = {
       },
     },
     {
-      breakpoint: 448,
+      breakpoint: 350,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,

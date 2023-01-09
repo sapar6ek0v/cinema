@@ -18,10 +18,6 @@ export const FilmCrewCol = styled.div`
   flex: 0 0 auto;
 
   @media (min-width: ${breakpoints.extraSmall}) {
-    width: 25%;
-  }
-
-  @media (min-width: ${breakpoints.small}) {
     width: 33.33333333%;
   }
 `;

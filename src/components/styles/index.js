@@ -1,12 +1,10 @@
+import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
+import { breakpoints } from '../../constants/breakpoints';
 import { colors } from '../../constants/colors';
-import {
-  fontStyleSmNormal,
-  flexJustifyCenter,
-  fontStyleXlBold,
-  fontStyleMdBold,
-} from '../../helpers/cssFragments';
+import { fontStyleXlBold, fontStyleMdBold } from '../../helpers/cssFragments';
 
 export const Group = styled.div`
   display: flex;
@@ -16,6 +14,7 @@ export const Group = styled.div`
 `;
 
 export const Title = styled.h4`
+  margin-bottom: 0;
   font-size: 22px;
   color: ${colors.white};
   font-weight: bold;
@@ -30,48 +29,29 @@ export const ViewLink = styled(Link)`
   transition: all 0.4s linear;
 
   &:hover {
-    color: ${colors.lightGray};
+    color: ${colors.yellow};
   }
 `;
 
 export const Button = styled.button`
-  ${fontStyleMdBold};
   color: ${(props) => (props.active ? colors.yellow : colors.lightGray)};
-  padding: 0 20px 0 0;
   text-transform: uppercase;
   background: transparent;
   border: none;
+  padding: 0;
   transition: all 0.4s ease-in-out;
 
   &:hover {
     color: ${colors.yellow};
   }
-`;
 
-export const AdvertiseTitle = styled.p`
-  color: ${colors.lightBlue};
-  ${fontStyleSmNormal};
-  ${flexJustifyCenter};
-  gap: 2px;
-  margin: 0;
-
-  &::before,
-  &::after {
-    content: '';
-    width: 5px;
-    height: 1px;
-    background-color: ${colors.lightBlue};
-    display: inline-block;
+  @media (min-width: ${breakpoints.extraSmall}) {
+    font-size: 14px;
   }
-`;
 
-export const Row = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: calc(-1 * 0);
-  margin-right: calc(-0.5 * 1.5rem);
-  margin-left: calc(-0.5 * 1.5rem);
-  gap: ${(props) => props.gap && `${props.gap}px`};
+  @media (min-width: ${breakpoints.small}) {
+    ${fontStyleMdBold};
+  }
 `;
 
 export const NoFoundTitle = styled.p`
@@ -83,4 +63,34 @@ export const NoFoundTitle = styled.p`
 export const Wrapper = styled.section`
   min-height: calc(100vh - 75px);
   position: relative;
+`;
+
+export const StyledContainer = styled(Container)`
+  /* @media (min-width: 320px) {
+    max-width: 280px;
+  }
+
+  @media (min-width: 480px) {
+    max-width: 410px;
+  } */
+  /* 
+  @media (min-width: 576px) {
+    max-width: 526px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  } */
 `;

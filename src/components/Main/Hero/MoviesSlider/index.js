@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 import { getImage } from '../../../../helpers/getImage';
+import { useMediaQuery } from '../../../../hooks/useMediaQuery';
 import {
   SliderFlexBox,
   SliderWrapper,
@@ -15,15 +16,18 @@ import {
   SliderLink,
   SliderDate,
   ImageLink,
+  Wrapper,
 } from './styles';
 import { settings } from './settings';
 
 const MoviesSlider = ({ movies }) => {
+  const matches = useMediaQuery('(min-width: 576px)');
+
   return (
-    <>
+    <Wrapper>
       {!!movies ? (
         <Slider {...settings}>
-          {movies.map((movie) => {
+          {movies.slice(0, matches ? -1 : 10).map((movie) => {
             const { release_date, id, poster_path, title, vote_average } = movie;
             return (
               <SliderWrapper key={id}>
@@ -51,7 +55,7 @@ const MoviesSlider = ({ movies }) => {
           })}
         </Slider>
       ) : null}
-    </>
+    </Wrapper>
   );
 };
 

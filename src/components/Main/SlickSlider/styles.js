@@ -1,25 +1,35 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { colors } from '../../constants/colors';
+import { breakpoints } from '../../../constants/breakpoints';
+import { colors } from '../../../constants/colors';
 import {
   flexAlignCenter,
   flexColumn,
   fontStyleMdBold,
   fontStyleSmBold,
   fontStyleXlBold,
-} from '../../helpers/cssFragments';
+} from '../../../helpers/cssFragments';
+
+export const SlickSliderWrapper = styled.div``;
 
 export const SlickSliderCard = styled.div`
   ${flexColumn};
   text-align: center;
-  padding: 0px 10px;
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    padding: 0px 10px 20px;
+  }
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    padding: 0px 10px;
+  }
 `;
 
 export const SlickSliderImageWrapper = styled.figure`
+  margin: 0 auto;
   position: relative;
   transition: all 0.4s linear;
-  margin: 0;
 
   &:hover {
     filter: brightness(0.4);
@@ -28,12 +38,25 @@ export const SlickSliderImageWrapper = styled.figure`
       opacity: 1;
     }
   }
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    height: 240px;
+    width: 100%;
+  }
+
+  @media (min-width: ${breakpoints.sm}) {
+    height: 287px;
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+    height: 264px;
+  }
 `;
 
 export const SlickSliderImage = styled.img`
   border-radius: 5px;
   width: 100%;
-  height: 264px;
+  height: 100%;
   object-fit: cover;
 `;
 

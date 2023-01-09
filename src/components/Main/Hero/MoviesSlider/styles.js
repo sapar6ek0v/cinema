@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { breakpoints } from '../../../../constants/breakpoints';
 import { colors } from '../../../../constants/colors';
 import {
   flexAlignCenter,
@@ -8,9 +9,17 @@ import {
   fontStyleMdNormal,
 } from '../../../../helpers/cssFragments';
 
+export const Wrapper = styled.div``;
+
 export const SliderWrapper = styled.div`
   padding: 5px 10px;
-  margin-bottom: 20px;
+  @media (min-width: ${breakpoints.extraSmall}) {
+    margin-bottom: 54px;
+  }
+
+  @media (min-width: ${breakpoints.small}) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const SliderImage = styled.img`

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from 'react-query';
 
 import { useLanguageContext } from '../../../context/LanguageContext';
 import { MovieServices } from '../../../helpers/services/movieServices';
 import Loader from '../../Loader';
+import { StyledContainer } from '../../styles';
 import SearchForm from './SearchForm';
 import MoviesSlider from './MoviesSlider';
 import { HeroWrapper } from './styles';
@@ -29,10 +29,10 @@ const Hero = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <Container>
+        <StyledContainer>
           <SearchForm value={value} setValue={setValue} handleSubmit={onSubmit} />
           <MoviesSlider movies={movies} />
-        </Container>
+        </StyledContainer>
       )}
     </HeroWrapper>
   );

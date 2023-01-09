@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import SEO from '../../components/SEO';
@@ -9,7 +8,8 @@ import PopularTvs from '../../components/Main/PopularTvs';
 import ActorsPopular from '../../components/Main/ActorsPopular';
 import Trends from '../../components/Main/Trends';
 import Trailers from '../../components/Main/Trailers';
-import { Col4, Col8, Wrapper } from '../../components/Main/styles';
+import { Col4, Col8, Wrapper, Row } from '../../components/Main/styles';
+import { StyledContainer } from '../../components/styles';
 
 const Main = () => {
   const { t } = useTranslation();
@@ -24,7 +24,7 @@ const Main = () => {
       />
       <Hero />
       <Wrapper>
-        <Container>
+        <StyledContainer>
           <Row>
             <Col8>
               <PopularMovies />
@@ -34,7 +34,7 @@ const Main = () => {
               <ActorsPopular />
             </Col4>
           </Row>
-        </Container>
+        </StyledContainer>
       </Wrapper>
       <Trailers />
       <Trends />

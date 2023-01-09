@@ -8,7 +8,7 @@ import { useLanguageContext } from '../../../context/LanguageContext';
 import { ActorServices } from '../../../helpers/services/actorServices';
 import { getImage } from '../../../helpers/getImage';
 import advertise from '../../../images/advertise.jpg';
-import { AdvertiseTitle } from '../../styles';
+import { AdvertiseTitle } from '../styles';
 import {
   PopularActorWrapper,
   AdvertiseImage,

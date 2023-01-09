@@ -1,19 +1,18 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-import { Title } from '../../styles';
-import { TrailersWrapper } from './styles';
+import { StyledContainer, Title } from '../../styles';
+import { Wrapper } from './styles';
 
 const Trailers = () => {
   const { t } = useTranslation();
 
   return (
-    <TrailersWrapper>
-      <Container>
+    <Wrapper>
+      <StyledContainer>
         <Title>{t('main.trailerTitle')}</Title>
-      </Container>
-    </TrailersWrapper>
+      </StyledContainer>
+    </Wrapper>
   );
 };
 
