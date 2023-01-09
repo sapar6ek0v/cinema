@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 
+import { useMediaQuery } from '../../../../hooks/useMediaQuery';
 import { getImage } from '../../../../helpers/getImage';
 import notFound from '../../../../images/not-found.jpg';
 import { settings } from './settings';
@@ -23,11 +24,12 @@ import {
 
 const SlickSlider = ({ list, linkPath }) => {
   const { t } = useTranslation();
+  const matches = useMediaQuery('(min-width: 576px)');
 
   return (
     <SlickSliderWrapper>
       <Slider {...settings}>
-        {list.slice(0, 11).map((item) => (
+        {list.slice(0, matches ? 11 : 6).map((item) => (
           <SlickSliderCard key={item.id}>
             <Stack>
               <SlickSliderImageWrapper>

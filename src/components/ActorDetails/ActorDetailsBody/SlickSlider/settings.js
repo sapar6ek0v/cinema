@@ -1,4 +1,5 @@
 export const settings = {
+  arrows: false,
   dots: true,
   infinite: true,
   slidesToShow: 4,

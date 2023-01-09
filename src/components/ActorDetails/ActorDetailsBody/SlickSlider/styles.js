@@ -14,7 +14,7 @@ import {
 
 export const SlickSliderWrapper = styled.div`
   @media (min-width: ${breakpoints.extraSmall}) {
-    overflow: hidden;
+    overflow: auto;
     padding: 30px 0px;
   }
 
