@@ -1,7 +1,7 @@
 import React from 'react';
 import dayjs from 'dayjs';
-import { Container } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
+import { Container } from 'react-bootstrap';
 
 import TMDBlogo from '../../../images/svgs/TMDB.svg';
 import ListItem from './ListItem';

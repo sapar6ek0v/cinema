@@ -6,16 +6,18 @@ import cityViewBg from '../../../images/city-view.jpg';
 import { Group } from '../../styles';
 
 export const Wrapper = styled.section`
-  min-height: calc(100vh - 75px);
+  min-height: 100vh;
   background: ${colors.bg3} url(${cityViewBg}) center/cover;
   background-blend-mode: darken;
 
   @media (min-width: ${breakpoints.extraSmall}) {
     padding: 50px 12px;
+    margin-top: 50px;
   }
 
   @media (min-width: ${breakpoints.sm}) {
     padding: 50px 0;
+    margin-top: 74px;
   }
 `;
 

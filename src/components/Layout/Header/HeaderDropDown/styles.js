@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { fontStyleMdBold } from '../../../../helpers/cssFragments';
 import { colors } from '../../../../constants/colors';
+import { breakpoints } from '../../../../constants/breakpoints';
 
 export const DropDownWrapper = styled(Dropdown)``;
 
 export const DropDownButton = styled(Dropdown.Toggle)`
   ${fontStyleMdBold};
   text-transform: uppercase;
-  padding: 2px 8px;
   cursor: pointer;
   transition: all 0.4s linear;
   background-color: transparent !important;
@@ -23,6 +23,14 @@ export const DropDownButton = styled(Dropdown.Toggle)`
     outline: none !important;
     box-shadow: none !important;
     color: ${colors.yellow} !important;
+  }
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    padding: 0;
+  }
+
+  @media (min-width: ${breakpoints.xl}) {
+    padding: 2px 0;
   }
 `;
 

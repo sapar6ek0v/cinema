@@ -3,12 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { useQuery } from 'react-query';
 import { useTranslation } from 'react-i18next';
+import { Container } from 'react-bootstrap';
 
 import { useLanguageContext } from '../../../../context/LanguageContext';
 import { getImage } from '../../../../helpers/getImage';
 import { ActorServices } from '../../../../helpers/services/actorServices';
 import anonym from '../../../../images/anonym.jpg';
-import { NoFoundTitle, StyledContainer } from '../../../styles';
+import { NoFoundTitle } from '../../../styles';
 import { ContentFlexContainer, ContentWrapper, SliderContainer, Title } from '../styles';
 import { ActorCharacter, ActorImage, ActorName, ActorsCard, Button, ButtonCenter } from './styles';
 
@@ -22,7 +23,7 @@ const Actors = ({ type, id }) => {
 
   return (
     <ContentWrapper>
-      <StyledContainer>
+      <Container>
         <ContentFlexContainer>
           <Title>#{t('details.castTitle')}</Title>
           <SliderContainer>
@@ -54,7 +55,7 @@ const Actors = ({ type, id }) => {
             ) : null}
           </SliderContainer>
         </ContentFlexContainer>
-      </StyledContainer>
+      </Container>
     </ContentWrapper>
   );
 };

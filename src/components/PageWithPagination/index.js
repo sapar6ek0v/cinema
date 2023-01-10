@@ -1,6 +1,6 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
-import { StyledContainer } from '../styles';
 import Card from './Card';
 import FilterButtons from './FilterButtons';
 import PaginationButtons from './PaginationButtons';
@@ -9,7 +9,7 @@ import { ButtonGroup, Grid, Stack, Wrapper } from './styles';
 const PageWithPagination = ({ list, types, currentType, page, togglePage, linkPath, handleChangeType }) => {
   return (
     <Wrapper>
-      <StyledContainer>
+      <Container>
         <Stack>
           <ButtonGroup>
             <FilterButtons types={types} currentType={currentType} handleChangeType={handleChangeType} />
@@ -27,7 +27,7 @@ const PageWithPagination = ({ list, types, currentType, page, togglePage, linkPa
             <PaginationButtons page={page} togglePage={togglePage} />
           </ButtonGroup>
         </Stack>
-      </StyledContainer>
+      </Container>
     </Wrapper>
   );
 };

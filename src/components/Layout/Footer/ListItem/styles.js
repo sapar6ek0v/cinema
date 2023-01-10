@@ -1,14 +1,22 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { colors } from '../../../../constants/colors';
+import { breakpoints } from '../../../../constants/breakpoints';
 import { flexColumn, fontStyleMdNormal } from '../../../../helpers/cssFragments';
 
 export const List = styled.ul`
   ${flexColumn};
-  gap: 10px;
   list-style: none;
   padding: 0;
   margin: 0;
+
+  @media (min-width: ${breakpoints.extraSmall}) {
+    gap: 6px;
+  }
+
+  @media (min-width: ${breakpoints.sm}) {
+    gap: 10px;
+  }
 `;
 
 export const LinkItem = styled(Link)`

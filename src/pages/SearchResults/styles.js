@@ -5,11 +5,16 @@ import { breakpoints } from '../../constants/breakpoints';
 
 export const Wrapper = styled.section`
   position: relative;
-  min-height: calc(100vh - 75px);
+  min-height: 100vh;
   background: ${colors.darkBlue2};
 
   @media (min-width: ${breakpoints.extraSmall}) {
     padding: 50px 12px;
+    margin-top: 50px;
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+    margin-top: 74px;
   }
 
   @media (min-width: ${breakpoints.md}) {

@@ -11,17 +11,20 @@ import {
 import { Group } from '../../styles';
 
 export const Wrapper = styled.section`
-  min-height: calc(100vh - 75px);
+  min-height: 100vh;
   position: relative;
 `;
 
 export const DetailsHeaderWrapper = styled.div`
+  min-height: 100vh;
   @media (min-width: ${breakpoints.extraSmall}) {
     padding: 50px 12px;
+    margin-top: 50px;
   }
 
   @media (min-width: ${breakpoints.sm}) {
     padding: 50px 0;
+    margin-top: 74px;
   }
 
   @media (min-width: ${breakpoints.xl}) {

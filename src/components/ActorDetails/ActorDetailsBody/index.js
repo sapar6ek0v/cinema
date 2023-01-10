@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Container } from 'react-bootstrap';
 
 import { idGenerator } from '../../../helpers/idGenerator';
-import { StyledContainer } from '../../styles';
 import ActorMoviesSlider from './ActorMoviesSlider';
 import ActorTvsSlider from './ActorTvsSlider';
 import { Title, Wrapper, ButtonGroup, Button } from './styles';
@@ -40,7 +40,7 @@ const ActorDetailsBody = ({ id }) => {
 
   return (
     <Wrapper>
-      <StyledContainer>
+      <Container>
         <Title>{t('actorDetails.filmography')}</Title>
         <ButtonGroup>
           {buttonTypes.map((buttonType) => (
@@ -54,7 +54,7 @@ const ActorDetailsBody = ({ id }) => {
           ))}
         </ButtonGroup>
         {switchContent(type)}
-      </StyledContainer>
+      </Container>
     </Wrapper>
   );
 };

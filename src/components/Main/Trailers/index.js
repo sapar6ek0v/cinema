@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Container } from 'react-bootstrap';
 
-import { StyledContainer, Title } from '../../styles';
+import { Title } from '../../styles';
 import { Wrapper } from './styles';
 
 const Trailers = () => {
@@ -9,9 +10,9 @@ const Trailers = () => {
 
   return (
     <Wrapper>
-      <StyledContainer>
+      <Container>
         <Title>{t('main.trailerTitle')}</Title>
-      </StyledContainer>
+      </Container>
     </Wrapper>
   );
 };

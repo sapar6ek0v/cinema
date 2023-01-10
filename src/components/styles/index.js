@@ -1,4 +1,3 @@
-import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -63,34 +62,4 @@ export const NoFoundTitle = styled.p`
 export const Wrapper = styled.section`
   min-height: calc(100vh - 75px);
   position: relative;
-`;
-
-export const StyledContainer = styled(Container)`
-  /* @media (min-width: 320px) {
-    max-width: 280px;
-  }
-
-  @media (min-width: 480px) {
-    max-width: 410px;
-  } */
-  /* 
-  @media (min-width: 576px) {
-    max-width: 526px;
-  }
-
-  @media (min-width: 768px) {
-    max-width: 720px;
-  }
-
-  @media (min-width: 992px) {
-    max-width: 960px;
-  }
-
-  @media (min-width: 1200px) {
-    max-width: 1140px;
-  }
-
-  @media (min-width: 1400px) {
-    max-width: 1320px;
-  } */
 `;

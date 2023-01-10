@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { useTranslation } from 'react-i18next';
+import { Container } from 'react-bootstrap';
 
 import MediaTypeProvider from '../../context/MediaTypeContext';
 import { useLanguageContext } from '../../context/LanguageContext';
@@ -9,7 +10,6 @@ import { SearchServices } from '../../helpers/services/searchServices';
 import { useDebounce } from '../../hooks/useDebounce';
 import SearchResultGrid from '../../components/SearchResultGrid';
 import SEO from '../../components/SEO';
-import { StyledContainer } from '../../components/styles';
 import { SearchInput, Wrapper, FlexContainer } from './styles';
 
 const SearchResults = () => {
@@ -43,7 +43,7 @@ const SearchResults = () => {
         type={t('search.helmetType')}
       />
       <Wrapper>
-        <StyledContainer>
+        <Container>
           <FlexContainer>
             <SearchInput
               onChange={handleOnChange}
@@ -55,7 +55,7 @@ const SearchResults = () => {
 
             <SearchResultGrid list={data} isLoading={isLoading} />
           </FlexContainer>
-        </StyledContainer>
+        </Container>
       </Wrapper>
     </MediaTypeProvider>
   );

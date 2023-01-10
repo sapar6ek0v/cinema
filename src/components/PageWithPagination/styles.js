@@ -9,9 +9,11 @@ export const Wrapper = styled.div`
 
   @media (min-width: ${breakpoints.extraSmall}) {
     padding: 50px 12px;
+    margin-top: 50px;
   }
 
   @media (min-width: ${breakpoints.sm}) {
+    margin-top: 74px;
     padding: 70px 0;
   }
 `;

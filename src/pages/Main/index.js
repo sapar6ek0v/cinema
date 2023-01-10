@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Container } from 'react-bootstrap';
 
 import SEO from '../../components/SEO';
 import Hero from '../../components/Main/Hero';
@@ -9,7 +10,6 @@ import ActorsPopular from '../../components/Main/ActorsPopular';
 import Trends from '../../components/Main/Trends';
 import Trailers from '../../components/Main/Trailers';
 import { Col4, Col8, Wrapper, Row } from '../../components/Main/styles';
-import { StyledContainer } from '../../components/styles';
 
 const Main = () => {
   const { t } = useTranslation();
@@ -24,7 +24,7 @@ const Main = () => {
       />
       <Hero />
       <Wrapper>
-        <StyledContainer>
+        <Container>
           <Row>
             <Col8>
               <PopularMovies />
@@ -34,7 +34,7 @@ const Main = () => {
               <ActorsPopular />
             </Col4>
           </Row>
-        </StyledContainer>
+        </Container>
       </Wrapper>
       <Trailers />
       <Trends />

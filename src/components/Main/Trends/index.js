@@ -1,9 +1,9 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { Container } from 'react-bootstrap';
 
 import { MovieTrendServices } from '../../../helpers/services/movieTrendServices';
 import { useLanguageContext } from '../../../context/LanguageContext';
-import { StyledContainer } from '../../styles';
 import Loader from '../../Loader';
 import { Row } from '../styles';
 import { Wrapper } from './styles';
@@ -18,13 +18,13 @@ const Trends = () => {
   return (
     <Wrapper>
       {!isLoading && !!trends ? (
-        <StyledContainer>
+        <Container>
           <Row>
             <RightSide trends={trends} />
 
             <div></div>
           </Row>
-        </StyledContainer>
+        </Container>
       ) : (
         <Loader />
       )}

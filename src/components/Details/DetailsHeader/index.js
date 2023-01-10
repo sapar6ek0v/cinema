@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons';
 import dayjs from 'dayjs';
 import { useTranslation } from 'react-i18next';
+import { Container } from 'react-bootstrap';
 
 import { MovieServices } from '../../../helpers/services/movieServices';
 import { useLanguageContext } from '../../../context/LanguageContext';
@@ -12,7 +13,7 @@ import { colors } from '../../../constants/colors';
 import notFound from '../../../images/not-found.jpg';
 import Loader from '../../Loader';
 import MediaLinks from '../../MediaLinks';
-import { Group, StyledContainer } from '../../styles';
+import { Group } from '../../styles';
 import FilmCrew from './FilmCrew';
 import CircularBar from './CircularBar';
 import ImageModal from './ImageModal';
@@ -51,7 +52,7 @@ const DetailsHeader = ({ type, id }) => {
   const handleClose = () => setIsViewModalImage(false);
 
   return (
-    <Wrapper active={isLoading}>
+    <Wrapper>
       {!isLoading && !!item ? (
         <>
           <DetailsHeaderWrapper
@@ -63,7 +64,7 @@ const DetailsHeader = ({ type, id }) => {
               backgroundBlendMode: 'darken',
             }}
           >
-            <StyledContainer>
+            <Container>
               <Grid>
                 <ImageContainer>
                   <ImageWrapper onClick={handleOpen}>
@@ -106,7 +107,7 @@ const DetailsHeader = ({ type, id }) => {
                   <FilmCrew id={id} type={type} />
                 </Column8>
               </Grid>
-            </StyledContainer>
+            </Container>
           </DetailsHeaderWrapper>
 
           {isViewModalImage && (
