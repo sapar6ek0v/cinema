@@ -22,11 +22,11 @@ const TrailersAndVideos = ({ type, id }) => {
     VideoServices.getImagesById(type, id, language)
   );
 
-  const [videoKey, setVideoKey] = useState('');
+  const [video, setVideo] = useState({});
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
-  const handleStartTrailer = (key) => {
-    setVideoKey(key);
+  const handleStartTrailer = (value) => {
+    setVideo(value);
     setIsVideoModalOpen(true);
   };
 
@@ -49,7 +49,7 @@ const TrailersAndVideos = ({ type, id }) => {
                     <CardWrapper key={video.id}>
                       <Card>
                         <ImageWrapper>
-                          <StartIcon icon={faPlayCircle} onClick={() => handleStartTrailer(video.key)} />
+                          <StartIcon icon={faPlayCircle} onClick={() => handleStartTrailer(video)} />
                           <Image src={poster} alt="poster" />
                         </ImageWrapper>
                         <Header>{video.name}</Header>
@@ -68,7 +68,7 @@ const TrailersAndVideos = ({ type, id }) => {
           </ContentFlexContainer>
         </Container>
       </ContentWrapper>
-      {isVideoModalOpen && <TrailerModal onClose={handleClose} videoKey={videoKey} />}
+      {isVideoModalOpen && <TrailerModal onClose={handleClose} video={video} />}
     </>
   );
 };

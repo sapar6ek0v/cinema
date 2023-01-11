@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
     gap: 30px;
   }
 
-  @media (min-width: ${breakpoints.sm}) {
+  @media (min-width: ${breakpoints.md}) {
     width: 66.66666667%;
     flex: 0 0 auto;
   }

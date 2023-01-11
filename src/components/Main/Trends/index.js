@@ -6,8 +6,9 @@ import { MovieTrendServices } from '../../../helpers/services/movieTrendServices
 import { useLanguageContext } from '../../../context/LanguageContext';
 import Loader from '../../Loader';
 import { Row } from '../styles';
-import { Wrapper } from './styles';
 import RightSide from './RightSide';
+import LeftSide from './LeftSide';
+import { Wrapper } from './styles';
 
 const Trends = () => {
   const { language } = useLanguageContext();
@@ -22,7 +23,7 @@ const Trends = () => {
           <Row>
             <RightSide trends={trends} />
 
-            <div></div>
+            <LeftSide />
           </Row>
         </Container>
       ) : (

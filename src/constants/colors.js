@@ -22,4 +22,5 @@ export const colors = {
   pinkHover: '#590348',
   lightBlue2: '#20232a',
   lightGray2: '#333844d1',
+  secondaryWhite: 'rgba(255, 255, 255, 0.7)',
 };

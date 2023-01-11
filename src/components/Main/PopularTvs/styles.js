@@ -12,4 +12,12 @@ export const PopularTvsWrapper = styled(PopularMoviesWrapper)`
   }
 `;
 
-export const PopularTvsGroup = styled(PopularMoviesGroup)``;
+export const PopularTvsGroup = styled(PopularMoviesGroup)`
+  @media (min-width: ${breakpoints.extraSmall}) {
+    gap: 10px;
+  }
+
+  @media (min-width: ${breakpoints.small}) {
+    gap: 30px;
+  }
+`;
