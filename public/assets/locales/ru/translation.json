@@ -1,0 +1,152 @@
+{
+  "main": {
+    "helmetTitle": "Главная",
+    "helmetDescription": "Добро пожаловать в главную страницу!",
+    "helmetName": "Проект API фильмов",
+    "helmetType": "Проект",
+    "inputPlaceholder": "Найдите фильм, телешоу или знаменитость, которую вы ищете",
+    "advertisement": "Реклама",
+    "sidebarTitle": "В ЦЕНТРЕ ВНИМАНИЯ ЗНАМЕНИТОСТИ",
+    "sidebarLink": "ПОСМОТРЕТЬ ВСЕ ЗНАМЕНИТОСТОЙ",
+    "movieTitle": "В ТЕАТРЕ",
+    "tvTitle": "В ТЕАТРЕ",
+    "viewAll": "Просмотреть все",
+    "trailerTitle": "В ТЕАТРЕ",
+    "trendTitle": "ПОСЛЕДНИЕ ФИЛЬМЫ",
+    "trendOverview": "Обзор"
+  },
+
+  "movieDetails": {
+    "helmetTitle": "Детали фильма",
+    "helmetDescription": "Дополнительная информация об этом фильме",
+    "helmetName": "Проект Cinema",
+    "helmetType": "Проект"
+  },
+
+  "tvShowDetails": {
+    "helmetTitle": "Детали телешоу",
+    "helmetDescription": "Дополнительная информация об этом телешоу",
+    "helmetName": "Проект Cinema",
+    "helmetType": "Проект"
+  },
+
+  "details": {
+    "imageExpand": "Расширить",
+    "overview": "Обзор",
+    "notFoundOverviewTitle": "К сожалению, у нас пока нет информации об этом фильме",
+    "notFoundTagline": "Нет слогана",
+    "minutes": "мин",
+    "circularBarTitle": "Пользовательская оценка",
+    "mediaTitle": "Медиа",
+    "notFoundTrailerTitle": "Нет трейлеров.",
+    "recommendationTitle": "Рекомендации",
+    "notFoundRecommendationTitle": "Нет рекомендаций.",
+    "originalName": "Оригинальное название",
+    "status": "Статус",
+    "budget": "Бюджет",
+    "revenue": "Доход",
+    "networks": "Сети",
+    "type": "Тип",
+    "originalLanguage": "Исходный язык",
+    "keywords": "Ключевые слова",
+    "notFoundKeywordsTitle": "Нет ключевых слов.",
+    "castTitle": "В ролях",
+    "notFoundCastTitle": "Отсутствует актерский состав.",
+    "viewMore": "Смотреть ещё"
+  },
+
+  "actorDetails": {
+    "helmetTitle": "Информация об актёре",
+    "helmetDescription": "Дополнительная информация об актёре",
+    "helmetName": "Проект Cinema",
+    "helmetType": "Проект",
+    "personalInformation": "Личные данные",
+    "knownForDepartment": "Знаменит",
+    "birthday": "День рождения",
+    "placeOfBirth": "Место рождения",
+    "alsoKnownAs": "Также известен как",
+    "biography": "Биография",
+    "notFoundBiographyTitle": "Нету информация о биографии",
+    "viewMore": "Еще",
+    "filmography": "ФИЛЬМОГРАФИЯ",
+    "readMore": "Ещё",
+    "notFoundTvShowTitle": "Нету сериалов.",
+    "notFoundMoviesTitle": "Нету фильмов.",
+    "overview": "Обзор",
+    "media": "Медиа",
+    "movies": "Фильмы",
+    "tvShows": "Сериалы"
+  },
+
+  "slider": {
+    "readMore": "Ещё"
+  },
+
+  "search": {
+    "helmetTitle": "Результаты поиска",
+    "helmetDescription": "Поиск фильма, телешоу или знаменитости, которую вы ищете",
+    "helmetName": "Проект Cinema",
+    "helmetType": "Проект",
+    "notFoundTitle": "По вашему запросу нет результатов.",
+    "navbarResultTitle": "Результаты поиска",
+    "notFoundOverviewTitle": "Нет обзоров!",
+    "inputPlaceholder": "Поиск фильма, телешоу или знаменитости, которую вы ищете",
+    "navbarMoviesTitle": "Фильмы",
+    "navbarTvShowsTitle": "Тв Сериалы",
+    "navbarPeopleTitle": "Люди"
+  },
+
+  "layout": {
+    "header": {
+      "signUp": "Регистрация",
+      "home": "главная",
+      "login": "войти"
+    },
+    "footer": {
+      "title": "TMDB. Все права защищены. Спроектировано и разработано Eldiiar.",
+      "newsletter": "Информационная рассылка",
+      "subscribeTitle": "Подпишитесь на нашу систему рассылки сейчас, чтобы получать от нас последние новости.",
+      "subscribeLink": "подписаться сейчас",
+      "inputPlaceholder": "Введите адрес почты..."
+    }
+  },
+
+  "movies": {
+    "helmetTitle": "{{title}} фильмы",
+    "helmetDescription": "{{title}} список фильмов",
+    "helmetName": "Проект Cinema",
+    "helmetType": "Проект"
+  },
+
+  "tvShows": {
+    "helmetTitle": "{{title}} телешоу",
+    "helmetDescription": "{{title}} список телешоу",
+    "helmetName": "Проект Cinema",
+    "helmetType": "Проект"
+  },
+
+  "movie": {
+    "title": "Фильмы",
+    "nowPlaying": "Сейчас Играет",
+    "popular": "Популярные",
+    "topRated": "Лучшие По Рейтингу",
+    "upcoming": "Предстоящие"
+  },
+
+  "tvShow": {
+    "title": "Тв Сериалы",
+    "popular": "Популярные",
+    "onTheAir": "В Прямом Эфире",
+    "topRated": "Лучшие По Рейтингу",
+    "airingToday": "Сегодня В Эфире"
+  },
+
+  "form": {
+    "signUp": "Регистрация",
+    "login": "Войти",
+    "usernameLabel": "Имя пользователя или Email",
+    "passwordLabel": "Пароль",
+    "rememberMeLabel": "Запомнит меня",
+    "privacy": "Я соглашаюсь с Политикой конфиденциальности и Пользовательским соглашением"
+  }
+}

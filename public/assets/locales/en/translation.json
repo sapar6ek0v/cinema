@@ -1,0 +1,152 @@
+{
+  "main": {
+    "helmetTitle": "Main",
+    "helmetDescription": "Welcome to main page!",
+    "helmetName": "Project Cinema",
+    "helmetType": "project",
+    "inputPlaceholder": "Search for a movie, TV Show or celebrity that you are looking for",
+    "advertisement": "advertisement",
+    "sidebarTitle": "SPOTLIGHT CELEBRITIES",
+    "sidebarLink": "SEE ALL CELEBRITIES",
+    "movieTitle": "IN THEATER",
+    "tvTitle": "IN THEATER",
+    "viewAll": "View All",
+    "trailerTitle": "IN THEATER",
+    "trendTitle": "LATEST MOVIES",
+    "trendOverview": "Overview"
+  },
+
+  "movieDetails": {
+    "helmetTitle": "Movie details",
+    "helmetDescription": "More information about this movie",
+    "helmetName": "Project Cinema",
+    "helmetType": "project"
+  },
+
+  "tvShowDetails": {
+    "helmetTitle": "Tv Show details",
+    "helmetDescription": "More information about this tv show",
+    "helmetName": "Project Cinema",
+    "helmetType": "project"
+  },
+
+  "details": {
+    "imageExpand": "Expand",
+    "overview": "Overview",
+    "notFoundOverviewTitle": "Sorry but we don't have information about this movie yet",
+    "notFoundTagline": "No tagline",
+    "minutes": "min",
+    "circularBarTitle": "Custom check",
+    "mediaTitle": "Media",
+    "notFoundTrailerTitle": "No trailers.",
+    "recommendationTitle": "Recommendations",
+    "notFoundRecommendationTitle": "No recommendations.",
+    "originalName": "Original name",
+    "status": "Status",
+    "budget": "Budget",
+    "revenue": "Revenue",
+    "networks": "Networks",
+    "type": "Type",
+    "originalLanguage": "Original Language",
+    "keywords": "Keywords",
+    "notFoundKeywordsTitle": "No key words.",
+    "castTitle": "Starring",
+    "notFoundCastTitle": "The cast is missing.",
+    "viewMore": "View more"
+  },
+
+  "actorDetails": {
+    "helmetTitle": "Actor details",
+    "helmetDescription": "More information about actor",
+    "helmetName": "Project Cinema",
+    "helmetType": "project",
+    "personalInformation": "Personal information",
+    "knownForDepartment": "Known for department",
+    "birthday": "Birthday",
+    "placeOfBirth": "Place of birth",
+    "alsoKnownAs": "Also known as",
+    "biography": "Biography",
+    "notFoundBiographyTitle": "No information about biography",
+    "viewMore": "More",
+    "filmography": "FILMOGRAPHY",
+    "readMore": "More",
+    "notFoundTvShowTitle": "No serials.",
+    "notFoundMoviesTitle": "No movies.",
+    "overview": "Overview",
+    "media": "Media",
+    "movies": "Movies",
+    "tvShows": "Serials"
+  },
+
+  "slider": {
+    "readMore": "More"
+  },
+
+  "search": {
+    "helmetTitle": "Search results",
+    "helmetDescription": "Search for a movie, TV Show or celebrity that you are looking for",
+    "helmetName": "Project Cinema",
+    "helmetType": "project",
+    "notFoundTitle": "There are no results, that matched your query.",
+    "navbarResultTitle": "Search Results",
+    "notFoundOverviewTitle": "Don`t have any overview!",
+    "inputPlaceholder": "Search for a movie, TV Show or celebrity that you are looking for",
+    "navbarMoviesTitle": "Movies",
+    "navbarTvShowsTitle": "Tv Serials",
+    "navbarPeopleTitle": "People"
+  },
+
+  "layout": {
+    "header": {
+      "signUp": "Sign Up",
+      "home": "home",
+      "login": "Log In"
+    },
+    "footer": {
+      "title": "TMDB. All Rights Reserved. Designed and Developed by Eldiiar.",
+      "newsletter": "Newsletter",
+      "subscribeTitle": "Subscribe to our newsletter system now to get latest news from us.",
+      "subscribeLink": "subscribe now",
+      "inputPlaceholder": "Enter your email..."
+    }
+  },
+
+  "movies": {
+    "helmetTitle": "{{title}} movies",
+    "helmetDescription": "{{title}} movie list",
+    "helmetName": "Project Cinema",
+    "helmetType": "project"
+  },
+
+  "tvShows": {
+    "helmetTitle": "{{title}} tv shows",
+    "helmetDescription": "{{title}} tv show list",
+    "helmetName": "Project Cinema",
+    "helmetType": "project"
+  },
+
+  "movie": {
+    "title": "Movies",
+    "nowPlaying": "Now Playing",
+    "popular": "Popular",
+    "topRated": "Top Rated",
+    "upcoming": "Upcoming"
+  },
+
+  "tvShow": {
+    "title": "Tv Serials",
+    "onTheAir": "On The Air",
+    "popular": "Popular",
+    "topRated": "Top Rated",
+    "airingToday": "Airing Today"
+  },
+
+  "form": {
+    "signUp": "Sign Up",
+    "login": "Log In",
+    "usernameLabel": "Username or Email Address",
+    "passwordLabel": "Password",
+    "rememberMeLabel": "Remember Me",
+    "privacy": "I agree with Privacy Policy and User agreement"
+  }
+}
