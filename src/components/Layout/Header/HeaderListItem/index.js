@@ -8,6 +8,7 @@ import HeaderDropDown from '../HeaderDropDown';
 import HeaderLink from '../HeaderLink';
 import { useListItem } from '../hooks/useListItem';
 import { BurgerBar, BurgerMenu, Menu, HeaderGroup, LangBtn, SignUpBtn } from './styles';
+import LoginModal from '../LoginModal';
 
 const HeaderListItem = () => {
   const { t } = useTranslation();
@@ -16,6 +17,7 @@ const HeaderListItem = () => {
   const matches = useMediaQuery('(min-width: 992px)');
 
   const [isMenuClicked, setIsMenuClicked] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleLang = () => {
     setLanguage(language === 'ru' ? 'en' : 'ru');
@@ -36,7 +38,7 @@ const HeaderListItem = () => {
             <HeaderGroup>
               {!!matches ? (
                 listItem
-                  .slice(0, 5)
+                  .slice(0, 3)
                   .map((link) => (
                     <>
                       {link.submenu?.length ? (
@@ -57,12 +59,12 @@ const HeaderListItem = () => {
             <HeaderGroup>
               {!!matches
                 ? listItem
-                    .slice(5)
+                    .slice(3)
                     .map((link) => <HeaderLink key={link.id} title={link.title} path={link.path} />)
                 : null}
 
-              <SignUpBtn aria-label="sig up button" type="button">
-                {t('layout.header.signUp')}
+              <SignUpBtn aria-label="login button" type="button" onClick={() => setIsOpen(true)}>
+                {t('layout.header.login')}
               </SignUpBtn>
               <LangBtn onClick={toggleLang} aria-label="language change button" type="button">
                 {language}
@@ -97,6 +99,8 @@ const HeaderListItem = () => {
             })
           : null}
       </Menu>
+
+      {isOpen && <LoginModal onClose={() => setIsOpen(false)} />}
     </>
   );
 };

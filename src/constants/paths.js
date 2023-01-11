@@ -6,5 +6,6 @@ export const Paths = {
   MOVIES: '/movies',
   TV_SHOWS: '/tv-shows',
   SEARCH: '/search/*',
+  SIGN_UP: '/sign-up',
   ANONYM: '*',
 };

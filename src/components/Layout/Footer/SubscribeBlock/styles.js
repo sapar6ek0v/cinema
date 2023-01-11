@@ -17,6 +17,7 @@ export const Description = styled.p`
 
 export const InputWrapper = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 export const Input = styled.input`

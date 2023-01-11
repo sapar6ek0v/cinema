@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import LanguageProvider from './context/LanguageContext';
@@ -15,6 +15,7 @@ const Movies = lazy(() => import('./pages/Movies'));
 const Serials = lazy(() => import('./pages/Serials'));
 const ActorInformation = lazy(() => import('./pages/ActorInformation'));
 const SearchResults = lazy(() => import('./pages/SearchResults'));
+const SignUp = lazy(() => import('./pages/SignUp'));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,7 +39,8 @@ const App = () => {
               <Route path={Paths.MOVIES} element={<Movies />} />
               <Route path={Paths.TV_SHOWS} element={<Serials />} />
               <Route path={Paths.SEARCH} element={<SearchResults />} />
-              {/* <Route path={Paths.ANONYM} element={<Navigate to="/" />} /> */}
+              <Route path={Paths.SIGN_UP} element={<SignUp />} />
+              <Route path={Paths.ANONYM} element={<Navigate to={Paths.MAIN} />} />
             </Routes>
           </Layout>
         </LanguageProvider>

@@ -4,7 +4,11 @@ import { fontStyleMdBold } from '../../../../helpers/cssFragments';
 import { colors } from '../../../../constants/colors';
 import { breakpoints } from '../../../../constants/breakpoints';
 
-export const DropDownWrapper = styled(Dropdown)``;
+export const DropDownWrapper = styled(Dropdown)`
+  @media (min-width: ${breakpoints.xl}) {
+    display: flex;
+  }
+`;
 
 export const DropDownButton = styled(Dropdown.Toggle)`
   ${fontStyleMdBold};
@@ -48,7 +52,7 @@ export const DropDownLink = styled.button`
   border: none;
   ${fontStyleMdBold};
   display: block;
-  color: ${colors.lightGray};
+  color: colors.lightGray;
   padding: 10px 15px;
   text-decoration: none;
   text-transform: uppercase;

@@ -68,23 +68,8 @@ export const useListItem = () => {
     },
     {
       id: idGenerator(),
-      title: t('layout.header.community'),
-      path: '/community',
-    },
-    {
-      id: idGenerator(),
-      title: t('layout.header.news'),
-      path: '/news',
-    },
-    {
-      id: idGenerator(),
-      title: t('layout.header.help'),
-      path: '/help',
-    },
-    {
-      id: idGenerator(),
-      title: t('layout.header.login'),
-      path: '/login',
+      title: t('layout.header.signUp'),
+      path: Paths.SIGN_UP,
     },
   ];
 

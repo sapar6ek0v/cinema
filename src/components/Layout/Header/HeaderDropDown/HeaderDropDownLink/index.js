@@ -9,7 +9,6 @@ const HeaderDropDownLink = ({ item, onClose }) => {
     navigate(`${path}`);
     onClose();
   };
-
   return <DropDownLink onClick={() => handleNavigate(item.path)}>{item.title}</DropDownLink>;
 };
 

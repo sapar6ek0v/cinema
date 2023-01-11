@@ -100,10 +100,7 @@
     "header": {
       "signUp": "Sign Up",
       "home": "home",
-      "community": "community",
-      "news": "news",
-      "help": "help",
-      "login": "login"
+      "login": "Log In"
     },
     "footer": {
       "title": "TMDB. All Rights Reserved. Designed and Developed by Eldiiar.",
@@ -142,5 +139,14 @@
     "popular": "Popular",
     "topRated": "Top Rated",
     "airingToday": "Airing Today"
+  },
+
+  "form": {
+    "signUp": "Sign Up",
+    "login": "Log In",
+    "usernameLabel": "Username or Email Address",
+    "passwordLabel": "Password",
+    "rememberMeLabel": "Remember Me",
+    "privacy": "I agree with Privacy Policy and User agreement"
   }
 }

@@ -3,7 +3,14 @@ import styled from 'styled-components';
 
 import { breakpoints } from '../../constants/breakpoints';
 import { colors } from '../../constants/colors';
-import { fontStyleXlBold, fontStyleMdBold } from '../../helpers/cssFragments';
+import {
+  fontStyleXlBold,
+  fontStyleMdBold,
+  fontStyleSmNormal,
+  fontStyleSmBold,
+  flexAlignCenter,
+  flexColumn,
+} from '../../helpers/cssFragments';
 
 export const Group = styled.div`
   display: flex;
@@ -62,4 +69,73 @@ export const NoFoundTitle = styled.p`
 export const Wrapper = styled.section`
   min-height: calc(100vh - 75px);
   position: relative;
+`;
+
+export const Form = styled.form`
+  ${flexColumn};
+  gap: 20px;
+`;
+
+export const FormStack = styled.div`
+  ${flexColumn};
+  gap: 10px;
+`;
+
+export const Label = styled.label`
+  ${fontStyleSmBold};
+  color: #222222;
+  text-transform: uppercase;
+`;
+
+export const Input = styled.input`
+  ${fontStyleSmNormal};
+  color: #222222;
+  height: 42px;
+  border: 1px solid #222222;
+  padding: 0 15px;
+  transition: all 0.4s linear;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: ${colors.pink};
+    outline: none;
+  }
+`;
+
+export const Checkbox = styled.input``;
+
+export const CheckboxLabel = styled.label`
+  ${fontStyleSmNormal};
+  ${flexAlignCenter}
+  height: 42px;
+  gap: 10px;
+`;
+
+export const FormButton = styled.button`
+  ${fontStyleSmBold};
+  color: ${colors.white};
+  text-transform: uppercase;
+  border: 1px solid ${colors.white};
+  background-color: ${colors.pink};
+  height: 42px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.4s linear;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: ${colors.pink};
+    border-color: ${colors.pink};
+    background-color: ${colors.white};
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    border-color: ${colors.white};
+    background-color: ${colors.pink};
+    color: ${colors.white};
+  }
 `;
