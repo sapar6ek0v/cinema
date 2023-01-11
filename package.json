@@ -17,6 +17,7 @@
     "i18next": "^22.4.8",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.1.1",
+    "package-name": "^0.1.0",
     "react": "^18.0.0",
     "react-bootstrap": "^2.0.4",
     "react-circular-progressbar": "^2.0.4",

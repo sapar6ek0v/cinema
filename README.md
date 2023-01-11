@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# Cinema
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Application for easy viewing of series and movies. Also the actors who participate in the film and series. (Created using TMDB)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Built With
 
-### `npm start`
+**Client:** React, styled-components, react-router-dom, react-query.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**API:** TMDB API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- The ability to see information about the series, movie and actor.
+- The ability to see all the additional information about the film, series and actor (budget, cast, recommendations, trailers, etc.)
+- Sorting movies and series by several types.
+- Search for movies, series and actors.
+- Support to languages(en & ru)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Demo
 
-### `npm run build`
+Insert gif or link to demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How To Use
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Main Page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Enter your login credentials if you already have an account
 
-### `npm run eject`
+  ![Main Page](https://drive.google.com/file/d/1oQqluwgF9V7dz-WmK-wjvvLzoGD0ox_4/view?usp=share_link)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Create your user account if you don't have an account
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  <img src="https://user-images.githubusercontent.com/62003240/129846244-c4bd798c-aa87-47af-9f70-8253db18bff0.png" width="500" alt="Signup Window" />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Projects
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Manage your project's in the ProjectsView
 
-## Learn More
+  <img src="https://user-images.githubusercontent.com/62003240/129846778-98e6910b-3582-4fe6-89f3-c525bca9fbc5.png" width="800" alt="Projects View (All Projects)" />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- View your completed project's in the Completed tab
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  <img src="https://user-images.githubusercontent.com/62003240/129847000-13574e50-b76a-4dbc-be08-a17fb1b628ec.png" width="800" alt="Projects View (Completed Projects)" />
 
-### Code Splitting
+- You can modify a project by selecting it (the project's content will be displayed), then select Project Details tab
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  <img src="https://user-images.githubusercontent.com/62003240/129847259-40e8eec6-38ed-4416-acd1-80580d8c3bff.png" width="800" alt="Project's Details" />
 
-### Analyzing the Bundle Size
+### Project's Tasks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Add and manage your Finish Line Tasks (the IMPORTANT tasks) and Extra Feature tasks in the Project's Content (this is displayed if you select a project from the ProjectsView)
 
-### Making a Progressive Web App
+  <img src="https://user-images.githubusercontent.com/62003240/129848072-3448eace-29b9-4417-9467-ca727579a82a.png" width="800" alt="Project's Tasks (Project's Content)" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Use the ComboBoxes to enable the filtering of tasks
 
-### Advanced Configuration
+  <img src="https://user-images.githubusercontent.com/62003240/129849188-9753f6f0-5908-4904-b4ad-4c295731990e.png" width="800" alt="Project's Content with filter" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- View your Completed Tasks
 
-### Deployment
+  <img src="https://user-images.githubusercontent.com/62003240/129849394-e2e6c6cc-98a7-4c9e-9bf8-74652fe9cf61.png" width="800" alt="Project's Content (Completed Tasks)" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- You can modify a task by selecting it (the task's content will be displayed), then select Task Details tab
 
-### `npm run build` fails to minify
+  <img src="https://user-images.githubusercontent.com/62003240/129849576-5306ffcb-d973-4239-b075-98672cd1157b.png" width="800" alt="Task's Details" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Task's Subtasks
+
+- Add and manage a task's subtasks in the Task's Content (this is displayed if you select a task from the Project's Content)
+
+  <img src="https://user-images.githubusercontent.com/62003240/129849930-ccef240f-1e93-4db3-b3fd-41475ed34e0e.png" width="800"  alt="Task's subtasks (Task's Content)"/>
+
+- View your Completed Subtasks
+
+  <img src="https://user-images.githubusercontent.com/62003240/129850086-aac9f7f0-254f-4998-b976-f3ffd2e1f672.png" width="800"  alt="Task's Content (Completed Subtasks)" />
+
+- You can modify a subtask by selecting it (the subtask details modal dialog will be shown)
+
+  <img src="https://user-images.githubusercontent.com/62003240/129850493-bc46b01a-f08b-4dff-aa36-41f8e03317c5.png" width="800" alt="Subtask's Details"/>
+
+### BONUS: Project Ideas
+
+- A user interface to manage your project ideas 😉
+
+  <img src="https://user-images.githubusercontent.com/62003240/129850995-85e22b93-27a1-48e5-a915-54ac4839d63c.png" width="800" alt="Project Ideas" />
+
+## Getting Started
+
+### Installation
+
+1. To run a project locally, fisrt clone the repo
+
+   ```sh
+   git clone https://github.com/sapar6ek0v/cinema.git
+   ```
+
+2. Go to the project directory
+
+   ```sh
+   cd my-project
+   ```
+
+3. Install all packages
+
+   ```sh
+   npm install
+   ```
+
+### Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`API_KEY`
+
+You can API_KEY here [TMDB docs](https://developers.themoviedb.org/3/getting-started/introduction)
+
+4. Run the project
+
+   ```sh
+   npm start
+   ```
+
+## Feedback
+
+If you have any feedback, please reach out to me at eldiiarsparbekov03@gmail.com
