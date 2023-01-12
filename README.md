@@ -32,21 +32,21 @@ Application for easy viewing of series and movies. Also the actors who participa
 
 - Search input, type movie, tv shows or celebrity
 
-<img src="public/assets/images/cinema_main_page_search.png.png" width="800" alt="Main page search" />
+<img src="public/assets/images/cinema_main_page_search.png" width="800" alt="Main page search" />
 
 - Search results
 
-<img src="public/assets/images/search_result_page.png.png" width="800" alt="search result page" />
+<img src="public/assets/images/search_result_page.png" width="800" alt="search result page" />
 
 ### Movies Page
 
 - Movie types
 
-<img src="public/assets/images/movie_types.png.png" width="800" alt="movie types" />
+<img src="public/assets/images/movie_types.png" width="800" alt="movie types" />
 
 - Movies page
 
-<img src="public/assets/images/movie_types_page.png.png" width="800" alt="movie types page" />
+<img src="public/assets/images/movie_types_page.png" width="800" alt="movie types page" />
 
 - Movies details
 
