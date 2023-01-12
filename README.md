@@ -26,7 +26,7 @@ Insert gif or link to demo
 
 ### Main Page
 
-![Main Page](https://drive.google.com/file/d/1oQqluwgF9V7dz-WmK-wjvvLzoGD0ox_4/view?usp=share_link)
+![](images/cinema_main_page.png)
 
 ## Getting Started
 
