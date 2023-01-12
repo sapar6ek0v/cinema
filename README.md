@@ -81,7 +81,7 @@ Application for easy viewing of series and movies. Also the actors who participa
 2. Go to the project directory
 
    ```sh
-   cd my-project
+   cd cinema
    ```
 
 3. Install all packages
@@ -96,7 +96,7 @@ To run this project, you will need to add the following environment variables to
 
 `API_KEY`
 
-You can API_KEY here [TMDB docs](https://developers.themoviedb.org/3/getting-started/introduction)
+You can get API_KEY here [TMDB docs](https://developers.themoviedb.org/3/getting-started/introduction)
 
 4. Run the project
 

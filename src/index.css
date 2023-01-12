@@ -10,25 +10,6 @@ body {
   font-family: 'Dosis', sans-serif;
 }
 
-.header-fix {
-  position: fixed;
-  top: 0;
-  z-index: 9;
-  background: #20232a;
-  animation: scroll 1s ease-in-out;
-}
-
-@keyframes scroll {
-  0% {
-    opacity: 0;
-    top: -100px;
-  }
-  100% {
-    opacity: 1;
-    top: 0;
-  }
-}
-
 .slick-dots {
   text-align: right;
   position: static;

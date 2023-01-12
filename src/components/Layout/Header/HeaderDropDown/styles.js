@@ -52,7 +52,7 @@ export const DropDownLink = styled.button`
   border: none;
   ${fontStyleMdBold};
   display: block;
-  color: colors.lightGray;
+  color: ${colors.lightGray};
   padding: 10px 15px;
   text-decoration: none;
   text-transform: uppercase;
