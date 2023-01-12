@@ -20,13 +20,53 @@ Application for easy viewing of series and movies. Also the actors who participa
 
 ## Demo
 
-Insert gif or link to demo
+[Demo](https://cinema-black.vercel.app/)
 
 ## How To Use
 
 ### Main Page
 
-![](images/cinema_main_page.png)
+- Main Page, Where you can view everything
+
+<img src="public/assets/images/cinema_main_page.png" width="800" alt="Main page" />
+
+- Search input, type movie, tv shows or celebrity
+
+<img src="public/assets/images/cinema_main_page_search.png.png" width="800" alt="Main page search" />
+
+- Search results
+
+<img src="public/assets/images/search_result_page.png.png" width="800" alt="search result page" />
+
+### Movies Page
+
+- Movie types
+
+<img src="public/assets/images/movie_types.png.png" width="800" alt="movie types" />
+
+- Movies page
+
+<img src="public/assets/images/movie_types_page.png.png" width="800" alt="movie types page" />
+
+- Movies details
+
+<img src="public/assets/images/movie_details_page.png" width="800" alt="movie details page" />
+
+### Tv Shows page
+
+- Tv Show types
+
+<img src="public/assets/images/tv_shows_types.png" width="800" alt="tv show types" />
+
+- Tv Show details page
+
+<img src="public/assets/images/tv_shows_details_page.png" width="800" alt="tv show details page" />
+
+### Actors
+
+- Actor details page
+
+<img src="public/assets/images/actor_details.png" width="800" alt="actor details page" />
 
 ## Getting Started
 
